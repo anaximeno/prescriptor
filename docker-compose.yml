@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: docker.io/postgres:latest
+    environment:
+      POSTGRES_DB: prescriptor
+      POSTGRES_USER: prescriptor
+      POSTGRES_PASSWORD: passw0rd
+    ports:
+      - 5432:5432
