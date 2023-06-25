@@ -2,10 +2,11 @@ package group.three.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import lombok.*;
+
 import jakarta.persistence.*;
 import jakarta.annotation.Nonnull;
+
+import lombok.*;
 
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor
@@ -14,7 +15,7 @@ import jakarta.annotation.Nonnull;
 @Setter
 @Entity
 @Table(name = "pharmacies")
-public class Pharmacy implements Serializable{
+public class Pharmacy implements Serializable {
 
     @Nonnull
     private String name;
@@ -22,7 +23,7 @@ public class Pharmacy implements Serializable{
     @Nonnull
     private LocalDate dateOfFoundation;
 
-    @Nonnull
-    private DateTimeFormatter afterHoursService;
+    // @Nonnull
+    // private DateTimeFormatter afterHoursService; // XXX: ???
 
 }

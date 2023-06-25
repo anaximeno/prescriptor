@@ -1,9 +1,9 @@
 package group.three.model;
 
-import java.io.Serializable;
-import lombok.*;
 import jakarta.persistence.*;
 import jakarta.annotation.Nonnull;
+
+import lombok.*;
 
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor
@@ -12,10 +12,9 @@ import jakarta.annotation.Nonnull;
 @Setter
 @Entity
 @Table(name = "physicians")
-public class Physician implements Serializable{
-
+public class Physician {
     @Nonnull
-    private String CIPS;//numero de identificacao profissional
+    private String cips;
 
     @Nonnull
     private String specialty;

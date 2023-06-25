@@ -1,6 +1,5 @@
 package group.three.model;
 
-import java.io.Serializable;
 import lombok.*;
 import jakarta.persistence.*;
 
@@ -11,6 +10,6 @@ import jakarta.persistence.*;
 @Setter
 @Entity
 @Table(name = "pacients")
-public class Pacient implements Serializable{
-    private String naturalidade;
+public class Pacient {
+    private Boolean hasInsurance;
 }

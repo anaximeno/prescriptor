@@ -1,68 +1,76 @@
 package group.three.model;
 
-import java.time.*;
-import java.util.UUID;
+import java.time.LocalDate;
 
 import jakarta.annotation.Nonnull;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+
 import lombok.*;
+
+import group.three.utils.JsonLike;
+import group.three.utils.UserType;
+import group.three.utils.interfaces.IJsonResource;
 
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor
 @Builder
 @Getter
 @Setter
+@Entity
 @Table(name = "users")
-public class User {
+public class User implements IJsonResource {
     @Id
-    @Nonnull
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    private Long id;
 
     @Nonnull
-    private String username; // Could be email as well
+    private String username;
 
     @Nonnull
     private String password;
 
     @Nonnull
-    private String givenName;
+    private String name;
 
     @Nonnull
+    @Column(name = "last_name")
     private String lastName;
 
     @Nonnull
     private Gender gender;
 
     @Nonnull
+    @Column(name = "birth_date")
     private LocalDate birthDate;
 
     @Nonnull
-    private String CNI;
+    private String cni;
 
     @Nonnull
-    private byte NIF;
+    private Long nif;
+
+    @Column(name = "user_type")
+    private UserType userType;
 
     @Nonnull
-    private String endereco;
+    private String homeAddress;
 
-    private byte phoneNumber;
-  
+    private String phoneNumber;
+
+    public JsonLike toJsonResource() {
+        return JsonLike
+                .from("name", getName())
+                .add("nif", getNif())
+                .add("cni", getCni())
+                .add("lastName", getLastName())
+                .add("birthDate", getBirthDate())
+                .add("phoneNumber", getPhoneNumber())
+                .add("homeAddress", getHomeAddress())
+                .add("userType", getUserType());
+    }
 }
-
-/*
- Na cada um di kes tabelas la dibaxo ten ki ten FK di user (ki é PK na tabela users ou seja id)
-
-Dja na kes tabela dibaxo bu ta adiciona informaçons ke importante ten sobre es
-
-Tipo pa physician e pa recepcionist és ten ki ten FK di clinica ke ta trabadja nel, 
-ntom bu ten ki kria entidade clínica antes
-
-E bu ta ba ta adiciona na kada kel ke di si competência
-
-Por enquanto apenas kria kes tipos di users la ku ses infos, 
-si bu ka consigue fz relaçon nta fz o ki bu fz push
- */

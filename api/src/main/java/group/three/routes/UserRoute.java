@@ -15,6 +15,7 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.Produces;
 
+import group.three.request.UserRequest;
 import group.three.services.UserService;
 
 @Path("/api/user")
@@ -40,16 +41,16 @@ public class UserRoute {
     @Path("/")
     @Transactional
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response store() {
-        return userService.storeUser();
+    public Response store(UserRequest user) {
+        return userService.storeUser(user);
     }
 
     @PUT
     @Path("/{id}")
     @Transactional
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response update() {
-        return userService.updateUser();
+    public Response update(@PathParam("id") Long id, UserRequest user) {
+        return userService.updateUser(id, user);
     }
 
     @DELETE
