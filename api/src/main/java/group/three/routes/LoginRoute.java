@@ -9,6 +9,7 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.Produces;
 
+import group.three.model.UserLogin;
 import group.three.services.LoginService;
 
 @Path("/api/login")
@@ -20,7 +21,7 @@ public class LoginRoute {
 
     @POST
     @Path("/")
-    public Response login() {
-        return loginService.userLogin();
+    public Response login(UserLogin userLogin) {
+        return loginService.userLogin(userLogin);
     }
 }

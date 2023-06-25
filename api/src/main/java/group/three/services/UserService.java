@@ -3,6 +3,8 @@ package group.three.services;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.core.Response;
 
+import group.three.model.User;
+
 @ApplicationScoped
 public class UserService {
     public Response getUsers() {
@@ -13,11 +15,11 @@ public class UserService {
         return Response.ok("TODO").build(); // TODO
     }
 
-    public Response storeUser() {
+    public Response storeUser(User user) {
         return Response.ok("TODO").build(); // TODO
     }
 
-    public Response updateUser() {
+    public Response updateUser(Long id, User user) {
         return Response.ok("TODO").build(); // TODO
     }
 
