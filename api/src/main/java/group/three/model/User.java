@@ -55,6 +55,7 @@ public class User implements IJsonResource {
     @Nonnull
     private Long nif;
 
+    @Nonnull
     @Column(name = "user_type")
     private UserType userType;
 
@@ -67,7 +68,8 @@ public class User implements IJsonResource {
 
     public JsonLike toJsonResource() {
         return JsonLike
-                .from("name", getName())
+                .from("id", id)
+                .add("name", getName())
                 .add("nif", getNif())
                 .add("cni", getCni())
                 .add("lastName", getLastName())

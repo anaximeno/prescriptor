@@ -4,8 +4,11 @@ import jakarta.annotation.Nonnull;
 
 import java.time.LocalDate;
 
+
 import group.three.model.User;
 import group.three.utils.interfaces.IEntityRequest;
+import group.three.utils.enums.Gender;
+import group.three.utils.enums.UserType;
 
 import lombok.*;
 
@@ -42,6 +45,12 @@ public class UserRequest implements IEntityRequest<User> {
 
     private String phoneNumber;
 
+    @Nonnull
+    private UserType userType;
+
+    @Nonnull
+    private Gender gender;
+
     public User toEntity() {
         return User.builder()
                 .username(username)
@@ -53,6 +62,8 @@ public class UserRequest implements IEntityRequest<User> {
                 .nif(nif)
                 .homeAddress(homeAddress)
                 .phoneNumber(phoneNumber)
+                .userType(userType)
+                .gender(gender)
                 .build();
     }
 }
