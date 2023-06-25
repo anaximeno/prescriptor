@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:front/ui/pages/home/components/prescription.dart';
+import 'package:front/ui/pages/home/views/prescription.dart';
 
 void main() => runApp(const MyApp());
 
