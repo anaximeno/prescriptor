@@ -5,8 +5,8 @@ import jakarta.inject.Inject;
 import jakarta.ws.rs.core.Response;
 
 import group.three.model.User;
-import group.three.model.UserLogin;
 import group.three.repository.UserRepository;
+import group.three.request.UserLoginRequest;
 import group.three.utils.JsonLike;
 
 @ApplicationScoped
@@ -14,7 +14,7 @@ public class LoginService {
     @Inject
     UserRepository userRepository;
 
-    public Response userLogin(UserLogin userLogin) {
+    public Response userLogin(UserLoginRequest userLogin) {
         final User user = userRepository.findByUsername(userLogin.getUsername());
 
         if (user != null && user.getPassword() == userLogin.getPassword()) {

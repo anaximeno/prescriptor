@@ -1,4 +1,4 @@
-package group.three.model;
+package group.three.request;
 
 import lombok.*;
 
@@ -8,7 +8,7 @@ import lombok.*;
 @ToString
 @Getter
 @Setter
-public class UserLogin {
+public class UserLoginRequest {
     private String username;
     private String password;
 }
