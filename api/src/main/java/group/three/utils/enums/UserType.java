@@ -1,4 +1,4 @@
-package group.three.utils;
+package group.three.utils.enums;
 
 public enum UserType {
     PHYSICIAN,

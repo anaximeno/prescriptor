@@ -6,7 +6,7 @@ import org.eclipse.microprofile.openapi.annotations.info.Info;
 import org.eclipse.microprofile.openapi.annotations.info.License;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
-import group.three.constant.Constants;
+import group.three.utils.Constants;
 import jakarta.ws.rs.core.Application;
 
 @OpenAPIDefinition(

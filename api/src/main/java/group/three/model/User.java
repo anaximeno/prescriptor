@@ -10,11 +10,12 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-import lombok.*;
-
 import group.three.utils.JsonLike;
-import group.three.utils.UserType;
+import group.three.utils.enums.Gender;
+import group.three.utils.enums.UserType;
 import group.three.utils.interfaces.IJsonResource;
+
+import lombok.*;
 
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor
@@ -58,8 +59,10 @@ public class User implements IJsonResource {
     private UserType userType;
 
     @Nonnull
+    @Column(name = "home_address")
     private String homeAddress;
 
+    @Column(name = "phone_number")
     private String phoneNumber;
 
     public JsonLike toJsonResource() {
@@ -71,6 +74,7 @@ public class User implements IJsonResource {
                 .add("birthDate", getBirthDate())
                 .add("phoneNumber", getPhoneNumber())
                 .add("homeAddress", getHomeAddress())
-                .add("userType", getUserType());
+                .add("userType", getUserType())
+                .add("gender", getGender());
     }
 }

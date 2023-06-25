@@ -2,10 +2,11 @@ package group.three.request;
 
 import jakarta.annotation.Nonnull;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import group.three.model.User;
 import group.three.utils.interfaces.IEntityRequest;
+
 import lombok.*;
 
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
@@ -28,13 +29,18 @@ public class UserRequest implements IEntityRequest<User> {
     private String lastName;
 
     @Nonnull
-    private Date birthDate;
+    private LocalDate birthDate;
 
     @Nonnull
     private String cni;
 
     @Nonnull
     private Long nif;
+
+    @Nonnull
+    private String homeAddress;
+
+    private String phoneNumber;
 
     public User toEntity() {
         return User.builder()
@@ -45,6 +51,8 @@ public class UserRequest implements IEntityRequest<User> {
                 .birthDate(birthDate)
                 .cni(cni)
                 .nif(nif)
+                .homeAddress(homeAddress)
+                .phoneNumber(phoneNumber)
                 .build();
     }
 }

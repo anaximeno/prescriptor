@@ -1,9 +1,9 @@
-package group.three.constant;
+package group.three.utils;
 
-public class Constants{
+public class Constants {
     public static final String ENDPOINT_PHYSICIAN_TAG_NAME = "Recurso Médico";
     public static final String ENDPOINT_PHYSICIAN_TAG__DESCRIPTION = "Recursos para Operações Relacionadas com Médicos ";
-    
+
     public static final String ENDPOINT_PHYSICIAN_INFO_TITLE = "";
     public static final String ENDPOINT_PHYSICIAN_INFO_DESCRIPTION = "";
     public static final String ENDPOINT_PHYSICIAN_INFO_VERSION = "1.0.0";
