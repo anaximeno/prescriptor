@@ -2,7 +2,6 @@ package group.three.model;
 
 import java.util.Date;
 
-import group.three.utils.UserType;
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -11,6 +10,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.*;
+import group.three.utils.JsonLike;
+import group.three.utils.UserType;
+import group.three.utils.interfaces.IJsonResource;
 
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor
@@ -19,14 +21,13 @@ import lombok.*;
 @Setter
 @Entity
 @Table(name = "users")
-public class User {
+public class User implements IJsonResource {
     @Id
-    @Nonnull
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Nonnull
-    private String username; // Could be email as well
+    private String username;
 
     @Nonnull
     private String password;
@@ -43,13 +44,20 @@ public class User {
     private Date birthDate;
 
     @Nonnull
-    @Column(name = "cni")
-    private String CNI;
+    private String cni;
 
     @Nonnull
-    @Column(name = "nif")
-    private byte NIF;
+    private Long nif;
 
     @Column(name = "user_type")
     private UserType userType;
+
+    public JsonLike toJsonResource() {
+        return JsonLike
+                .from("name", getName())
+                .add("lastName", getLastName())
+                .add("birthDate", getBirthDate())
+                .add("nif", getNif())
+                .add("cni", getCni());
+    }
 }

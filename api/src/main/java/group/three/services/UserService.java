@@ -6,6 +6,7 @@ import jakarta.ws.rs.core.Response;
 
 import group.three.model.User;
 import group.three.repository.UserRepository;
+import group.three.request.UserRequest;
 import group.three.utils.JsonLike;
 
 @ApplicationScoped
@@ -30,11 +31,13 @@ public class UserService {
                 .build();
     }
 
-    public Response storeUser(User user) {
-        if (userRepository.insert(user)) {
+    public Response storeUser(UserRequest user) {
+        if (userRepository.insert(user.toEntity())) {
+            final User storedUser = userRepository.findByUsername(user.getUsername());
+
             return Response
                     .status(Response.Status.CREATED)
-                    .entity(JsonLike.messageWithData("usuário adicionado com sucesso", user))
+                    .entity(JsonLike.messageWithData("usuário adicionado com sucesso", storedUser.toJsonResource()))
                     .build();
         }
 
@@ -44,12 +47,14 @@ public class UserService {
                 .build();
     }
 
-    public Response updateUser(Long id, User user) {
+    public Response updateUser(Long id, UserRequest user) {
         if (userRepository.findById(id) != null) {
-            if (userRepository.insert(user)) {
+            if (userRepository.insert(user.toEntity())) {
+                final User storedUser = userRepository.findById(id);
+
                 return Response
                         .status(Response.Status.OK)
-                        .entity(JsonLike.message("operação realizada com sucesso"))
+                        .entity(JsonLike.messageWithData("operação realizada com sucesso", storedUser.toJsonResource()))
                         .build();
             }
 
@@ -66,14 +71,7 @@ public class UserService {
     }
 
     public Response deleteUserById(Long id) {
-        if (userRepository.findById(id) != null) {
-            if (userRepository.deleteById(id)) {
-                return Response
-                        .status(Response.Status.OK)
-                        .entity(JsonLike.message("operação realizada com sucesso"))
-                        .build();
-            }
-
+        if (userRepository.findById(id) != null && !userRepository.deleteById(id)) {
             return Response
                     .status(Response.Status.UNSUPPORTED_MEDIA_TYPE)
                     .entity(JsonLike.message("operação realizada sem sucesso"))
