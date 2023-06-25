@@ -14,7 +14,7 @@ import group.three.services.LoginService;
 @Path("/api/login")
 @ApplicationScoped
 @Produces(MediaType.APPLICATION_JSON)
-public class Login {
+public class LoginRoute {
     @Inject
     LoginService loginService;
 

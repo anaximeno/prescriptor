@@ -20,7 +20,7 @@ import group.three.services.PrescriptionService;
 @Path("/api/prescription")
 @ApplicationScoped
 @Produces(MediaType.APPLICATION_JSON)
-public class Prescription {
+public class PrescriptionRoute {
     @Inject
     PrescriptionService prescriptionService;
 
