@@ -5,6 +5,7 @@ import lombok.*;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor
 @Builder
+@ToString
 @Getter
 @Setter
 public class UserLogin {
