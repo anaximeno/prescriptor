@@ -6,7 +6,7 @@ class Prescription extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       height: 650,
       width: 700,
       child: Padding(
@@ -25,7 +25,7 @@ class Prescription extends StatelessWidget {
                     color: Colors.white,
                     child: Padding(
                       padding: EdgeInsets.all(10.0),
-                      child: Column(
+                      child: Column( //TODO: Add expanded widget to align all widgtes to make UI more consistent and usable
                         children: [
                           Padding(
                             padding: EdgeInsets.all(8.0),
