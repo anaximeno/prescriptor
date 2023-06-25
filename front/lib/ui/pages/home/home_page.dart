@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
+import 'views/views.dart';
+
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    // TODO: here we should be choosing withing showing the doctor home page
+    //  view or the pharmacist's.
+    return const Prescription();
   }
 }
