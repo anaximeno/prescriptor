@@ -18,13 +18,13 @@ public class LoginService {
         final User user = userRepository.findByUsername(userLogin.getUsername());
 
         if (user != null && user.getPassword() == userLogin.getPassword()) {
-            return Response.ok(JsonLike.messageWithData("Success", user)).build();
+            return Response.ok(JsonLike.messageWithData("sucesso", user)).build();
         }
 
         // TODO: should return a token to use in the app
         return Response
                 .status(Response.Status.UNAUTHORIZED)
-                .entity(JsonLike.message("Username or password is incorrect"))
+                .entity(JsonLike.message("O campo 'username' ou 'password' está incorreto"))
                 .build();
     }
 }
