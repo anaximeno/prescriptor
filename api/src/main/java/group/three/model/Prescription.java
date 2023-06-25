@@ -38,12 +38,12 @@ public class Prescription {
     private Date expirationDate;
 
     @Nonnull
-    @ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     @JoinColumn(name = "pacient_id")
     private Pacient pacient;
 
     @Nonnull
-    @ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     @JoinColumn(name = "physician_id")
     private Physician physician;
 

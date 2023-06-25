@@ -19,4 +19,12 @@ public class Physician {
     @Nonnull
     private String specialty;
 
+    @Nonnull
+    @OneToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+    private User user;
+
+    //TODO
+    // @Nonnull
+    // @ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+    // private Clinic clinic;
 }

@@ -25,5 +25,4 @@ public class Pharmacy implements Serializable {
 
     // @Nonnull
     // private DateTimeFormatter afterHoursService; // XXX: ???
-
 }
