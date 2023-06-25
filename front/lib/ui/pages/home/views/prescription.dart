@@ -9,7 +9,7 @@ class Prescription extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return SizedBox( //TODO: design the layout to put prescription in foreground
       height: 650,
       width: 700,
       child: Padding(

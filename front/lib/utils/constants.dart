@@ -33,4 +33,17 @@ class Constants{
   static String DOCTOR_PRESCRIPTION_SIGNATURE_BUTTON = 'Assinatura Digital';
 
   static String PRESCRIPRION_CREATE_BUTTON = 'Criar';
+
+  static String LOGIN_RECEPTION = 'Bem vindo';
+  static String LOGIN_EMAIL_HINT = 'Email ou CIPS';
+  static String PASSWORD_HINT = 'Password';
+  static String LOGIN_BUTTON = 'Entrar';
+
+  static String SIDEBAR_ICON_DASHBOARD = 'Menu Principal';
+  static String SIDEBAR_ICON_PRESCRIPTION = 'Receita';
+  static String SIDEBAR_ICON_PATIENT = 'Paciente';
+  static String SIDEBAR_ICON_MEDICINE = 'Medicamento';
+  static String SIDEBAR_ICON_HELP = 'Ajuda';
+
+  static String APPBAR_TITLE = 'APP NAME';
 }
