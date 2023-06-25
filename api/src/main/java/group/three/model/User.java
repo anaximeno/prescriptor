@@ -1,7 +1,6 @@
 package group.three.model;
 
 import java.util.Date;
-import java.util.UUID;
 
 import group.three.utils.UserType;
 import jakarta.annotation.Nonnull;
@@ -24,7 +23,7 @@ public class User {
     @Id
     @Nonnull
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    private Long id;
 
     @Nonnull
     private String username; // Could be email as well

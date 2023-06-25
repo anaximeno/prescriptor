@@ -2,7 +2,6 @@ package group.three.model;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.UUID;
 import lombok.*;
 import jakarta.persistence.*;
 import jakarta.annotation.Nonnull;
@@ -19,7 +18,7 @@ public class Pharmacy implements Serializable{
     @Id
     @Nonnull
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    private Long id;
 
     @Nonnull
     private String name;

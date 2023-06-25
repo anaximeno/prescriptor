@@ -1,7 +1,6 @@
 package group.three.model;
 
 import java.util.Date;
-import java.util.UUID;
 
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.CascadeType;
@@ -28,7 +27,7 @@ public class Prescription {
     @Id
     @Nonnull
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    private Long id;
 
     @Nonnull
     @Column(name = "emission_date")
