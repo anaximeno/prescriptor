@@ -13,6 +13,14 @@ class Physicians extends StatelessWidget {
       Expanded( flex: 10,
           child: Column(
             children: [
+              Container(padding: EdgeInsets.all(10.0),
+                child: Row(
+                  children: [
+                    Container(height: 60, width: 40, color: Colors.yellowAccent),
+                    Container(height: 60,width: 40, color: Colors.pinkAccent),
+                  ],
+                ),
+              ),
               Placeholder(),
             ]),
       ),
