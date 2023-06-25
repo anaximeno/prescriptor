@@ -3,6 +3,8 @@ package group.three.services;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.core.Response;
 
+import group.three.model.Prescription;
+
 @ApplicationScoped
 public class PrescriptionService {
     public Response getPrescriptions() {
@@ -13,11 +15,11 @@ public class PrescriptionService {
         return Response.ok("TODO").build(); // TODO
     }
 
-    public Response storePrescription() {
+    public Response storePrescription(Prescription prescription) {
         return Response.ok("TODO").build(); // TODO
     }
 
-    public Response updatePrescription() {
+    public Response updatePrescription(Long id, Prescription prescription) {
         return Response.ok("TODO").build(); // TODO
     }
 
