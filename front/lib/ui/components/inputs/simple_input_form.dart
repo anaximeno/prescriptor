@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:front/utils/constants.dart';
 
 class SimpleInputForm extends StatelessWidget {
   final double _contentHeight = 37;
@@ -49,6 +50,7 @@ class SimpleInputForm extends StatelessWidget {
                 borderRadius: BorderRadius.circular(5),
               ),
               child: TextField(
+                obscureText: hint == Constants.PASSWORD_HINT,
                 maxLines: null,
                 style: const TextStyle(
                   fontSize: 15,

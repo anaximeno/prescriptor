@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:front/ui/pages/home/views/physicians.dart';
 import 'package:front/ui/pages/login/login_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         textTheme: _MyTextTheme,
       ),
-      home: const LoginPage(),
+      home: const Physicians(),
     );
   }
 }

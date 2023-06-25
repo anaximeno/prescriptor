@@ -18,7 +18,7 @@ class IconTextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Container(alignment: Alignment.topLeft,
       padding: EdgeInsets.all(8.0),
       height: height,
       width: widht,
