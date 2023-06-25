@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:front/utilities/Constants.dart';
+import 'package:front/utils/constants.dart';
+
 
 class Prescription extends StatelessWidget {
   const Prescription({super.key});

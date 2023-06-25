@@ -33,4 +33,10 @@ class Constants{
   static String DOCTOR_PRESCRIPTION_SIGNATURE_BUTTON = 'Assinatura Digital';
 
   static String PRESCRIPRION_CREATE_BUTTON = 'Criar';
+
+  static String LOGIN_RECEPTION = 'Bem vindo';
+  static String LOGIN_EMAIL_HINT = 'Email ou CIPS';
+  static String LOGIN_PASSWORD_HINT = 'Password';
+  static String LOGIN_BUTTON = 'Entrar';
+
 }
