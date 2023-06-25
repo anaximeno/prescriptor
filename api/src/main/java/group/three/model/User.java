@@ -67,8 +67,8 @@ public class User implements IJsonResource {
     private String phoneNumber;
 
     public JsonLike toJsonResource() {
-        return JsonLike
-                .from("id", id)
+        return JsonLike.builder()
+                .add("id", id)
                 .add("name", getName())
                 .add("nif", getNif())
                 .add("cni", getCni())
@@ -77,6 +77,7 @@ public class User implements IJsonResource {
                 .add("phoneNumber", getPhoneNumber())
                 .add("homeAddress", getHomeAddress())
                 .add("userType", getUserType())
-                .add("gender", getGender());
+                .add("gender", getGender())
+                .build();
     }
 }

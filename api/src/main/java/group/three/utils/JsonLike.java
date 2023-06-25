@@ -5,13 +5,12 @@ import java.util.HashMap;
 public class JsonLike extends HashMap<String, Object> {
     private static final long serialVersionUID = 1L;
 
-    public JsonLike add(String key, Object object) {
-        this.put(key, object);
-        return this;
+    public static JsonLikeBuilder builder() {
+        return new JsonLikeBuilder();
     }
 
     public static JsonLike from(String key, Object obj) {
-        return (new JsonLike()).add(key, obj);
+        return JsonLike.builder().add(key, obj).build();
     }
 
     public static JsonLike message(String message) {
@@ -23,6 +22,6 @@ public class JsonLike extends HashMap<String, Object> {
     }
 
     public static JsonLike messageWithData(String message, Object data) {
-        return message(message).add("data", data);
+        return JsonLike.builder().add("message", message).add("data", data).build();
     }
 }
