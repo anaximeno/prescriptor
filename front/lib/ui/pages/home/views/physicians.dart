@@ -11,25 +11,21 @@ class Physicians extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(children: [
-      Expanded(flex: 2, child: SideBar()),
+    return Column(
+        children: [
+          Container(padding: EdgeInsets.all(10.0),
+            child: Row(
+              children: [
+                Expanded(child: Container(child: TitleText(title: Constants.DASHBOARD, color: Colors.black))),
 
-      Expanded( flex: 10,
-          child: Column(
-            children: [
-              Container(padding: EdgeInsets.all(10.0),
-                child: Row(
-                  children: [
-                    Expanded(child: Container(child: TitleText(title: Constants.DASHBOARD, color: Colors.black))),
-                    
-                    BigButton(text: Constants.PRESCRIPTION_CREATE, buttonColor: Colors.lightBlueAccent, textColor: Colors.white),
-                    BigButton(text: Constants.PRESCRIPTION_SEARCH, buttonColor: Colors.white, textColor: Colors.black),
-                  ],
-                ),
-              ),
-              PrescriptionInsert(),
-            ]),
-      ),
-    ]);
+                BigButton(text: Constants.PRESCRIPTION_CREATE, buttonColor: Colors.lightBlueAccent, textColor: Colors.white),
+                BigButton(text: Constants.PRESCRIPTION_SEARCH, buttonColor: Colors.white, textColor: Colors.black),
+              ],
+            ),
+          ),
+          Expanded(child: Container(color: Colors.lightBlueAccent,
+            child: Prescription() // If press create prescription
+          )),
+        ]);
   }
 }

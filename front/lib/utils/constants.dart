@@ -6,6 +6,7 @@ class Constants{
   static String PRESCRIPTION_TITLE = 'Receita Médica';
   static String PRESCRIPTION_CREATE = 'Criar Receita';
   static String PRESCRIPTION_SEARCH = 'Pesquisar Receita';
+  static String PRESCRIPTION_VALIDATE = 'Validar Receita';
 
   static String PACIENT_TITLE = 'Paciente';
   static String MEDICINE_TITLE = 'Medicamento';
@@ -41,6 +42,7 @@ class Constants{
   static String MEDICINE_ADMINNISTRATION_HINT = 'Oral';
   static String MEDICINE_DESCRIPTION = 'Descrição';
   static String MEDICINE_DURATION = 'Período de Uso';
+  static String MEDICINE_SEARCH = 'Pesquisa Medicamento';
 
   static String PHYSICIANS_CIPS = 'CIPS';
   static String PHYSICIANS_CIPS_HINT = '030/2023';
@@ -55,9 +57,9 @@ class Constants{
 
   static String DASHBOARD = 'DASHBOARD';
   static String ICON_DASHBOARD = 'Menu Principal';
-  static String ICON_PRESCRIPTION = 'Receita';
-  static String ICON_PATIENT = 'Paciente';
-  static String ICON_MEDICINE = 'Medicamento';
+  static String ICON_PRESCRIPTION = 'Receitas';
+  static String ICON_PATIENT = 'Pacientes';
+  static String ICON_MEDICINE = 'Medicamentos';
   static String ICON_HELP = 'Ajuda';
 
   static String APPBAR_TITLE = 'APP NAME';

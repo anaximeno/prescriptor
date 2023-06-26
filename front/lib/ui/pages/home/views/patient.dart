@@ -5,8 +5,8 @@ import 'package:front/utils/constants.dart';
 
 import '../../../components/texts/texts.dart';
 
-class PatientInsert extends StatelessWidget {
-  const PatientInsert({super.key});
+class Patient extends StatelessWidget {
+  const Patient({super.key});
 
   @override
   Widget build(BuildContext context) {

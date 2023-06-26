@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:front/ui/components/buttons/big_button.dart';
 import 'package:front/ui/components/texts/texts.dart';
+import 'package:front/ui/pages/home/components/side_bar.dart';
 import 'package:front/utils/constants.dart';
 
 import 'views/views.dart';
@@ -22,6 +24,13 @@ class HomePage extends StatelessWidget {
           ],
         ),
 
-        body:Physicians());//body differ  between de users
+        body:Row(children: [
+          Expanded(flex: 2, child: SideBar()),
+
+          Expanded( flex: 10,
+            child: Pharmacist()// differ  between de users
+          ),
+        ]),
+    );
   }
 }
