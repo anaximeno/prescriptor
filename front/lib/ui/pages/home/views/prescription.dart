@@ -6,7 +6,11 @@ import '../../../components/buttons/simple_button.dart';
 import '../../../components/inputs/simple_input_form.dart';
 
 class Prescription extends StatelessWidget {
-  const Prescription({super.key});
+  final String goal;//TODO: try make the input_forms not  touchable on view and validate mode
+
+  const Prescription({super.key,
+    required this.goal
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +27,32 @@ class Prescription extends StatelessWidget {
               padding: const EdgeInsets.all(10.0),
               child: Column(
                 children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SimpleInputForm(
+                        labelText:
+                        Constants.PRESCRIPTION_EMISSION_DATE,
+                        hint: Constants.PRESCRIPTION_EMISSION_DATE_HINT,
+                        width: 250,
+                        inputWidth: 120,
+                      ),
+                      SimpleInputForm(
+                        labelText:
+                        Constants.PRESCRIPTION_EXPIRATION_DATE,
+                        hint: Constants.PRESCRIPTION_EXPIRATION_DATE_HINT,
+                        width: 250,
+                        inputWidth: 120,
+                      ),
+                      SimpleInputForm(//RENOVABLE
+                        labelText:
+                        Constants.PRESCRIPTION_CYCLE,
+                        hint: Constants.PRESCRIPTION_CYCLE_HINT,
+                        width: 210,
+                        inputWidth: 95,
+                      ),
+                    ],
+                  ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Center(
@@ -124,6 +154,13 @@ class Prescription extends StatelessWidget {
                       ),
                       SimpleInputForm(
                         labelText:
+                        Constants.MEDICINE_FREQUENCY,
+                        hint: Constants.BLANK,
+                        width: 200,
+                        inputWidth: 110,
+                      ),
+                      SimpleInputForm(
+                        labelText:
                             Constants.MEDICINE_DURATION,
                         hint: Constants.BLANK,
                         width: 200,
@@ -161,7 +198,7 @@ class Prescription extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   SimpleButton(
-                    text: Constants.CREATE_BUTTON,
+                    text: goal,
                     width: 100,
                   ),
                 ],

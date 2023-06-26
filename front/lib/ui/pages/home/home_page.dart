@@ -28,7 +28,7 @@ class HomePage extends StatelessWidget {
           Expanded(flex: 2, child: SideBar()),
 
           Expanded( flex: 10,
-            child: Pharmacist()// differ  between de users
+            child: Physicians()// differ  between de users
           ),
         ]),
     );

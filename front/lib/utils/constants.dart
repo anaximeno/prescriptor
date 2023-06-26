@@ -7,6 +7,13 @@ class Constants{
   static String PRESCRIPTION_CREATE = 'Criar Receita';
   static String PRESCRIPTION_SEARCH = 'Pesquisar Receita';
   static String PRESCRIPTION_VALIDATE = 'Validar Receita';
+  static String PRESCRIPTION_EMISSION_DATE = 'Data de Emissão';
+  static String PRESCRIPTION_EMISSION_DATE_HINT = '10-01-2023';
+  static String PRESCRIPTION_EXPIRATION_DATE = 'Data de Expiração';
+  static String PRESCRIPTION_EXPIRATION_DATE_HINT = '11-02-2023';
+  static String PRESCRIPTION_AUTO_RENOVABLE = 'Renovável';
+  static String PRESCRIPTION_CYCLE = 'Ciclo Renovação';
+  static String PRESCRIPTION_CYCLE_HINT = '30 (dias)'; //validate once per cycle
 
   static String PACIENT_TITLE = 'Paciente';
   static String MEDICINE_TITLE = 'Medicamento';
@@ -42,6 +49,7 @@ class Constants{
   static String MEDICINE_ADMINNISTRATION_HINT = 'Oral';
   static String MEDICINE_DESCRIPTION = 'Descrição';
   static String MEDICINE_DURATION = 'Período de Uso';
+  static String MEDICINE_FREQUENCY = 'Frequência';
   static String MEDICINE_SEARCH = 'Pesquisa Medicamento';
 
   static String PHYSICIANS_CIPS = 'CIPS';
@@ -49,6 +57,8 @@ class Constants{
   static String PHYSICIANS_SIGNATURE_BUTTON = 'Assinatura Digital';
 
   static String CREATE_BUTTON = 'Criar';
+  static String EDIT_BUTTON = 'Editar';
+  static String VALIDATE_BUTTON = 'Validar';
 
   static String LOGIN_RECEPTION = 'Bem vindo';
   static String LOGIN_EMAIL_HINT = 'Email ou CIPS';
