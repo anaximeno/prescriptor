@@ -2,6 +2,8 @@ package group.three.model;
 
 import java.time.LocalDate;
 
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -23,7 +25,7 @@ import lombok.*;
 @Setter
 @Entity
 @Table(name = "prescriptions")
-public class Prescription {
+public class Prescription extends PanacheEntityBase {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

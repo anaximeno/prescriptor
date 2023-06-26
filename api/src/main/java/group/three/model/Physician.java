@@ -1,6 +1,7 @@
 package group.three.model;
 
 import jakarta.persistence.*;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.annotation.Nonnull;
 
 import lombok.*;
@@ -12,7 +13,11 @@ import lombok.*;
 @Setter
 @Entity
 @Table(name = "physicians")
-public class Physician {
+public class Physician extends PanacheEntityBase {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
     @Nonnull
     private String cips;
 
@@ -23,7 +28,7 @@ public class Physician {
     @OneToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     private User user;
 
-    //TODO
+    // TODO
     // @Nonnull
     // @ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     // private Clinic clinic;
