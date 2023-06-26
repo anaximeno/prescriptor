@@ -1,6 +1,6 @@
 package group.three.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.CascadeType;
@@ -25,27 +25,26 @@ import lombok.*;
 @Table(name = "prescriptions")
 public class Prescription {
     @Id
-    @Nonnull
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Nonnull
     @Column(name = "emission_date")
-    private Date emissionDate;
+    private LocalDate emissionDate;
 
     @Nonnull
     @Column(name = "expiration_date")
-    private Date expirationDate;
+    private LocalDate expirationDate;
 
     @Nonnull
     @ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     @JoinColumn(name = "pacient_id")
-    private Pacient pacient;
+    private User pacient; // XXX: return to their specific models
 
     @Nonnull
     @ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     @JoinColumn(name = "physician_id")
-    private Physician physician;
+    private User physician; // XXX: return to their specific models
 
     @Nonnull
     @Column(name = "medicine_name")
