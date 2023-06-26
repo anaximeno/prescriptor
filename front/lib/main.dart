@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:front/ui/pages/home/home_page.dart';
-import 'package:front/ui/pages/home/views/physicians.dart';
 import 'package:front/ui/pages/login/login_page.dart';
-import 'package:google_fonts/google_fonts.dart';
+import './ui/theming.dart';
 
 void main() => runApp(const MyApp());
 
@@ -11,27 +10,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextTheme _MyTextTheme = TextTheme(
-      displayLarge: GoogleFonts.roboto(
-        fontSize: 24,
-        fontWeight: FontWeight.bold,
-      ),
-      bodyLarge: GoogleFonts.roboto(
-        fontSize: 16,
-        fontWeight: FontWeight.normal
-      ),
-      //add more if needed
-    );
-
     return MaterialApp(
       title: 'Prescriptor',
+      routes: {
+        '/login': (context) => const LoginPage(),
+        '/': (context) => const HomePage(),
+      },
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        textTheme: _MyTextTheme,
-      ),
-      home: HomePage(),
+      theme: Theming.appTheme,
     );
   }
 }
-
