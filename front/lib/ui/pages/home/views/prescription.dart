@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:front/ui/components/buttons/checkbox.dart';
 import 'package:front/ui/components/texts/texts.dart';
 import 'package:front/utils/constants.dart';
 
@@ -44,7 +45,17 @@ class Prescription extends StatelessWidget {
                         width: 250,
                         inputWidth: 120,
                       ),
-                      SimpleInputForm(//RENOVABLE
+                      //TODO: RENOVABLE CHECKBOX
+                      Container(padding: EdgeInsets.all(8.0),
+                          child: Row(
+                            children: [
+                              Text(Constants.PRESCRIPTION_AUTO_RENOVABLE,
+                                style: TextStyle(fontSize: 15, color: Colors.black),
+                              ),
+                              CheckboxExample(),
+                            ],
+                          )),
+                      SimpleInputForm(
                         labelText:
                         Constants.PRESCRIPTION_CYCLE,
                         hint: Constants.PRESCRIPTION_CYCLE_HINT,
