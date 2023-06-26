@@ -1,11 +1,12 @@
 package group.three.model;
 
 import java.io.Serializable;
-import java.util.Date;
-import java.util.UUID;
-import lombok.*;
+import java.time.LocalDate;
+
 import jakarta.persistence.*;
 import jakarta.annotation.Nonnull;
+
+import lombok.*;
 
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor
@@ -14,20 +15,14 @@ import jakarta.annotation.Nonnull;
 @Setter
 @Entity
 @Table(name = "pharmacies")
-public class Pharmacy implements Serializable{
-    
-    @Id
-    @Nonnull
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+public class Pharmacy implements Serializable {
 
     @Nonnull
     private String name;
 
     @Nonnull
-    private Date dof;//date of foundation 
+    private LocalDate dateOfFoundation;
 
-    @Nonnull
-    private byte NIF;
-
+    // @Nonnull
+    // private DateTimeFormatter afterHoursService; // XXX: ???
 }

@@ -1,11 +1,8 @@
 package group.three.model;
 
-import java.io.Serializable;
-import java.util.Date;
-import java.util.UUID;
 import lombok.*;
-import jakarta.persistence.*;
 import jakarta.annotation.Nonnull;
+import jakarta.persistence.*;
 
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor
@@ -14,23 +11,10 @@ import jakarta.annotation.Nonnull;
 @Setter
 @Entity
 @Table(name = "pacients")
-public class Pacient implements Serializable{
-    
-    @Id
+public class Pacient {
     @Nonnull
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    @OneToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+    private User user;
 
-    @Nonnull
-    private String name;
-
-    @Nonnull
-    private Date dob;//date of birth
-
-    @Nonnull
-    private String CNI;
-
-    @Nonnull
-    private byte NIF;
-
+    private Boolean hasInsurance;
 }

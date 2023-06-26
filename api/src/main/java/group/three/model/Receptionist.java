@@ -1,30 +1,29 @@
 package group.three.model;
 
-import jakarta.persistence.*;
+import java.time.*;
+
 import jakarta.annotation.Nonnull;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.OneToOne;
 
-import lombok.*;
-
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
-@NoArgsConstructor
-@Builder
-@Getter
-@Setter
-@Entity
-@Table(name = "physicians")
-public class Physician {
+public class Receptionist {
     @Nonnull
-    private String cips;
+    private String department;
 
     @Nonnull
     private String specialty;
 
     @Nonnull
+    private LocalDate startingDate;
+
+    @Nonnull
     @OneToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     private User user;
 
-    //TODO
+    // TODO
     // @Nonnull
     // @ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     // private Clinic clinic;
+
 }

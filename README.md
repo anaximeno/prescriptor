@@ -10,7 +10,7 @@ Projeto de software para a disciplina de Engenharia de Software sobre um serviç
 ## Executar o Projeto
 Para executar o projeto vai precisar das seguintes dependências:
 
-- Flutter >= 3.7.7
+- Flutter >= 3.10.5
 - Java >= 11
 - Podman ou Docker
 - docker-compose
