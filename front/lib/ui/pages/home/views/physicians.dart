@@ -24,7 +24,7 @@ class Physicians extends StatelessWidget {
             ),
           ),
           Expanded(child: Container(color: Colors.lightBlueAccent,
-            child: Prescription(goal: Constants.VALIDATE_BUTTON) // If press create prescription
+            child: Prescription(goal: Constants.CREATE_BUTTON) // If press create prescription
           )),
         ]);
   }
