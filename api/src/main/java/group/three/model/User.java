@@ -14,7 +14,7 @@ import group.three.utils.JsonLike;
 import group.three.utils.enums.Gender;
 import group.three.utils.enums.UserType;
 import group.three.utils.interfaces.IJsonResource;
-
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import lombok.*;
 
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
@@ -24,7 +24,7 @@ import lombok.*;
 @Setter
 @Entity
 @Table(name = "users")
-public class User implements IJsonResource {
+public class User extends PanacheEntityBase implements IJsonResource {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

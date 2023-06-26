@@ -15,7 +15,7 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.Produces;
 
-import group.three.model.Prescription;
+import group.three.request.PrescriptionRequest;
 import group.three.services.PrescriptionService;
 
 @Path("/api/prescription")
@@ -41,16 +41,16 @@ public class PrescriptionRoute {
     @Path("/")
     @Transactional
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response store(Prescription prescription) {
-        return prescriptionService.storePrescription(prescription);
+    public Response store(PrescriptionRequest prescriptionRequest) {
+        return prescriptionService.storePrescription(prescriptionRequest);
     }
 
     @PUT
     @Path("/{id}")
     @Transactional
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response update(@PathParam("id") Long id, Prescription prescription) {
-        return prescriptionService.updatePrescription(id, prescription);
+    public Response update(@PathParam("id") Long id, PrescriptionRequest prescriptionRequest) {
+        return prescriptionService.updatePrescription(id, prescriptionRequest);
     }
 
     @DELETE
