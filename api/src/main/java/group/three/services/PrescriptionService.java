@@ -36,36 +36,39 @@ public class PrescriptionService {
     }
 
     public Response storePrescription(PrescriptionRequest prescriptionRequest) {
-        User physician = null;
-        User pacient = null;
+        // User physician = null;
+        // User pacient = null;
 
-        if (prescriptionRequest.getPhysicianId() != null) {
-            physician = userRepository.findById(prescriptionRequest.getPhysicianId());
-        }
+        // if (prescriptionRequest.getPhysicianId() != null) {
+        //     physician = userRepository.findById(prescriptionRequest.getPhysicianId());
+        // }
 
-        if (prescriptionRequest.getPacientId() != null) {
-            pacient = userRepository.findById(prescriptionRequest.getPacientId());
-        }
+        // if (prescriptionRequest.getPacientId() != null) {
+        //     pacient = userRepository.findById(prescriptionRequest.getPacientId());
+        // }
 
-        if (physician != null && pacient != null) {
-            final Prescription prescription = Prescription.builder()
-                    .emissionDate(prescriptionRequest.getEmissionDate())
-                    .expirationDate(prescriptionRequest.getExpirationDate())
-                    .medicineName(prescriptionRequest.getMedicineName())
-                    .autoRenovable(prescriptionRequest.getAutoRenovable())
-                    .quantity(prescriptionRequest.getQuantity())
-                    .frequency(prescriptionRequest.getFrequency())
-                    .observation(prescriptionRequest.getObservation())
-                    .pacient(pacient)
-                    .physician(physician)
+        final Prescription prescription = Prescription.builder()
+                .emissionDate(prescriptionRequest.getEmissionDate())
+                .expirationDate(prescriptionRequest.getExpirationDate())
+                .medicineName(prescriptionRequest.getMedicineName())
+                .autoRenovable(prescriptionRequest.getAutoRenovable())
+                .quantity(prescriptionRequest.getQuantity())
+                .frequency(prescriptionRequest.getFrequency())
+                .observation(prescriptionRequest.getObservation())
+                .medicineDose(prescriptionRequest.getMedicineDose())
+                .medicineUseType(prescriptionRequest.getMedicineUseType())
+                .pacientName(prescriptionRequest.getPacientName())
+                .pacientCni(prescriptionRequest.getPacientCni())
+                .pacientBirthDate(prescriptionRequest.getPacientBirthDate())
+                .pacientPhone(prescriptionRequest.getPacientPhone())
+                .physicianCips(prescriptionRequest.getPhysicianCips())
+                .build();
+
+        if (prescriptionRepository.insert(prescription)) {
+            return Response
+                    .status(Response.Status.CREATED)
+                    .entity(JsonLike.messageWithData("receita médica adicionada com sucesso", prescription))
                     .build();
-
-            if (prescriptionRepository.insert(prescription)) {
-                return Response
-                        .status(Response.Status.CREATED)
-                        .entity(JsonLike.messageWithData("receita médica adicionada com sucesso", prescription))
-                        .build();
-            }
         }
 
         return Response
@@ -85,6 +88,15 @@ public class PrescriptionService {
             prescription.setMedicineName(prescriptionRequest.getMedicineName());
             prescription.setQuantity(prescriptionRequest.getQuantity());
             prescription.setObservation(prescriptionRequest.getObservation());
+            prescription.setMedicineDose(prescriptionRequest.getMedicineDose());
+            prescription.setMedicineUseType(prescriptionRequest.getMedicineUseType());
+            prescription.setPacientName(prescriptionRequest.getPacientName());
+            prescription.setPacientCni(prescriptionRequest.getPacientCni());
+            prescription.setPacientPhone(prescriptionRequest.getPacientPhone());
+            prescription.setPacientBirthDate(prescriptionRequest.getPacientBirthDate());
+            prescription.setPhysicianCips(prescriptionRequest.getPhysicianCips());
+            prescription.setUsePeriod(prescriptionRequest.getUsePeriod());
+
 
             if (prescriptionRepository.insert(prescription)) {
                 return Response
