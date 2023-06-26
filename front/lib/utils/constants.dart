@@ -47,9 +47,12 @@ class Constants{
   static String MEDICINE_USAGE_HINT = 'Externo';
   static String MEDICINE_ADMINISTRATION = 'Via';
   static String MEDICINE_ADMINNISTRATION_HINT = 'Oral';
-  static String MEDICINE_DESCRIPTION = 'Descrição';
+  static String MEDICINE_OBSERVATIONS = 'Observações';
+  static String MEDICINE_OBSERVATION_HINT = 'Cuidados a tomar';
   static String MEDICINE_DURATION = 'Período de Uso';
+  static String MEDICINE_DURATION_HINT = '7 (dias)';
   static String MEDICINE_FREQUENCY = 'Frequência';
+  static String MEDICINE_FREQUENCY_HINT = '8 (horas)';
   static String MEDICINE_SEARCH = 'Pesquisa Medicamento';
 
   static String PHYSICIANS_CIPS = 'CIPS';

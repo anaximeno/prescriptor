@@ -158,22 +158,22 @@ class Prescription extends StatelessWidget {
                     children: [
                       SimpleInputForm(
                         labelText:
-                            Constants.MEDICINE_DESCRIPTION,
-                        hint: Constants.BLANK,
-                        width: 300,
+                            Constants.MEDICINE_OBSERVATIONS,
+                        hint: Constants.MEDICINE_OBSERVATION_HINT,
+                        width: 320,
                         inputWidth: 220,
                       ),
                       SimpleInputForm(
                         labelText:
                         Constants.MEDICINE_FREQUENCY,
-                        hint: Constants.BLANK,
+                        hint: Constants.MEDICINE_FREQUENCY_HINT,
                         width: 200,
                         inputWidth: 110,
                       ),
                       SimpleInputForm(
                         labelText:
                             Constants.MEDICINE_DURATION,
-                        hint: Constants.BLANK,
+                        hint: Constants.MEDICINE_DURATION_HINT,
                         width: 200,
                         inputWidth: 90,
                       ),
