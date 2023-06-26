@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:front/ui/components/texts/texts.dart';
 import 'package:front/utils/constants.dart';
 
 import 'views/views.dart';
@@ -13,14 +14,14 @@ class HomePage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(//AppBar is the same for every user
         backgroundColor: Colors.white,
-          title: TextButton(onPressed: () {}, child: Text(Constants.APPBAR_TITLE, style: TextStyle(fontSize: 20, color: Colors.black))),
+          title: TextButton(onPressed: () {}, child: TitleText(title: Constants.APPBAR_TITLE, color: Colors.black)),
           leading: IconButton(onPressed:() {}, icon: Icon(Icons.menu, color: Colors.black)),
           actions: [
-            IconButton(onPressed: (){}, icon: const Icon(Icons.notifications, color: Colors.black)),
+            IconButton(onPressed: (){}, icon: const Icon(Icons.notifications_none_rounded, color: Colors.black)),
             IconButton(onPressed: (){}, icon: const Icon(Icons.account_circle_outlined, color: Colors.black)),
           ],
         ),
 
-        body:Placeholder());//body differ  between de users
+        body:Physicians());//body differ  between de users
   }
 }

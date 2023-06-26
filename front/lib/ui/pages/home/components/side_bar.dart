@@ -15,22 +15,22 @@ class SideBar extends StatelessWidget {
           Column(
             children: [
             Container(padding: EdgeInsets.all(5.0),
-                child: IconTextButton(name: Constants.SIDEBAR_ICON_DASHBOARD, icon: Icons.house_rounded, color: Colors.lightBlueAccent, height: 35, widht: 200)),
+                child: IconTextButton(onPressed: (){}, name: Constants.ICON_DASHBOARD, icon: Icons.house_rounded, color: Colors.blue, height: 35, widht: 200)),
             Container(padding:EdgeInsets.all(5.0),
-                child: IconTextButton(name: Constants.SIDEBAR_ICON_PATIENT, icon: Icons.person, color: Colors.lightBlueAccent, height: 35, widht: 200)),
+                child: IconTextButton(onPressed: (){}, name: Constants.ICON_PATIENT, icon: Icons.person, color: Colors.blue, height: 35, widht: 200)),
             Container(padding: EdgeInsets.all(5.0),
-                child: IconTextButton(name: Constants.SIDEBAR_ICON_PRESCRIPTION, icon: Icons.medical_information_rounded, color: Colors.lightBlueAccent, height: 35, widht: 200)),
+                child: IconTextButton(onPressed: (){}, name: Constants.ICON_PRESCRIPTION, icon: Icons.medical_information_rounded, color: Colors.blue, height: 35, widht: 200)),
             Container(padding: EdgeInsets.all(5.0),
-                child: IconTextButton(name: Constants.SIDEBAR_ICON_MEDICINE, icon: Icons.medication, color: Colors.lightBlueAccent, height: 35, widht: 200)),
+                child: IconTextButton(onPressed: (){}, name: Constants.ICON_MEDICINE, icon: Icons.medication, color: Colors.blue, height: 35, widht: 200)),
             ],
           ),
           Container(padding:EdgeInsets.all(5.0),
               alignment: Alignment.bottomLeft, //not working. To be at bottom
-              child: IconTextButton(name: Constants.SIDEBAR_ICON_HELP, icon: Icons.chat, color: Colors.lightBlueAccent, height: 35, widht: 200))
+              child: IconTextButton(onPressed: (){}, name: Constants.ICON_HELP, icon: Icons.chat, color: Colors.blue, height: 35, widht: 200))
           
         ],
 
       ),
-  );
+    );
   }
 }
