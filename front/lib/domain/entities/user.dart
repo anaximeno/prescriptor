@@ -29,26 +29,30 @@ class UserEntity {
   });
 
   Map<String, dynamic> toJson() => {
+        'cni': cni,
+        'nif': nif,
         'name': name,
         'lastName': lastName,
+        'birthDate': birthDate,
         'username': username,
         'password': password,
         'homeAddress': homeAddress,
         'phomeNumber': phoneNumber,
-        'gender': gender,
-        'cni': cni,
-        'nif': nif,
+        'gender': gender?.stringRepresentation(),
+        'userType': userType?.stringRepresentation(),
       }..removeWhere((key, value) => value == null);
 
   factory UserEntity.fromJson(Map<String, dynamic> json) => UserEntity(
+        cni: json['cni'] as String?,
+        nif: json['nif'] as int?,
         name: json['name'] as String?,
         lastName: json['lastName'] as String?,
+        birthDate: json['birthDate'],
         username: json['username'] as String?,
         password: json['password'] as String?,
         homeAddress: json['homeAddress'] as String?,
         phoneNumber: json['phoneNumber'] as String?,
         gender: GenderUtil.fromString(json['gender'] as String?),
-        cni: json['cni'] as String?,
-        nif: json['nif'] as int?,
+        userType: UserTypeUtil.fromString(json['userType'] as String?),
       );
 }

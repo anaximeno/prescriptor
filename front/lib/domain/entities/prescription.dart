@@ -1,4 +1,5 @@
 class PrescriptionEntity {
+  int? id;
   DateTime? emissionDate;
   DateTime? expirationDate;
   int? pacientId;
@@ -10,11 +11,6 @@ class PrescriptionEntity {
   int? frequency;
   bool? autoRenovable;
   String? observation;
-  String? pacientName;
-  String? pacientCni;
-  String? pacientBirthDate;
-  String? pacientPhone;
-  String? physicianCips;
 
   PrescriptionEntity({
     this.emissionDate,
@@ -28,11 +24,6 @@ class PrescriptionEntity {
     this.observation,
     this.medicineDose,
     this.medicineUseType,
-    this.pacientName,
-    this.pacientCni,
-    this.pacientBirthDate,
-    this.pacientPhone,
-    this.physicianCips,
   });
 
   factory PrescriptionEntity.fromJson(Map<String, dynamic> json) =>
@@ -48,11 +39,6 @@ class PrescriptionEntity {
         observation: json['observation'] as String?,
         medicineDose: json['medicineDose'] as double?,
         medicineUseType: json['medicineUseType'] as String?,
-        pacientName: json['pacientName'] as String?,
-        pacientCni: json['pacientCni'] as String?,
-        pacientBirthDate: json['pacientBirthDate'] as String?,
-        pacientPhone: json['pacientPhone'] as String?,
-        physicianCips: json['physicianCips'] as String?,
       );
 
   Map<String, dynamic> toJson() => {
@@ -67,10 +53,5 @@ class PrescriptionEntity {
         'observation': observation,
         'medicineDose': medicineDose,
         'medicineUseType': medicineUseType,
-        'pacientName': pacientName,
-        'pacientCni': pacientCni,
-        'pacientBirthDate': pacientBirthDate,
-        'pacientPhone': pacientPhone,
-        'physicianCips': physicianCips,
       };
 }
