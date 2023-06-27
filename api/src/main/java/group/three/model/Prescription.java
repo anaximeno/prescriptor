@@ -1,5 +1,7 @@
 package group.three.model;
 
+import group.three.utils.JsonResource;
+import group.three.utils.interfaces.IJsonResource;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
 import jakarta.annotation.Nonnull;
@@ -23,7 +25,7 @@ import lombok.*;
 @Setter
 @Entity
 @Table(name = "prescriptions")
-public class Prescription extends PanacheEntityBase {
+public class Prescription extends PanacheEntityBase implements IJsonResource {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -73,4 +75,25 @@ public class Prescription extends PanacheEntityBase {
 
     @Column(name = "use_period")
     private int usePeriod;
+
+    public JsonResource toJsonResource() {
+        return JsonResource.builder()
+                .set("id", id)
+                .set("emissionDate", emissionDate)
+                .set("expirationDate", expirationDate)
+                .set("pacient", pacient.toJsonResource())
+                .set("pacientId", pacient.getId()) // XXX: redundant with pacient.id
+                .set("physician", physician.toJsonResource())
+                .set("physicianId", physician.getId()) // XXX: redundant with physician.id
+                .set("pharmacist", pharmacist.toJsonResource())
+                .set("pharmacistId", pharmacist.getId()) // XXX: redundant with pharmacist.id
+                .set("medicineName", medicineName)
+                .set("medicineDose", medicineDose)
+                .set("medicineUseType", medicineUseType)
+                .set("frequency", frequency)
+                .set("observation", observation)
+                .set("usePeriod", usePeriod)
+                .set("autoRenovable", autoRenovable)
+                .build();
+    }
 }

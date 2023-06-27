@@ -4,10 +4,14 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.core.Response;
 
+import group.three.model.Pacient;
+import group.three.model.Pharmacist;
+import group.three.model.Physician;
 import group.three.model.Prescription;
-import group.three.model.User;
+import group.three.repository.PacientRepository;
+import group.three.repository.PharmacistRepository;
+import group.three.repository.PhysicianRespository;
 import group.three.repository.PrescriptionRepository;
-import group.three.repository.UserRepository;
 import group.three.request.PrescriptionRequest;
 import group.three.utils.JsonResource;
 
@@ -16,7 +20,11 @@ public class PrescriptionService {
     @Inject
     PrescriptionRepository prescriptionRepository;
     @Inject
-    UserRepository userRepository;
+    PacientRepository pacientRepository;
+    @Inject
+    PhysicianRespository physicianRespository;
+    @Inject
+    PharmacistRepository pharmacistRepository;
 
     public Response getPrescriptions() {
         return Response.ok(JsonResource.data(prescriptionRepository.listAll())).build();
@@ -36,39 +44,21 @@ public class PrescriptionService {
     }
 
     public Response storePrescription(PrescriptionRequest prescriptionRequest) {
-        // User physician = null;
-        // User pacient = null;
+        Physician physician = physicianRespository.findById(prescriptionRequest.getPhysicianId());
+        Pacient pacient = pacientRepository.findById(prescriptionRequest.getPacientId());
+        Pharmacist pharmacist = pharmacistRepository.findById(prescriptionRequest.getPharmacistId());
 
-        // if (prescriptionRequest.getPhysicianId() != null) {
-        //     physician = userRepository.findById(prescriptionRequest.getPhysicianId());
-        // }
+        if (physician != null && pacient != null) {
+            final Prescription prescription = prescriptionRequest.toPrescriptionEntity(pacient, physician, pharmacist);
 
-        // if (prescriptionRequest.getPacientId() != null) {
-        //     pacient = userRepository.findById(prescriptionRequest.getPacientId());
-        // }
+            if (prescriptionRepository.insert(prescription)) {
+                return Response
+                        .status(Response.Status.CREATED)
+                        .entity(JsonResource.messageWithData("receita médica adicionada com sucesso",
+                                prescription.toJsonResource()))
+                        .build();
+            }
 
-        final Prescription prescription = Prescription.builder()
-                .emissionDate(prescriptionRequest.getEmissionDate())
-                .expirationDate(prescriptionRequest.getExpirationDate())
-                .medicineName(prescriptionRequest.getMedicineName())
-                .autoRenovable(prescriptionRequest.getAutoRenovable())
-                .quantity(prescriptionRequest.getQuantity())
-                .frequency(prescriptionRequest.getFrequency())
-                .observation(prescriptionRequest.getObservation())
-                .medicineDose(prescriptionRequest.getMedicineDose())
-                .medicineUseType(prescriptionRequest.getMedicineUseType())
-                .pacientName(prescriptionRequest.getPacientName())
-                .pacientCni(prescriptionRequest.getPacientCni())
-                .pacientBirthDate(prescriptionRequest.getPacientBirthDate())
-                .pacientPhone(prescriptionRequest.getPacientPhone())
-                .physicianCips(prescriptionRequest.getPhysicianCips())
-                .build();
-
-        if (prescriptionRepository.insert(prescription)) {
-            return Response
-                    .status(Response.Status.CREATED)
-                    .entity(JsonResource.messageWithData("receita médica adicionada com sucesso", prescription))
-                    .build();
         }
 
         return Response
@@ -78,30 +68,18 @@ public class PrescriptionService {
     }
 
     public Response updatePrescription(Long id, PrescriptionRequest prescriptionRequest) {
-        // XXX: changing the physician and the pacient won't work with the current
-        // algorithm
-        final Prescription prescription = prescriptionRepository.findById(id);
+        Physician physician = physicianRespository.findById(prescriptionRequest.getPhysicianId());
+        Pacient pacient = pacientRepository.findById(prescriptionRequest.getPacientId());
+        Pharmacist pharmacist = pharmacistRepository.findById(prescriptionRequest.getPharmacistId());
 
-        if (prescription != null) {
-            prescription.setEmissionDate(prescriptionRequest.getExpirationDate());
-            prescription.setAutoRenovable(prescriptionRequest.getAutoRenovable());
-            prescription.setMedicineName(prescriptionRequest.getMedicineName());
-            prescription.setQuantity(prescriptionRequest.getQuantity());
-            prescription.setObservation(prescriptionRequest.getObservation());
-            prescription.setMedicineDose(prescriptionRequest.getMedicineDose());
-            prescription.setMedicineUseType(prescriptionRequest.getMedicineUseType());
-            prescription.setPacientName(prescriptionRequest.getPacientName());
-            prescription.setPacientCni(prescriptionRequest.getPacientCni());
-            prescription.setPacientPhone(prescriptionRequest.getPacientPhone());
-            prescription.setPacientBirthDate(prescriptionRequest.getPacientBirthDate());
-            prescription.setPhysicianCips(prescriptionRequest.getPhysicianCips());
-            prescription.setUsePeriod(prescriptionRequest.getUsePeriod());
-
+        if (physician != null && pacient != null && prescriptionRepository.findById(id) != null) {
+            final Prescription prescription = prescriptionRequest.toPrescriptionEntity(pacient, physician, pharmacist);
 
             if (prescriptionRepository.insert(prescription)) {
                 return Response
                         .status(Response.Status.OK)
-                        .entity(JsonResource.message("operação realizada com sucesso"))
+                        .entity(JsonResource.messageWithData("operação realizada com sucesso",
+                                prescription.toJsonResource()))
                         .build();
             }
 

@@ -1,5 +1,10 @@
 package group.three.request;
 
+import group.three.model.Pacient;
+import group.three.model.Pharmacist;
+import group.three.model.Physician;
+import group.three.model.Prescription;
+import jakarta.annotation.Nonnull;
 import lombok.*;
 
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
@@ -9,21 +14,38 @@ import lombok.*;
 @Getter
 @Setter
 public class PrescriptionRequest {
+    @Nonnull
+    private Long pacientId;
+    @Nonnull
+    private Long physicianId;
+
+    private Long pharmacistId;
+
     private String emissionDate;
     private String expirationDate;
-    private Long pacientId;
-    private Long physicianId;
     private String medicineName;
     private Boolean autoRenovable;
     private Integer quantity;
     private Integer frequency;
     private String observation;
-    private int usePeriod;
     private Double medicineDose;
     private String medicineUseType;
-    private String pacientName;
-    private String pacientCni;
-    private String pacientBirthDate;
-    private String pacientPhone;
-    private String physicianCips;
+    private int usePeriod;
+
+    public Prescription toPrescriptionEntity(Pacient pacient, Physician physician, Pharmacist pharmacist) {
+        return Prescription.builder()
+                .pacient(pacient)
+                .physician(physician)
+                .pharmacist(pharmacist)
+                .emissionDate(emissionDate)
+                .expirationDate(expirationDate)
+                .medicineName(medicineName)
+                .medicineDose(medicineDose)
+                .autoRenovable(autoRenovable)
+                .quantity(quantity)
+                .frequency(frequency)
+                .observation(observation)
+                .usePeriod(usePeriod)
+                .build();
+    }
 }
