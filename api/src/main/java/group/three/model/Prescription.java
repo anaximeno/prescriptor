@@ -2,11 +2,11 @@ package group.three.model;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
-// import jakarta.annotation.Nonnull;
-// import jakarta.persistence.CascadeType;
-// import jakarta.persistence.FetchType;
-// import jakarta.persistence.JoinColumn;
-// import jakarta.persistence.ManyToOne;
+import jakarta.annotation.Nonnull;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -34,14 +34,19 @@ public class Prescription extends PanacheEntityBase {
     @Column(name = "expiration_date")
     private String expirationDate;
 
-    // XXX
-    // @ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
-    // @JoinColumn(name = "pacient_id")
-    // private User pacient; // XXX: return to their specific models
+    @Nonnull
+    @ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+    @JoinColumn(name = "pacient_id")
+    private Pacient pacient;
 
-    // @ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
-    // @JoinColumn(name = "physician_id")
-    // private User physician; // XXX: return to their specific models
+    @Nonnull
+    @ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+    @JoinColumn(name = "physician_id")
+    private Physician physician;
+
+    @ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+    @JoinColumn(name = "pharmasist_id")
+    private Pharmacist pharmacist;
 
     @Column(name = "medicine_name")
     private String medicineName;
@@ -65,21 +70,6 @@ public class Prescription extends PanacheEntityBase {
 
     @Column(name = "medicine_use_type")
     private String medicineUseType;
-
-    @Column(name = "pacient_name")
-    private String pacientName;
-
-    @Column(name = "pacient_cni")
-    private String pacientCni;
-
-    @Column(name = "pacient_birth_date")
-    private String pacientBirthDate;
-
-    @Column(name = "pacient_phone")
-    private String pacientPhone;
-
-    @Column(name = "physician_cips")
-    private String physicianCips;
 
     @Column(name = "use_period")
     private int usePeriod;

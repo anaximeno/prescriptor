@@ -26,6 +26,7 @@ public class Pharmacy extends PanacheEntityBase implements IJsonResource {
     private String name;
 
     @Nonnull
+    @Column(name = "date_of_foundation")
     private LocalDate dateOfFoundation;
 
     // @Nonnull

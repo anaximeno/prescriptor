@@ -10,6 +10,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Entity;
 
@@ -38,16 +39,15 @@ public class Pharmacist extends PanacheEntityBase implements IJsonResource {
     @OneToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     private User user;
 
-    // TODO
-    // @Nonnull
-    // @ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
-    // private Pharmacy pharmacy;
+    @Nonnull
+    @ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+    private Pharmacy pharmacy;
 
     public JsonResource toJsonResource() {
         return JsonResource.builder()
                 .set("id", getId())
                 .set("user", getUser().toJsonResource())
-                // .set("pharmacy", getPharmacy().toJsonResource()) // TODO
+                .set("pharmacy", getPharmacy().toJsonResource())
                 .build();
     }
 }

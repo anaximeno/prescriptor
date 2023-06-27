@@ -1,9 +1,11 @@
 package group.three.model;
 
-import jakarta.persistence.*;
 import group.three.utils.JsonResource;
 import group.three.utils.interfaces.IJsonResource;
+
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+
+import jakarta.persistence.*;
 import jakarta.annotation.Nonnull;
 
 import lombok.*;
@@ -30,17 +32,16 @@ public class Physician extends PanacheEntityBase implements IJsonResource {
     @OneToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     private User user;
 
-    // TODO
-    // @Nonnull
-    // @ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
-    // private Clinic clinic;
+    @Nonnull
+    @ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+    private Clinic clinic;
 
     public JsonResource toJsonResource() {
         return JsonResource.builder()
                 .set("cips", getCips())
                 .set("speciality", getSpecialty())
                 .set("user", getUser().toJsonResource())
-                // .set("clinic", getClinic().toJsonResource()) // TODO
+                .set("clinic", getClinic().toJsonResource())
                 .build();
     }
 }
