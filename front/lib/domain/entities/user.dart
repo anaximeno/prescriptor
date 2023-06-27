@@ -8,7 +8,7 @@ class UserEntity {
   String? password;
   String? homeAddress;
   String? phoneNumber;
-  DateTime? birthDate;
+  String? birthDate;
   UserType? userType;
   Gender? gender;
   String? cni;
