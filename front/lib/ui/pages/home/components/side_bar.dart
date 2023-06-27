@@ -15,19 +15,17 @@ class SideBar extends StatelessWidget {
           Column(
             children: [
             Container(padding: EdgeInsets.all(5.0),
-                child: IconTextButton(onPressed: (){}, name: Constants.ICON_DASHBOARD, icon: Icons.house_rounded, color: Colors.blue, height: 35, widht: 200)),
+                child: IconTextButton(onPressed: (){}, name: Constants.ICON_DASHBOARD, icon: Icons.house_rounded, color: Color(Constants.DEFAULT_2_BLUE_), height: 35, widht: 200)),
             Container(padding:EdgeInsets.all(5.0),
-                child: IconTextButton(onPressed: (){}, name: Constants.ICON_PATIENT, icon: Icons.person, color: Colors.blue, height: 35, widht: 200)),
+                child: IconTextButton(onPressed: (){}, name: Constants.ICON_PATIENT, icon: Icons.person, color: Color(Constants.DEFAULT_2_BLUE_), height: 35, widht: 200)),
             Container(padding: EdgeInsets.all(5.0),
-                child: IconTextButton(onPressed: (){}, name: Constants.ICON_PRESCRIPTION, icon: Icons.medical_information_rounded, color: Colors.blue, height: 35, widht: 200)),
+                child: IconTextButton(onPressed: (){}, name: Constants.ICON_PRESCRIPTION, icon: Icons.medical_information_rounded, color: Color(Constants.DEFAULT_2_BLUE_), height: 35, widht: 200)),
             Container(padding: EdgeInsets.all(5.0),
-                child: IconTextButton(onPressed: (){}, name: Constants.ICON_MEDICINE, icon: Icons.medication, color: Colors.blue, height: 35, widht: 200)),
+                child: IconTextButton(onPressed: (){}, name: Constants.ICON_MEDICINE, icon: Icons.medication, color: Color(Constants.DEFAULT_2_BLUE_), height: 35, widht: 200)),
             ],
           ),
-          Container(padding:EdgeInsets.all(5.0),
-              alignment: Alignment.bottomLeft, //not working. To be at bottom
-              child: IconTextButton(onPressed: (){}, name: Constants.ICON_HELP, icon: Icons.chat, color: Colors.blue, height: 35, widht: 200))
-          
+          Container(padding: EdgeInsets.all(5.0), child: IconTextButton(onPressed: (){}, name: Constants.ICON_HELP, icon: Icons.chat, color: Color(Constants.DEFAULT_2_BLUE_), height: 35, widht: 200)),
+          //this container has to be at bottom
         ],
 
       ),

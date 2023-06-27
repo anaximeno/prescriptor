@@ -18,8 +18,8 @@ class Pharmacist extends StatelessWidget {
               children: [
                 Expanded(child: Container(child: TitleText(title: Constants.DASHBOARD, color: Colors.black))),
 
-                BigButton(text: Constants.PRESCRIPTION_VALIDATE, buttonColor: Colors.lightBlueAccent, textColor: Colors.white),
                 BigButton(text: Constants.PRESCRIPTION_SEARCH, buttonColor: Colors.white, textColor: Colors.black),
+                BigButton(text: Constants.PRESCRIPTION_VALIDATE, buttonColor: Colors.lightBlueAccent, textColor: Colors.white),
               ],
             ),
           ),
