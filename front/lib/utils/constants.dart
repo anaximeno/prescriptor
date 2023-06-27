@@ -43,6 +43,7 @@ class Constants{
   static String MEDICINE_DOSAGE = 'Dosagem';
   static String MEDICINE_DOSAGE_HINT = '10 (g)';
   static String MEDICINE_AMOUNT = 'Quantidade';
+  static String MEDICINE_AMOUNT_HINT = '1';
   static String MEDICINE_USAGE = 'Tipo de Uso';
   static String MEDICINE_USAGE_HINT = 'Externo';
   static String MEDICINE_ADMINISTRATION = 'Via';
@@ -53,7 +54,7 @@ class Constants{
   static String MEDICINE_DURATION_HINT = '7 (dias)';
   static String MEDICINE_FREQUENCY = 'Frequência';
   static String MEDICINE_FREQUENCY_HINT = '8 (horas)';
-  static String MEDICINE_SEARCH = 'Pesquisa Medicamento';
+  static String MEDICINE_SEARCH = 'Pesquisar';
 
   static String PHYSICIANS_CIPS = 'CIPS';
   static String PHYSICIANS_CIPS_HINT = '030/2023';
@@ -75,5 +76,12 @@ class Constants{
   static String ICON_MEDICINE = 'Medicamentos';
   static String ICON_HELP = 'Ajuda';
 
-  static String APPBAR_TITLE = 'APP NAME';
+  static String SEARCH_BAR_HINT = 'Busca Prescriptor';
+
+  static String APPBAR_TITLE = 'PRESCRIPTOR';
+
+  static int DEFAULT_BLUE = 0xFF7FB8D6;
+  static int DEFAULT_2_BLUE_ = 0xFF5D8FC2;
+  static int DEFAULT_GREY = 0xFFF4F4F4;
+  static int DEFAULT_2_GREY = 0xFFF8F9FA;
 }

@@ -10,7 +10,7 @@ class SimpleButton extends StatelessWidget {
     super.key,
     required this.text,
     required this.width,
-    this.backgroundColor = const Color(0xFF81D4FA),
+    this.backgroundColor = const Color(0xFF7FB8D6),
     this.onPressed,
   });
 

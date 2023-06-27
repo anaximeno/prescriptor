@@ -8,6 +8,7 @@ class SimpleInputForm extends StatelessWidget {
   final double inputWidth;
   final String hint;
   final double width;
+  final  bool isBig;
 
   const SimpleInputForm({
     super.key,
@@ -15,6 +16,7 @@ class SimpleInputForm extends StatelessWidget {
     required this.hint,
     required this.width,
     required this.inputWidth,
+    this.isBig = false
   });
 
   @override
@@ -22,7 +24,7 @@ class SimpleInputForm extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Container(
-        height: _contentHeight,
+        height: isBig ? 60 : _contentHeight,
         width: width,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(3),
@@ -49,22 +51,24 @@ class SimpleInputForm extends StatelessWidget {
                 color: Colors.blue[100],
                 borderRadius: BorderRadius.circular(5),
               ),
-              child: TextField(
-                obscureText: hint == Constants.PASSWORD_HINT,
-                maxLines: null,
-                style: const TextStyle(
-                  fontSize: 15,
-                  color: Colors.black,
-                ),
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.only(
-                    bottom: _contentHeight / 2,
-                  ),
-                  border: InputBorder.none,
-                  hintText: hint,
-                  hintStyle: TextStyle(
+              child: Center(
+                child: TextField(
+                  obscureText: hint == Constants.PASSWORD_HINT,
+                  maxLines: hint == Constants.MEDICINE_OBSERVATION_HINT ? null : 1,
+                  style: const TextStyle(
                     fontSize: 15,
-                    color: Colors.grey[500],
+                    color: Colors.black,
+                  ),
+                  decoration: InputDecoration(
+                    contentPadding: EdgeInsets.only(
+                      bottom: _contentHeight / 2,
+                    ),
+                    border: InputBorder.none,
+                    hintText: hint,
+                    hintStyle: TextStyle(
+                      fontSize: 15,
+                      color: Colors.grey[500],
+                    ),
                   ),
                 ),
               ),

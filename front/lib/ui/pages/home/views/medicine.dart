@@ -1,14 +1,11 @@
-//TODO: Make a prescription validate button and verification
-
 import 'package:flutter/material.dart';
 import 'package:front/ui/components/buttons/big_button.dart';
 import 'package:front/ui/components/texts/title_text.dart';
-import 'package:front/ui/pages/home/components/side_bar.dart';
 import 'package:front/ui/pages/home/components/simple_search_bar.dart';
 import 'package:front/utils/constants.dart';
 
-class Pharmacist extends StatelessWidget {
-  const Pharmacist({super.key});
+class Medicine extends StatelessWidget {
+  const Medicine({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +18,7 @@ class Pharmacist extends StatelessWidget {
 
                 SimpleSearchBar(),
 
-                BigButton(text: Constants.PRESCRIPTION_SEARCH, buttonColor: Colors.white, textColor: Colors.black),
-                BigButton(text: Constants.PRESCRIPTION_VALIDATE, buttonColor: Colors.lightBlueAccent, textColor: Colors.white),
+                BigButton(text: Constants.MEDICINE_SEARCH, buttonColor: Colors.lightBlueAccent, textColor: Colors.white),
               ],
             ),
           ),

@@ -133,7 +133,7 @@ class Prescription extends StatelessWidget {
                       ),
                       SimpleInputForm(
                         labelText: Constants.MEDICINE_AMOUNT,
-                        hint: Constants.BLANK,
+                        hint: Constants.MEDICINE_AMOUNT_HINT,
                         width: 150,
                         inputWidth: 60,
                       ),
@@ -162,6 +162,7 @@ class Prescription extends StatelessWidget {
                         hint: Constants.MEDICINE_OBSERVATION_HINT,
                         width: 320,
                         inputWidth: 220,
+                        isBig:true,
                       ),
                       SimpleInputForm(
                         labelText:
