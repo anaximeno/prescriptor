@@ -2,28 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:front/ui/components/components.dart';
 import 'package:front/utils/constants.dart';
 
-class SearchBar extends StatelessWidget {
-  const SearchBar({super.key});
+class SimpleSearchBar extends StatelessWidget {
+  const SimpleSearchBar({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(padding: EdgeInsets.all(8.0),
+    return Container(padding: EdgeInsets.symmetric(horizontal: 16.0),
         child: Row(
             children: [
-              IconButton(
+              /*IconButton(
                   onPressed: (){
                     showSearch(
                         context: context,
                         delegate: CustomSearchDelegate());
                     },
-                  icon: Icon(Icons.search_rounded, size: 20, color: Colors.grey)),
-              //SimpleInputForm(labelText: Constants.BLANK, hint: Constants.SEARCH_BAR_HINT, width: 300, inputWidth: 290)
+                  icon: Icon(Icons.search_rounded, size: 20, color: Colors.grey)),*/
+              Icon(Icons.search_rounded, size: 20, color: Color(Constants.DEFAULT_2_GREY)),
+              SimpleInputForm(labelText: Constants.BLANK, hint: Constants.SEARCH_BAR_HINT, width: 500, inputWidth: 490),
             ],
         ),
     );
   }
 }
 
+//class that control the search by the video:https://www.youtube.com/watch?v=KF1KMfQOpjM
+/*
 class CustomSearchDelegate extends SearchDelegate{
   @override
   List<Widget>? buildActions(BuildContext context) {
@@ -46,4 +49,4 @@ class CustomSearchDelegate extends SearchDelegate{
     throw UnimplementedError();
   }
 
-}
+}*/

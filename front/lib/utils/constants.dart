@@ -43,6 +43,7 @@ class Constants{
   static String MEDICINE_DOSAGE = 'Dosagem';
   static String MEDICINE_DOSAGE_HINT = '10 (g)';
   static String MEDICINE_AMOUNT = 'Quantidade';
+  static String MEDICINE_AMOUNT_HINT = '1';
   static String MEDICINE_USAGE = 'Tipo de Uso';
   static String MEDICINE_USAGE_HINT = 'Externo';
   static String MEDICINE_ADMINISTRATION = 'Via';
