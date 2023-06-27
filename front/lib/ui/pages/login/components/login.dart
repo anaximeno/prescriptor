@@ -25,8 +25,8 @@ class Login extends StatelessWidget {
               Center(child: Container(height: 3, width: 40, color: Color(0xFF81D4FA))),
               SizedBox(height: 20),
 
-              SimpleInputForm(labelText: Constants.BLANK, hint: Constants.LOGIN_EMAIL_HINT, width: 230, inputWidth: 215),
-              SimpleInputForm(labelText: Constants.BLANK, hint: Constants.PASSWORD_HINT, width: 230, inputWidth: 215),
+              SimpleInputForm(writeEnable: true, labelText: Constants.BLANK, hint: Constants.LOGIN_EMAIL_HINT, width: 230, inputWidth: 215),
+              SimpleInputForm(writeEnable: true, labelText: Constants.BLANK, hint: Constants.PASSWORD_HINT, width: 230, inputWidth: 215),
 
               SizedBox(height: 20),
 

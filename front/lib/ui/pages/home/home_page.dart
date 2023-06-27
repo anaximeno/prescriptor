@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:front/ui/components/texts/texts.dart';
 import 'package:front/ui/pages/home/components/side_bar.dart';
 import 'package:front/ui/pages/home/views/medicine.dart';
+import 'package:front/ui/pages/home/views/patient.dart';
 import 'package:front/utils/constants.dart';
 
 import 'views/views.dart';

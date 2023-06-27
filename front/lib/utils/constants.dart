@@ -35,7 +35,7 @@ class Constants{
   static String PACIENT_DISTRICT = 'Bairro';
   static String PACIENT_DISTRICT_HINT = 'Palmarejo';
   static String PACIENT_SEX = 'Sexo';
-  static String PACIENT_SEX_HINT = 'Masculino';
+  static String PACIENT_SEX_HINT = 'M ou F';
 
   static String MEDICINE = 'MEDICAMENTO';
   static String MEDICINE_NAME = 'Nome Medicamento';

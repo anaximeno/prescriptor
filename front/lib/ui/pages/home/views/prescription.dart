@@ -8,9 +8,11 @@ import '../../../components/inputs/simple_input_form.dart';
 
 class Prescription extends StatelessWidget {
   final String goal;//TODO: try make the input_forms not  touchable on view and validate mode
+  final bool writeEnable;
 
   const Prescription({super.key,
-    required this.goal
+    required this.goal,
+    required this.writeEnable
   });
 
   @override
@@ -32,6 +34,7 @@ class Prescription extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SimpleInputForm(
+                        writeEnable: writeEnable,
                         labelText:
                         Constants.PRESCRIPTION_EMISSION_DATE,
                         hint: Constants.PRESCRIPTION_EMISSION_DATE_HINT,
@@ -39,6 +42,7 @@ class Prescription extends StatelessWidget {
                         inputWidth: 120,
                       ),
                       SimpleInputForm(
+                        writeEnable: writeEnable,
                         labelText:
                         Constants.PRESCRIPTION_EXPIRATION_DATE,
                         hint: Constants.PRESCRIPTION_EXPIRATION_DATE_HINT,
@@ -56,6 +60,7 @@ class Prescription extends StatelessWidget {
                             ],
                           )),
                       SimpleInputForm(
+                        writeEnable: writeEnable,
                         labelText:
                         Constants.PRESCRIPTION_CYCLE,
                         hint: Constants.PRESCRIPTION_CYCLE_HINT,
@@ -78,24 +83,28 @@ class Prescription extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SimpleInputForm(
+                        writeEnable: writeEnable,
                         labelText: Constants.PACIENT_NAME,
                         hint: Constants.PACIENT_NAME_HINT,
                         width: 200,
                         inputWidth: 150,
                       ),
                       SimpleInputForm(
+                        writeEnable: writeEnable,
                         labelText: Constants.PACIENT_CNI,
                         hint: Constants.PACIENT_CNI_HINT,
                         width: 190,
                         inputWidth: 150,
                       ),
                       SimpleInputForm(
+                        writeEnable: writeEnable,
                         labelText: Constants.PACIENT_NASC,
                         hint: Constants.PACIENT_NASC_HINT,
                         width: 250,
                         inputWidth: 120,
                       ),
                       SimpleInputForm(
+                        writeEnable: writeEnable,
                         labelText: Constants.PACIENT_PHONE,
                         hint: Constants.PACIENT_PHONE_HINT,
                         width: 200,
@@ -120,30 +129,35 @@ class Prescription extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SimpleInputForm(
+                        writeEnable: writeEnable,
                         labelText: Constants.MEDICINE_NAME,
                         hint: Constants.MEDICINE_NAME_HINT,
                         width: 300,
                         inputWidth: 150,
                       ),
                       SimpleInputForm(
+                        writeEnable: writeEnable,
                         labelText: Constants.MEDICINE_DOSAGE,
                         hint: Constants.MEDICINE_DOSAGE_HINT,
                         width: 150,
                         inputWidth: 80,
                       ),
                       SimpleInputForm(
+                        writeEnable: writeEnable,
                         labelText: Constants.MEDICINE_AMOUNT,
                         hint: Constants.MEDICINE_AMOUNT_HINT,
                         width: 150,
                         inputWidth: 60,
                       ),
                       SimpleInputForm(
+                        writeEnable: writeEnable,
                         labelText: Constants.MEDICINE_USAGE,
                         hint: Constants.MEDICINE_USAGE_HINT,
                         width: 180,
                         inputWidth: 90,
                       ),
                       SimpleInputForm(
+                        writeEnable: writeEnable,
                         labelText: Constants
                             .MEDICINE_ADMINISTRATION,
                         hint: Constants
@@ -157,6 +171,7 @@ class Prescription extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SimpleInputForm(
+                        writeEnable: writeEnable,
                         labelText:
                             Constants.MEDICINE_OBSERVATIONS,
                         hint: Constants.MEDICINE_OBSERVATION_HINT,
@@ -165,6 +180,7 @@ class Prescription extends StatelessWidget {
                         isBig:true,
                       ),
                       SimpleInputForm(
+                        writeEnable: writeEnable,
                         labelText:
                         Constants.MEDICINE_FREQUENCY,
                         hint: Constants.MEDICINE_FREQUENCY_HINT,
@@ -172,6 +188,7 @@ class Prescription extends StatelessWidget {
                         inputWidth: 110,
                       ),
                       SimpleInputForm(
+                        writeEnable: writeEnable,
                         labelText:
                             Constants.MEDICINE_DURATION,
                         hint: Constants.MEDICINE_DURATION_HINT,
@@ -196,6 +213,7 @@ class Prescription extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SimpleInputForm(
+                        writeEnable: writeEnable,
                         labelText: Constants.PHYSICIANS_CIPS,
                         hint: Constants.PHYSICIANS_CIPS_HINT,
                         width: 150,

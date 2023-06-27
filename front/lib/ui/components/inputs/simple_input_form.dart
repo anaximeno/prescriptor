@@ -9,6 +9,7 @@ class SimpleInputForm extends StatelessWidget {
   final String hint;
   final double width;
   final  bool isBig;
+  final bool writeEnable;
 
   const SimpleInputForm({
     super.key,
@@ -16,7 +17,9 @@ class SimpleInputForm extends StatelessWidget {
     required this.hint,
     required this.width,
     required this.inputWidth,
+    required this.writeEnable,
     this.isBig = false
+
   });
 
   @override
@@ -53,6 +56,7 @@ class SimpleInputForm extends StatelessWidget {
               ),
               child: Center(
                 child: TextField(
+                  enabled: writeEnable,
                   obscureText: hint == Constants.PASSWORD_HINT,
                   maxLines: hint == Constants.MEDICINE_OBSERVATION_HINT ? null : 1,
                   style: const TextStyle(

@@ -4,6 +4,7 @@ import 'package:front/ui/components/buttons/simple_button.dart';
 import 'package:front/ui/components/texts/texts.dart';
 import 'package:front/ui/pages/home/components/side_bar.dart';
 import 'package:front/ui/pages/home/components/simple_search_bar.dart';
+import 'package:front/ui/pages/home/views/patient.dart';
 import 'package:front/ui/pages/home/views/views.dart';
 import 'package:front/utils/constants.dart';
 
@@ -27,7 +28,7 @@ class Physicians extends StatelessWidget {
             ),
           ),
           Expanded(child: Container(color: Color(Constants.DEFAULT_BLUE),
-            child: Prescription(goal: Constants.CREATE_BUTTON) // If press create prescription
+            child: Patient(goal: Constants.CREATE_BUTTON,writeEnable: true) // TODO:make to differ: create and edit
           )),
         ]);
   }
