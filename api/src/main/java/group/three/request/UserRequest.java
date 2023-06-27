@@ -4,9 +4,7 @@ import jakarta.annotation.Nonnull;
 
 import java.time.LocalDate;
 
-
 import group.three.model.User;
-import group.three.utils.interfaces.IEntityRequest;
 import group.three.utils.enums.Gender;
 import group.three.utils.enums.UserType;
 
@@ -18,7 +16,7 @@ import lombok.*;
 @Builder
 @Getter
 @Setter
-public class UserRequest implements IEntityRequest<User> {
+public class UserRequest {
     @Nonnull
     private String username;
 
@@ -51,7 +49,7 @@ public class UserRequest implements IEntityRequest<User> {
     @Nonnull
     private Gender gender;
 
-    public User toEntity() {
+    public User toUserEntity() {
         return User.builder()
                 .username(username)
                 .password(password)

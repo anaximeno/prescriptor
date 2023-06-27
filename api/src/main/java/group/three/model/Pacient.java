@@ -1,9 +1,13 @@
 package group.three.model;
 
-import lombok.*;
+import group.three.utils.JsonLike;
+import group.three.utils.interfaces.IJsonResource;
+
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.*;
+
+import lombok.*;
 
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor
@@ -12,7 +16,7 @@ import jakarta.persistence.*;
 @Setter
 @Entity
 @Table(name = "pacients")
-public class Pacient extends PanacheEntityBase {
+public class Pacient extends PanacheEntityBase implements IJsonResource {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -22,4 +26,11 @@ public class Pacient extends PanacheEntityBase {
     private User user;
 
     private Boolean hasInsurance;
+
+    public JsonLike toJsonResource() {
+        return JsonLike.builder()
+                .set("hasInsurance", getHasInsurance())
+                .set("user", user.toJsonResource())
+                .build();
+    }
 }

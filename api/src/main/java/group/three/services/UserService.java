@@ -32,7 +32,7 @@ public class UserService {
     }
 
     public Response storeUser(UserRequest user) {
-        if (userRepository.insert(user.toEntity())) {
+        if (userRepository.insert(user.toUserEntity())) {
             final User storedUser = userRepository.findByUsername(user.getUsername());
 
             return Response
@@ -49,12 +49,12 @@ public class UserService {
 
     public Response updateUser(Long id, UserRequest user) {
         if (userRepository.findById(id) != null) {
-            if (userRepository.insert(user.toEntity())) {
-                final User storedUser = userRepository.findById(id);
+            if (userRepository.insert(user.toUserEntity())) {
+                final User updatedUser = userRepository.findById(id);
 
                 return Response
                         .status(Response.Status.OK)
-                        .entity(JsonLike.messageWithData("operação realizada com sucesso", storedUser.toJsonResource()))
+                        .entity(JsonLike.messageWithData("operação realizada com sucesso", updatedUser.toJsonResource()))
                         .build();
             }
 

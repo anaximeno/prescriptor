@@ -68,16 +68,16 @@ public class User extends PanacheEntityBase implements IJsonResource {
 
     public JsonLike toJsonResource() {
         return JsonLike.builder()
-                .add("id", id)
-                .add("name", getName())
-                .add("nif", getNif())
-                .add("cni", getCni())
-                .add("lastName", getLastName())
-                .add("birthDate", getBirthDate())
-                .add("phoneNumber", getPhoneNumber())
-                .add("homeAddress", getHomeAddress())
-                .add("userType", getUserType())
-                .add("gender", getGender())
+                .set("id", getId())
+                .set("name", getName())
+                .set("nif", getNif())
+                .set("cni", getCni())
+                .set("lastName", getLastName())
+                .set("birthDate", getBirthDate())
+                .set("phoneNumber", getPhoneNumber())
+                .set("homeAddress", getHomeAddress())
+                .set("userType", getUserType())
+                .set("gender", getGender())
                 .build();
     }
 }
