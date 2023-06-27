@@ -7,7 +7,7 @@ import jakarta.ws.rs.core.Response;
 import group.three.model.User;
 import group.three.repository.UserRepository;
 import group.three.request.UserRequest;
-import group.three.utils.JsonLike;
+import group.three.utils.JsonResource;
 
 @ApplicationScoped
 public class UserService {
@@ -15,19 +15,19 @@ public class UserService {
     UserRepository userRepository;
 
     public Response getUsers() {
-        return Response.ok(JsonLike.data(userRepository.listAll())).build();
+        return Response.ok(JsonResource.data(userRepository.listAll())).build();
     }
 
     public Response getUserById(Long id) {
         final User user = userRepository.findById(id);
 
         if (user != null) {
-            return Response.ok(JsonLike.data(user)).build();
+            return Response.ok(JsonResource.data(user)).build();
         }
 
         return Response
                 .status(Response.Status.NOT_FOUND)
-                .entity(JsonLike.message("usuário não encontrado"))
+                .entity(JsonResource.message("usuário não encontrado"))
                 .build();
     }
 
@@ -37,13 +37,13 @@ public class UserService {
 
             return Response
                     .status(Response.Status.CREATED)
-                    .entity(JsonLike.messageWithData("usuário adicionado com sucesso", storedUser.toJsonResource()))
+                    .entity(JsonResource.messageWithData("usuário adicionado com sucesso", storedUser.toJsonResource()))
                     .build();
         }
 
         return Response
                 .status(Response.Status.UNSUPPORTED_MEDIA_TYPE)
-                .entity(JsonLike.message("operação realizada sem sucesso"))
+                .entity(JsonResource.message("operação realizada sem sucesso"))
                 .build();
     }
 
@@ -54,19 +54,19 @@ public class UserService {
 
                 return Response
                         .status(Response.Status.OK)
-                        .entity(JsonLike.messageWithData("operação realizada com sucesso", updatedUser.toJsonResource()))
+                        .entity(JsonResource.messageWithData("operação realizada com sucesso", updatedUser.toJsonResource()))
                         .build();
             }
 
             return Response
                     .status(Response.Status.UNSUPPORTED_MEDIA_TYPE)
-                    .entity(JsonLike.message("operação realizada sem sucesso"))
+                    .entity(JsonResource.message("operação realizada sem sucesso"))
                     .build();
         }
 
         return Response
                 .status(Response.Status.NOT_FOUND)
-                .entity(JsonLike.message("usuário não encontrado"))
+                .entity(JsonResource.message("usuário não encontrado"))
                 .build();
     }
 
@@ -74,13 +74,13 @@ public class UserService {
         if (userRepository.findById(id) != null && !userRepository.deleteById(id)) {
             return Response
                     .status(Response.Status.UNSUPPORTED_MEDIA_TYPE)
-                    .entity(JsonLike.message("operação realizada sem sucesso"))
+                    .entity(JsonResource.message("operação realizada sem sucesso"))
                     .build();
         }
 
         return Response
                 .status(Response.Status.NOT_FOUND)
-                .entity(JsonLike.message("usuário não encontrado"))
+                .entity(JsonResource.message("usuário não encontrado"))
                 .build();
     }
 }

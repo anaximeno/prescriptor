@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
-import group.three.utils.JsonLike;
+import group.three.utils.JsonResource;
 import group.three.utils.interfaces.IJsonResource;
 
 import jakarta.annotation.Nonnull;
@@ -40,8 +40,8 @@ public class Clinic extends PanacheEntityBase implements IJsonResource {
     // @Nonnull
     // private DateTimeFormatter workingHours;
 
-    public JsonLike toJsonResource() {
-        return JsonLike.builder()
+    public JsonResource toJsonResource() {
+        return JsonResource.builder()
                 .set("id", getId())
                 .set("name", getName())
                 .set("dateOfFoundation", getDateOfFoundation())

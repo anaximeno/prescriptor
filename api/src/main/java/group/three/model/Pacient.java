@@ -1,6 +1,6 @@
 package group.three.model;
 
-import group.three.utils.JsonLike;
+import group.three.utils.JsonResource;
 import group.three.utils.interfaces.IJsonResource;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
@@ -27,8 +27,8 @@ public class Pacient extends PanacheEntityBase implements IJsonResource {
 
     private Boolean hasInsurance;
 
-    public JsonLike toJsonResource() {
-        return JsonLike.builder()
+    public JsonResource toJsonResource() {
+        return JsonResource.builder()
                 .set("hasInsurance", getHasInsurance())
                 .set("user", getUser().toJsonResource())
                 .build();

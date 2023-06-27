@@ -2,7 +2,7 @@ package group.three.model;
 
 import java.time.*;
 
-import group.three.utils.JsonLike;
+import group.three.utils.JsonResource;
 import group.three.utils.interfaces.IJsonResource;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
@@ -48,8 +48,8 @@ public class Receptionist extends PanacheEntityBase implements IJsonResource {
     // @ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     // private Clinic clinic;
 
-    public JsonLike toJsonResource() {
-        return JsonLike.builder()
+    public JsonResource toJsonResource() {
+        return JsonResource.builder()
                 .set("id", getId())
                 .set("specialty", getSpecialty())
                 .set("department", getDepartment())

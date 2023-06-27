@@ -1,7 +1,7 @@
 package group.three.model;
 
 import jakarta.persistence.*;
-import group.three.utils.JsonLike;
+import group.three.utils.JsonResource;
 import group.three.utils.interfaces.IJsonResource;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.annotation.Nonnull;
@@ -35,8 +35,8 @@ public class Physician extends PanacheEntityBase implements IJsonResource {
     // @ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     // private Clinic clinic;
 
-    public JsonLike toJsonResource() {
-        return JsonLike.builder()
+    public JsonResource toJsonResource() {
+        return JsonResource.builder()
                 .set("cips", getCips())
                 .set("speciality", getSpecialty())
                 .set("user", getUser().toJsonResource())

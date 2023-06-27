@@ -1,7 +1,7 @@
 package group.three.utils.interfaces;
 
-import group.three.utils.JsonLike;
+import group.three.utils.JsonResource;
 
 public interface IJsonResource {
-    public JsonLike toJsonResource();
+    public JsonResource toJsonResource();
 }

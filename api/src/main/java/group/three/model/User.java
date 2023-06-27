@@ -10,7 +10,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-import group.three.utils.JsonLike;
+import group.three.utils.JsonResource;
 import group.three.utils.enums.Gender;
 import group.three.utils.enums.UserType;
 import group.three.utils.interfaces.IJsonResource;
@@ -66,8 +66,8 @@ public class User extends PanacheEntityBase implements IJsonResource {
     @Column(name = "phone_number")
     private String phoneNumber;
 
-    public JsonLike toJsonResource() {
-        return JsonLike.builder()
+    public JsonResource toJsonResource() {
+        return JsonResource.builder()
                 .set("id", getId())
                 .set("name", getName())
                 .set("nif", getNif())

@@ -1,6 +1,6 @@
 package group.three.model;
 
-import group.three.utils.JsonLike;
+import group.three.utils.JsonResource;
 import group.three.utils.interfaces.IJsonResource;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.annotation.Nonnull;
@@ -43,8 +43,8 @@ public class Pharmacist extends PanacheEntityBase implements IJsonResource {
     // @ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     // private Pharmacy pharmacy;
 
-    public JsonLike toJsonResource() {
-        return JsonLike.builder()
+    public JsonResource toJsonResource() {
+        return JsonResource.builder()
                 .set("id", getId())
                 .set("user", getUser().toJsonResource())
                 // .set("pharmacy", getPharmacy().toJsonResource()) // TODO

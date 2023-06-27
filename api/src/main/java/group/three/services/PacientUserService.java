@@ -9,7 +9,7 @@ import group.three.model.Pacient;
 import group.three.repository.PacientRepository;
 import group.three.repository.UserRepository;
 import group.three.request.PacientUserRequest;
-import group.three.utils.JsonLike;
+import group.three.utils.JsonResource;
 
 @ApplicationScoped
 public class PacientUserService {
@@ -19,19 +19,19 @@ public class PacientUserService {
     PacientRepository pacientRepository;
 
     public Response getPacients() {
-        return Response.ok(JsonLike.data(pacientRepository.listAll())).build();
+        return Response.ok(JsonResource.data(pacientRepository.listAll())).build();
     }
 
     public Response getPacientById(Long id) {
         final Pacient pacient = pacientRepository.findById(id);
 
         if (pacient != null) {
-            return Response.ok(JsonLike.data(pacient)).build();
+            return Response.ok(JsonResource.data(pacient)).build();
         }
 
         return Response
                 .status(Response.Status.NOT_FOUND)
-                .entity(JsonLike.message("paciente não encontrado"))
+                .entity(JsonResource.message("paciente não encontrado"))
                 .build();
     }
 
@@ -44,7 +44,7 @@ public class PacientUserService {
             if (pacientRepository.insert(pacient)) {
                 return Response
                         .status(Response.Status.CREATED)
-                        .entity(JsonLike.messageWithData("paciente adicionado com sucesso", pacient.toJsonResource()))
+                        .entity(JsonResource.messageWithData("paciente adicionado com sucesso", pacient.toJsonResource()))
                         .build();
             } else {
                 userRepository.delete(user);
@@ -53,7 +53,7 @@ public class PacientUserService {
 
         return Response
                 .status(Response.Status.UNSUPPORTED_MEDIA_TYPE)
-                .entity(JsonLike.message("operação realizada sem sucesso"))
+                .entity(JsonResource.message("operação realizada sem sucesso"))
                 .build();
     }
 
@@ -66,20 +66,20 @@ public class PacientUserService {
 
                 return Response
                         .status(Response.Status.OK)
-                        .entity(JsonLike.messageWithData("operação realizada com sucesso",
+                        .entity(JsonResource.messageWithData("operação realizada com sucesso",
                                 updatedPacient.toJsonResource()))
                         .build();
             }
 
             return Response
                     .status(Response.Status.UNSUPPORTED_MEDIA_TYPE)
-                    .entity(JsonLike.message("operação realizada sem sucesso"))
+                    .entity(JsonResource.message("operação realizada sem sucesso"))
                     .build();
         }
 
         return Response
                 .status(Response.Status.NOT_FOUND)
-                .entity(JsonLike.message("paciente não encontrado"))
+                .entity(JsonResource.message("paciente não encontrado"))
                 .build();
     }
 
@@ -87,13 +87,13 @@ public class PacientUserService {
         if (pacientRepository.findById(id) != null && !pacientRepository.deleteById(id)) {
             return Response
                     .status(Response.Status.UNSUPPORTED_MEDIA_TYPE)
-                    .entity(JsonLike.message("operação realizada sem sucesso"))
+                    .entity(JsonResource.message("operação realizada sem sucesso"))
                     .build();
         }
 
         return Response
                 .status(Response.Status.NOT_FOUND)
-                .entity(JsonLike.message("paciente não encontrado"))
+                .entity(JsonResource.message("paciente não encontrado"))
                 .build();
     }
 }
