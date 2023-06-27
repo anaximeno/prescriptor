@@ -17,18 +17,12 @@ public class JsonResource extends HashMap<String, Object> {
         return new JsonResourceBuilder();
     }
 
-    public static JsonResource from(String key, Object obj) {
-        return JsonResource.builder()
-                .set(key, obj)
-                .build();
-    }
-
     public static JsonResource message(String message) {
-        return JsonResource.from("message", message);
+        return JsonResource.builder().set("message", message).build();
     }
 
     public static JsonResource data(Object data) {
-        return JsonResource.from("data", data);
+        return JsonResource.builder().set("data", data).build();
     }
 
     public static JsonResource messageWithData(String message, Object data) {
