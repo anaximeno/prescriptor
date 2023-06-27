@@ -1,6 +1,8 @@
 package group.three.model;
 
 import jakarta.persistence.*;
+import group.three.utils.JsonLike;
+import group.three.utils.interfaces.IJsonResource;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.annotation.Nonnull;
 
@@ -13,7 +15,7 @@ import lombok.*;
 @Setter
 @Entity
 @Table(name = "physicians")
-public class Physician extends PanacheEntityBase {
+public class Physician extends PanacheEntityBase implements IJsonResource {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -32,4 +34,13 @@ public class Physician extends PanacheEntityBase {
     // @Nonnull
     // @ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
     // private Clinic clinic;
+
+    public JsonLike toJsonResource() {
+        return JsonLike.builder()
+                .set("cips", getCips())
+                .set("speciality", getSpecialty())
+                .set("user", getUser().toJsonResource())
+                // .set("clinic", getClinic().toJsonResource()) // TODO
+                .build();
+    }
 }

@@ -30,7 +30,7 @@ public class Pacient extends PanacheEntityBase implements IJsonResource {
     public JsonLike toJsonResource() {
         return JsonLike.builder()
                 .set("hasInsurance", getHasInsurance())
-                .set("user", user.toJsonResource())
+                .set("user", getUser().toJsonResource())
                 .build();
     }
 }

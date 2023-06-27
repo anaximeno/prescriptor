@@ -1,7 +1,7 @@
 package group.three.model;
 
-import java.time.*;
-
+import group.three.utils.JsonLike;
+import group.three.utils.interfaces.IJsonResource;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.CascadeType;
@@ -10,17 +10,29 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+import jakarta.persistence.Entity;
 
-public class Pharmacist extends PanacheEntityBase {
+import lombok.*;
+
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@NoArgsConstructor
+@ToString
+@Builder
+@Getter
+@Setter
+@Entity
+@Table(name = "pharmacists")
+public class Pharmacist extends PanacheEntityBase implements IJsonResource {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Nonnull
-    private LocalDate startingDate;
+    // @Nonnull
+    // private LocalDate startingDate; // XXX: ???
 
-    @Nonnull
-    private LocalDateTime shift; // XXX: ???
+    // @Nonnull
+    // private LocalDateTime shift; // XXX: ???
 
     @Nonnull
     @OneToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
@@ -29,6 +41,13 @@ public class Pharmacist extends PanacheEntityBase {
     // TODO
     // @Nonnull
     // @ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
-    // private Clinic clinic;
+    // private Pharmacy pharmacy;
 
+    public JsonLike toJsonResource() {
+        return JsonLike.builder()
+                .set("id", getId())
+                .set("user", getUser().toJsonResource())
+                // .set("pharmacy", getPharmacy().toJsonResource()) // TODO
+                .build();
+    }
 }
