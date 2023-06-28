@@ -63,6 +63,7 @@ class LoginSection extends StatelessWidget {
                 ),
               ),
               SimpleButton(
+                onPressed: onSubmit,
                 text: Constants.LOGIN_BUTTON,
                 width: 100,
               ),
