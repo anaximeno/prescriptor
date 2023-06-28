@@ -21,7 +21,7 @@ extension ExtendedUserType on UserType {
 }
 
 abstract class UserTypeUtil {
-  static UserType? fromString(String value) {
+  static UserType? fromString(String? value) {
     switch (value) {
       case "PACIENT":
         return UserType.pacient;

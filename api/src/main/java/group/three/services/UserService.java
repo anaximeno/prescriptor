@@ -23,7 +23,7 @@ public class UserService {
         final User user = userRepository.findById(id);
 
         if (user != null) {
-            return Response.ok(JsonResource.data(user)).build();
+            return Response.ok(JsonResource.data(user.toJsonResource())).build();
         }
 
         return Response
