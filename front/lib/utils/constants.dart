@@ -5,7 +5,8 @@ class Constants{
   static String APPBAR_TITLE = 'Prescription';
 
   static int DEFAULT_BLUE = 0xFF7FB8D6;
-  static int DEFAULT_2_BLUE_ = 0xFF5D8FC2;
+  static int DEFAULT_BLUE_LIGHT = 0xA67FB8D6;
+  static int DEFAULT_2_BLUE = 0xFF5D8FC2;
   static int DEFAULT_GREY = 0xFFF4F4F4;
   static int DEFAULT_2_GREY = 0xFFF8F9FA;
 

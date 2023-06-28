@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:front/utils/constants.dart';
 
 class CheckboxExample extends StatefulWidget {
   const CheckboxExample({super.key});
@@ -15,7 +16,7 @@ class _CheckboxExampleState extends State<CheckboxExample> {
 
     return Checkbox(
       checkColor: Colors.white,
-      focusColor: Colors.lightBlueAccent,
+      focusColor: Color(Constants.DEFAULT_BLUE),
       value: isChecked,
       onChanged: (bool? value) {
         setState(() {

@@ -51,7 +51,7 @@ class SimpleInputForm extends StatelessWidget {
                 left: 20.0,
               ),
               decoration: BoxDecoration(
-                color: Colors.blue[100],
+                color: Color(Constants.DEFAULT_BLUE_LIGHT),//Colors.blue[100], //choose color
                 borderRadius: BorderRadius.circular(5),
               ),
               child: Center(

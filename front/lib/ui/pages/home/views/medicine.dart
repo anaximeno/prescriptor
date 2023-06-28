@@ -18,11 +18,11 @@ class Medicine extends StatelessWidget {
 
                 SimpleSearchBar(),
 
-                BigButton(text: Constants.MEDICINE_SEARCH, buttonColor: Colors.lightBlueAccent, textColor: Colors.white),
+                BigButton(text: Constants.MEDICINE_SEARCH, buttonColor: Color(Constants.DEFAULT_BLUE), textColor: Colors.white),
               ],
             ),
           ),
-          Expanded(child: Container(color: Colors.lightBlueAccent,
+          Expanded(child: Container(color: Color(Constants.DEFAULT_BLUE),
               child: Placeholder() // If press create prescription
           )),
         ]);
