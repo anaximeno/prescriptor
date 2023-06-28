@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:front/domain/controllers/prescription.dart';
 import 'package:front/ui/components/buttons/checkbox.dart';
 import 'package:front/ui/components/texts/texts.dart';
 import 'package:front/ui/theming.dart';
 import 'package:front/utils/constants.dart';
+import 'package:get/get.dart';
 
 import '../../../components/buttons/simple_button.dart';
 import '../../../components/inputs/simple_input_form.dart';
@@ -11,13 +13,13 @@ class Prescription extends StatelessWidget {
   //TODO: try make the input_forms not  touchable on view and validate mode
   final String goal;
   final bool writeEnable;
-  final Function()? onSubmit;
 
-  const Prescription({
+  final PrescriptionController controller = Get.find();
+
+  Prescription({
     super.key,
     required this.goal,
     required this.writeEnable,
-    this.onSubmit,
   });
 
   @override
@@ -48,6 +50,7 @@ class Prescription extends StatelessWidget {
                         hint: Constants.PRESCRIPTION_EMISSION_DATE_HINT,
                         width: 230,
                         inputWidth: 110,
+                        controller: controller.emissionDateController,
                       ),
                       SimpleInputForm(
                         enabled: writeEnable,
@@ -55,6 +58,7 @@ class Prescription extends StatelessWidget {
                         hint: Constants.PRESCRIPTION_EXPIRATION_DATE_HINT,
                         width: 235,
                         inputWidth: 110,
+                        controller: controller.expirationDateController,
                       ),
                       //TODO: RENOVABLE CHECKBOX
                       Container(
@@ -68,7 +72,18 @@ class Prescription extends StatelessWidget {
                                 color: Colors.black,
                               ),
                             ),
-                            const CheckboxExample(),
+                            Obx(
+                              () => Checkbox(
+                                checkColor: Colors.white,
+                                focusColor: Colors.lightBlueAccent,
+                                value: controller.autoRenovable.value,
+                                onChanged: (bool? value) {
+                                  if (value != null) {
+                                    controller.autoRenovable.value = value;
+                                  }
+                                },
+                              ),
+                            ),
                           ],
                         ),
                       ),
@@ -78,6 +93,7 @@ class Prescription extends StatelessWidget {
                         hint: Constants.PRESCRIPTION_CYCLE_HINT,
                         width: 210,
                         inputWidth: 95,
+                        controller: controller.cycleController,
                       ),
                     ],
                   ),
@@ -114,6 +130,7 @@ class Prescription extends StatelessWidget {
                         hint: Constants.PACIENT_CNI_HINT,
                         width: 175,
                         inputWidth: 135,
+                        controller: controller.pacientCniController,
                       ),
                       SimpleInputForm(
                         enabled: writeEnable,
@@ -151,6 +168,7 @@ class Prescription extends StatelessWidget {
                         hint: Constants.MEDICINE_NAME_HINT,
                         width: 230,
                         inputWidth: 150,
+                        controller: controller.medicineNameController,
                       ),
                       SimpleInputForm(
                         enabled: writeEnable,
@@ -158,6 +176,7 @@ class Prescription extends StatelessWidget {
                         hint: Constants.MEDICINE_DOSAGE_HINT,
                         width: 150,
                         inputWidth: 80,
+                        controller: controller.medicineDoseController,
                       ),
                       SimpleInputForm(
                         enabled: writeEnable,
@@ -165,6 +184,7 @@ class Prescription extends StatelessWidget {
                         hint: Constants.MEDICINE_AMOUNT_HINT,
                         width: 150,
                         inputWidth: 60,
+                        controller: controller.medicineAmountController,
                       ),
                       SimpleInputForm(
                         enabled: writeEnable,
@@ -172,6 +192,7 @@ class Prescription extends StatelessWidget {
                         hint: Constants.MEDICINE_USAGE_HINT,
                         width: 180,
                         inputWidth: 90,
+                        controller: controller.medicineUsageController,
                       ),
                       SimpleInputForm(
                         enabled: writeEnable,
@@ -179,6 +200,7 @@ class Prescription extends StatelessWidget {
                         hint: Constants.MEDICINE_ADMINNISTRATION_HINT,
                         width: 130,
                         inputWidth: 90,
+                        controller: controller.medicineAdministrationController,
                       ),
                     ],
                   ),
@@ -192,6 +214,7 @@ class Prescription extends StatelessWidget {
                         width: 320,
                         inputWidth: 220,
                         isBig: true,
+                        controller: controller.medicineObsController,
                       ),
                       SimpleInputForm(
                         enabled: writeEnable,
@@ -199,6 +222,7 @@ class Prescription extends StatelessWidget {
                         hint: Constants.MEDICINE_FREQUENCY_HINT,
                         width: 180,
                         inputWidth: 95,
+                        controller: controller.medicineFreqController,
                       ),
                       SimpleInputForm(
                         enabled: writeEnable,
@@ -206,6 +230,7 @@ class Prescription extends StatelessWidget {
                         hint: Constants.MEDICINE_DURATION_HINT,
                         width: 200,
                         inputWidth: 90,
+                        controller: controller.medicineDurationController,
                       ),
                     ],
                   ),
@@ -255,7 +280,7 @@ class Prescription extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(top: 20),
                     child: SimpleButton(
-                      onPressed: onSubmit,
+                      onPressed: controller.onSubmit,
                       text: goal,
                       width: 100,
                     ),
