@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:front/domain/controllers/login.dart';
 import 'package:front/ui/pages/login/components/login_title_section.dart';
 import 'package:front/ui/pages/login/components/login_section.dart';
+import 'package:front/ui/theming.dart';
 import 'package:front/utils/constants.dart';
 import 'package:get/get.dart';
 
@@ -18,7 +19,7 @@ class LoginPage extends StatelessWidget {
         Expanded(
           flex: 7,
           child: Container(
-            color: Colors.lightBlueAccent,
+            color: Theming.colorLightBlue,
             child: LoginTitleSection(
               title: Constants.APPBAR_TITLE,
               subtitle: Constants.APP_DESCRIPTION,
@@ -36,7 +37,7 @@ class LoginPage extends StatelessWidget {
         Expanded(
           flex: 2,
           child: Container(
-            color: Colors.blueAccent,
+            color: Theming.colorNiceBlue,
           ),
         ),
       ],

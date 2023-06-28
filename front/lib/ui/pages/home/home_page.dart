@@ -28,7 +28,7 @@ class HomePage extends StatelessWidget {
           IconButton(
             onPressed: () => Get.to(LoginPage()),
             icon: const Icon(
-              Icons.power_settings_new_rounded,
+              Icons.login_rounded,
               color: Theming.colorWhiteLike,
             ),
           ),

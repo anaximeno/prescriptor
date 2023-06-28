@@ -146,8 +146,8 @@ class RegisterPacient extends StatelessWidget {
                               controller: controller.pacientAddressController,
                               labelText: Constants.PACIENT_ADDRESS,
                               hint: Constants.BLANK,
-                              width: 300,
-                              inputWidth: 200,
+                              width: 350,
+                              inputWidth: 250,
                             ),
                             SimpleInputForm(
                               enabled: writeEnable,
