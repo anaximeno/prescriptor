@@ -33,7 +33,7 @@ class SimpleTextBox extends StatelessWidget {
               ),
               Text(
                 info,
-                style: TextStyle(fontSize: 15,color: Color(Constants.DEFAULT_GREY)),
+                style: TextStyle(fontSize: 15,color: Color(Constants.DEFAULT_2_BLUE)),
               ),
             ]
           )

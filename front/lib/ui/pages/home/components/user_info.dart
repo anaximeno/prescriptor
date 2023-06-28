@@ -13,13 +13,13 @@ class UserInfo extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          TitleText(title: Constants.USER_INFO_TITLE, color: Colors.white),
+          TitleText(title: Constants.USER_INFO_TITLE, color: Color(Constants.DEFAULT_2_BLUE)),
           Card(
               elevation: 5,
               color: Colors.white,
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
-                child: Column(
+                child: Column( //TODO: Limitate the widht from simpletextbox to add Safira info
                   children: [
                     SimpleTextBox(
                         nameText: Constants.USER_INFO_USERNAME,
@@ -59,7 +59,17 @@ class UserInfo extends StatelessWidget {
                     ),
                   ],
                 ),
-              )),
+                /*Padding( TODO: This code to be in a row with the column above
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      TitleText(title: '(Image add)', color: Colors.black),
+                      TitleText(title: 'Safira Corporation Account', color: Colors.black),
+                    ],
+                  ),
+                ),*/
+              ),
+          ),
         ],
       ),
     );

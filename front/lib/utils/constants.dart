@@ -11,7 +11,7 @@ class Constants{
   static int DEFAULT_GREY = 0xFFF4F4F4;
   static int DEFAULT_2_GREY = 0xFFF8F9FA;
 
-  static String USER_INFO_TITLE = 'Utilizador:';
+  static String USER_INFO_TITLE = 'Utilizador';
   static String USER_INFO_USERNAME = 'Utilizador:';
   static String USER_INFO_FULLNAME = 'Nome:';
   static String USER_INFO_PHONENUMBER = 'Telefone:';
