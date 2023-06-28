@@ -30,7 +30,7 @@ public class UserRequest {
     private String lastName;
 
     @Nonnull
-    private LocalDate birthDate;
+    private String birthDate;
 
     @Nonnull
     private String cni;

@@ -16,7 +16,7 @@ public class PharmacyRequest {
     @Nonnull
     private String name;
     @Nonnull
-    private LocalDate dateOfFoundation;
+    private String dateOfFoundation;
 
     public Pharmacy toPharmacyEntity(){
         return Pharmacy.builder()

@@ -17,7 +17,7 @@ public class ClinicRequest {
     @Nonnull
     private String name;
     @Nonnull
-    private LocalDate dateOfFoundation;
+    private String dateOfFoundation;
 
     public Clinic toClinicEntity() {
         return Clinic.builder()

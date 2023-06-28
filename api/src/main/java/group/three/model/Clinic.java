@@ -35,7 +35,7 @@ public class Clinic extends PanacheEntityBase implements IJsonResource {
 
     @Nonnull
     @Column(name = "date_of_foundation")
-    private LocalDate dateOfFoundation;
+    private String dateOfFoundation;//needs to be changed to String
 
     // @Nonnull
     // private DateTimeFormatter workingHours;

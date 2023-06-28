@@ -47,7 +47,7 @@ public class User extends PanacheEntityBase implements IJsonResource {
 
     @Nonnull
     @Column(name = "birth_date")
-    private LocalDate birthDate;
+    private String birthDate;
 
     @Nonnull
     private String cni;

@@ -38,7 +38,7 @@ public class Receptionist extends PanacheEntityBase implements IJsonResource {
     private String specialty;
 
     @Column(name = "starting_date")
-    private LocalDate startingDate;
+    private String startingDate;
 
     @Nonnull
     @OneToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)

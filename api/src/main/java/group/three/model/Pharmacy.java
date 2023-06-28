@@ -27,7 +27,7 @@ public class Pharmacy extends PanacheEntityBase implements IJsonResource {
 
     @Nonnull
     @Column(name = "date_of_foundation")
-    private LocalDate dateOfFoundation;
+    private String dateOfFoundation;
 
     // @Nonnull
     // private DateTimeFormatter afterHoursService; // XXX: ???

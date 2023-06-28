@@ -30,7 +30,7 @@ public class ReceptionistRequest extends UserRequest {
 
     private String specialty;
 
-    private LocalDate startingDate;
+    private String startingDate;
 
     @Override
     public User toUserEntity() {
