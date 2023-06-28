@@ -2,7 +2,6 @@ package group.three.request;
 
 import group.three.model.Clinic;
 
-import java.time.LocalDate;
 import jakarta.annotation.Nonnull;
 
 import lombok.*;
@@ -17,7 +16,7 @@ public class ClinicRequest {
     @Nonnull
     private String name;
     @Nonnull
-    private LocalDate dateOfFoundation;
+    private String dateOfFoundation;
 
     public Clinic toClinicEntity() {
         return Clinic.builder()

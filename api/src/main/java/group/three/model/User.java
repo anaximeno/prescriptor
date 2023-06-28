@@ -1,7 +1,5 @@
 package group.three.model;
 
-import java.time.LocalDate;
-
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -47,7 +45,7 @@ public class User extends PanacheEntityBase implements IJsonResource {
 
     @Nonnull
     @Column(name = "birth_date")
-    private LocalDate birthDate;
+    private String birthDate;
 
     @Nonnull
     private String cni;

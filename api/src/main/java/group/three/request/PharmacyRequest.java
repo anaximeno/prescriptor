@@ -1,7 +1,5 @@
 package group.three.request;
 
-import java.time.LocalDate;
-
 import group.three.model.Pharmacy;
 import jakarta.annotation.Nonnull;
 import lombok.*;
@@ -16,7 +14,7 @@ public class PharmacyRequest {
     @Nonnull
     private String name;
     @Nonnull
-    private LocalDate dateOfFoundation;
+    private String dateOfFoundation;
 
     public Pharmacy toPharmacyEntity(){
         return Pharmacy.builder()

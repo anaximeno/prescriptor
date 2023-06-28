@@ -6,5 +6,6 @@
         "kafka-streams.*",
         "camel.*",
         "quarkus.datasource.*"
-    ]
+    ],
+    "cmake.configureOnOpen": false
 }

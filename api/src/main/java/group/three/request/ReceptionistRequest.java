@@ -1,7 +1,5 @@
 package group.three.request;
 
-import java.time.LocalDate;
-
 import group.three.model.Clinic;
 import group.three.model.Receptionist;
 import group.three.model.User;
@@ -30,7 +28,7 @@ public class ReceptionistRequest extends UserRequest {
 
     private String specialty;
 
-    private LocalDate startingDate;
+    private String startingDate;
 
     @Override
     public User toUserEntity() {

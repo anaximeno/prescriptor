@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:front/domain/entities/physician.dart';
 import 'package:front/infra/api.dart';
 
-class PrescriptionRepository {
+class PhysicianRepository {
   final Api _api = Api(); // XXX: use dep injection
 
   Future<PhysicianEntity> getById(int id) async {
