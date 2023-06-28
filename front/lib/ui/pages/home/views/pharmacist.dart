@@ -28,10 +28,12 @@ class Pharmacist extends StatelessWidget {
           ),
           Expanded(child: Container(color: Color(Constants.DEFAULT_BLUE),
               padding: EdgeInsets.fromLTRB(20.0,20.0,20.0,0),
-              child: Card(elevation:5,
-                  child: UserInfo(),
-                  ),
+              child: Card(
+                elevation:5,
+                color: Color(Constants.DEFAULT_2_GREY),
+                child: UserInfo(),
               ),
+            ),
           ),
         ]
     );

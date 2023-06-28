@@ -28,33 +28,33 @@ class UserInfo extends StatelessWidget {
                     Row(
                       children: [
                         SimpleTextBox(
-                            nameText: Constants.USER_INFO_USERNAME,
+                            nameText: Constants.USER_INFO_FULLNAME,
                             info: Constants.TEST
                         ),
                         SimpleTextBox(
-                            nameText: Constants.USER_INFO_USERNAME,
+                            nameText: Constants.USER_INFO_PHONENUMBER,
                             info: Constants.TEST
                         ),
                       ],
                     ),
                     SimpleTextBox(
-                        nameText: Constants.USER_INFO_USERNAME,
+                        nameText: Constants.USER_INFO_ADDRESS,
                         info: Constants.TEST,
                     ),
                     Row(
                       children: [
                         SimpleTextBox(
-                            nameText: Constants.USER_INFO_USERNAME,
+                            nameText: Constants.USER_INFO_JOB,
                             info: Constants.TEST,
                         ),
                         SimpleTextBox(
-                            nameText: Constants.USER_INFO_USERNAME,
+                            nameText: Constants.USER_INFO_JOB_ID,
                             info: Constants.TEST,
                         ),
                       ],
                     ),
                     SimpleTextBox(
-                        nameText: Constants.USER_INFO_USERNAME,
+                        nameText: Constants.USER_INFO_ORGANIZATION,
                         info: Constants.TEST,
                     ),
                   ],

@@ -28,10 +28,14 @@ class Physicians extends StatelessWidget {
               ],
             ),
           ),
-          Expanded(child: Container(color: Color(Constants.DEFAULT_BLUE),
-            child:UserInfo(),
-            //Prescription(goal: Constants.INSERT_BUTTON,writeEnable: true) // TODO:make to differ: create and edit
-          )),
-        ]);
+          Expanded(
+            child: Container(
+              color: Color(Constants.DEFAULT_BLUE),
+              child:UserInfo(),
+              //Prescription(goal: Constants.INSERT_BUTTON,writeEnable: true) // TODO:make to differ: create and edit
+            ),
+          ),
+        ]
+    );
   }
 }
