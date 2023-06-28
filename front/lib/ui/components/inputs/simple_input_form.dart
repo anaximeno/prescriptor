@@ -2,24 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:front/utils/constants.dart';
 
 class SimpleInputForm extends StatelessWidget {
-  final double _contentHeight = 37;
-
+  final double _height = 37;
   final String labelText;
-  final double inputWidth;
   final String hint;
+  final double inputWidth;
   final double width;
-  final  bool isBig;
-  final bool writeEnable;
+  final bool isBig;
+  final bool enabled;
+
+  final TextEditingController? controller;
 
   const SimpleInputForm({
     super.key,
+    this.controller,
     required this.labelText,
     required this.hint,
     required this.width,
     required this.inputWidth,
-    required this.writeEnable,
-    this.isBig = false
-
+    required this.enabled,
+    this.isBig = false,
   });
 
   @override
@@ -27,7 +28,7 @@ class SimpleInputForm extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Container(
-        height: isBig ? 60 : _contentHeight,
+        height: isBig ? 60 : _height,
         width: width,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(3),
@@ -56,16 +57,18 @@ class SimpleInputForm extends StatelessWidget {
               ),
               child: Center(
                 child: TextField(
-                  enabled: writeEnable,
+                  enabled: enabled,
+                  controller: controller,
                   obscureText: hint == Constants.PASSWORD_HINT,
-                  maxLines: hint == Constants.MEDICINE_OBSERVATION_HINT ? null : 1,
+                  maxLines:
+                      hint == Constants.MEDICINE_OBSERVATION_HINT ? null : 1,
                   style: const TextStyle(
                     fontSize: 15,
                     color: Colors.black,
                   ),
                   decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(
-                      bottom: _contentHeight / 2,
+                      bottom: _height / 2,
                     ),
                     border: InputBorder.none,
                     hintText: hint,

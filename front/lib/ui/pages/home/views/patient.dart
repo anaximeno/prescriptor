@@ -44,14 +44,14 @@ class Patient extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SimpleInputForm(
-                        writeEnable: writeEnable,
+                        enabled: writeEnable,
                         labelText: Constants.PACIENT_NAME,
                         hint: Constants.PACIENT_NAME_HINT,
                         width: 190,
                         inputWidth: 140,
                       ),
                       SimpleInputForm(
-                        writeEnable: writeEnable,
+                        enabled: writeEnable,
                         labelText: Constants.PACIENT_SURNAME,
                         hint: Constants.PACIENT_SURNAME_HINT,
                         width: 200,
@@ -59,21 +59,21 @@ class Patient extends StatelessWidget {
                       ),
 
                       SimpleInputForm(
-                        writeEnable: writeEnable,
+                        enabled: writeEnable,
                         labelText: Constants.PACIENT_NASC,
                         hint: Constants.PACIENT_NASC_HINT,
                         width: 230,
                         inputWidth: 110,
                       ),
                       SimpleInputForm(
-                        writeEnable: writeEnable,
+                        enabled: writeEnable,
                         labelText: Constants.PACIENT_SEX,
                         hint: Constants.PACIENT_SEX_HINT,
                         width: 125,
                         inputWidth: 80,
                       ),
                       SimpleInputForm(
-                        writeEnable: writeEnable,
+                        enabled: writeEnable,
                         labelText: Constants.PACIENT_PHONE,
                         hint: Constants.PACIENT_PHONE_HINT,
                         width: 175,
@@ -85,21 +85,21 @@ class Patient extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SimpleInputForm(
-                        writeEnable: writeEnable,
+                        enabled: writeEnable,
                         labelText: Constants.PACIENT_CNI,
                         hint: Constants.PACIENT_CNI_HINT,
                         width: 175,
                         inputWidth: 140,
                       ),
                       SimpleInputForm(
-                        writeEnable: writeEnable,
+                        enabled: writeEnable,
                         labelText: Constants.PACIENT_NIF,
                         hint: Constants.PACIENT_NIF_HINT,
                         width: 150,
                         inputWidth: 115,
                       ),
                       SimpleInputForm(
-                        writeEnable: writeEnable,
+                        enabled: writeEnable,
                         labelText: Constants.PACIENT_ADDRESS,
                         hint: Constants.PACIENT_ADDRESS_HINT,
                         width: 260,
