@@ -4,11 +4,13 @@ import 'package:front/domain/entities/physician.dart';
 import 'package:front/infra/api.dart';
 
 class PhysicianRepository {
-  final Api _api = Api(); // XXX: use dep injection
+  final Api api;
+
+  PhysicianRepository(this.api);
 
   Future<PhysicianEntity> getById(int id) async {
     try {
-      final response = await _api.get('user/physician/$id');
+      final response = await api.get('user/physician/$id');
       final data = jsonDecode(response.body)['data'];
       return PhysicianEntity.fromJson(data as Map<String, dynamic>);
     } catch (e) {
@@ -18,7 +20,7 @@ class PhysicianRepository {
 
   Future<List<PhysicianEntity>> getAll() async {
     try {
-      final response = await _api.get('user/physician');
+      final response = await api.get('user/physician');
       final data = jsonDecode(response.body)['data'];
       return List.from(data)
           .map((e) => PhysicianEntity.fromJson(e as Map<String, dynamic>))
@@ -32,7 +34,7 @@ class PhysicianRepository {
     PhysicianEntity entity,
   ) async {
     try {
-      final response = await _api.post(
+      final response = await api.post(
         'user/physician',
         body: entity.toJson(),
       );
@@ -48,7 +50,7 @@ class PhysicianRepository {
     PhysicianEntity entity,
   ) async {
     try {
-      final response = await _api.put('user/physician/$id');
+      final response = await api.put('user/physician/$id');
       final data = jsonDecode(response.body)['data'];
       return PhysicianEntity.fromJson(data as Map<String, dynamic>);
     } catch (e) {
@@ -57,6 +59,6 @@ class PhysicianRepository {
   }
 
   Future<void> deletePhysician(int id) async {
-    await _api.delete('user/physician/$id');
+    await api.delete('user/physician/$id');
   }
 }

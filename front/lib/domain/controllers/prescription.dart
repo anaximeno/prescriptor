@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../repositories/prescription.dart';
+
 class PrescriptionController extends GetxController {
   TextEditingController emissionDateController = TextEditingController();
   TextEditingController expirationDateController = TextEditingController();
@@ -17,6 +19,10 @@ class PrescriptionController extends GetxController {
   TextEditingController medicineUsageController = TextEditingController();
 
   RxBool autoRenovable = false.obs;
+
+  final PrescriptionRepository prescriptionRepository;
+
+  PrescriptionController(this.prescriptionRepository);
 
   void onSubmit() {
     // TODO

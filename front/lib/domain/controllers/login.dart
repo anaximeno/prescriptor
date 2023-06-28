@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:front/domain/entities/entities.dart';
+import 'package:front/domain/repositories/login.dart';
 import 'package:front/ui/pages/home/home_page.dart';
 import 'package:get/get.dart';
 
@@ -12,6 +13,10 @@ class LoginController extends GetxController {
   UserEntity? get loginUser => _loginUser.value;
 
   set loginUser(UserEntity? value) => _loginUser.value = value;
+
+  LoginRepository loginRepository;
+
+  LoginController(this.loginRepository);
 
   void onSubmit() {
     // TODO: authenticate user

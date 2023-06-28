@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:front/domain/repositories/pacient.dart';
 import 'package:get/get.dart';
 
 class PacientController extends GetxController {
@@ -9,10 +10,13 @@ class PacientController extends GetxController {
   TextEditingController pacientPhoneController = TextEditingController();
   TextEditingController pacientCniController = TextEditingController();
   TextEditingController pacientNifController = TextEditingController();
-  TextEditingController pacientAddressController =
-      TextEditingController();
+  TextEditingController pacientAddressController = TextEditingController();
 
   RxBool pacientHasInsurance = false.obs;
+
+  final PacientRepository pacientRepository;
+
+  PacientController(this.pacientRepository);
 
   void onSubmit() {
     // TODO
