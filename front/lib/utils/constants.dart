@@ -70,7 +70,7 @@ abstract class Constants {
   static String PACIENT_CNI = 'CNI';
   static String PACIENT_CNI_HINT = '20040316M05J';
   static String PACIENT_NASC = 'Data Nascimento';
-  static String PACIENT_NASC_HINT = '10-01-2000';
+  static String PACIENT_NASC_HINT = 'yyyy-mm-dd';
   static String PACIENT_PHONE = 'Telemóvel';
   static String PACIENT_PHONE_HINT = '5671234';
   static String PACIENT_NIF = 'NIF';
@@ -85,19 +85,19 @@ abstract class Constants {
   static String MEDICINE_NAME = 'Nome';
   static String MEDICINE_NAME_HINT = 'Paracetamol';
   static String MEDICINE_DOSAGE = 'Dosagem';
-  static String MEDICINE_DOSAGE_HINT = '10 (g)';
+  static String MEDICINE_DOSAGE_HINT = 'g';
   static String MEDICINE_AMOUNT = 'Quantidade';
-  static String MEDICINE_AMOUNT_HINT = '1';
+  static String MEDICINE_AMOUNT_HINT = 'und.';
   static String MEDICINE_USAGE = 'Tipo de Uso';
-  static String MEDICINE_USAGE_HINT = 'Externo';
+  static String MEDICINE_USAGE_HINT = 'Int./Ext.';
   static String MEDICINE_ADMINISTRATION = 'Via';
-  static String MEDICINE_ADMINNISTRATION_HINT = 'Oral';
+  static String MEDICINE_ADMINISTRATION_HINT = 'Ex: Oral';
   static String MEDICINE_OBSERVATIONS = 'Observações';
   static String MEDICINE_OBSERVATION_HINT = 'Cuidados a tomar';
   static String MEDICINE_DURATION = 'Período de Uso';
-  static String MEDICINE_DURATION_HINT = '7 (dias)';
+  static String MEDICINE_DURATION_HINT = 'dias';
   static String MEDICINE_FREQUENCY = 'Frequência';
-  static String MEDICINE_FREQUENCY_HINT = '8 (horas)';
+  static String MEDICINE_FREQUENCY_HINT = 'horas';
   static String MEDICINE_SEARCH = 'Pesquisar';
 
   static String PHYSICIANS_NAME = 'Nome';

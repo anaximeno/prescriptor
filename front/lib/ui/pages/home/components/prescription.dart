@@ -46,7 +46,7 @@ class Prescription extends StatelessWidget {
                       SimpleInputForm(
                         enabled: writeEnable,
                         labelText: Constants.PRESCRIPTION_EMISSION_DATE,
-                        hint: Constants.BLANK,
+                        hint: Constants.PRESCRIPTION_EMISSION_DATE_HINT,
                         width: 230,
                         inputWidth: 110,
                         controller: controller.emissionDateController,
@@ -54,7 +54,7 @@ class Prescription extends StatelessWidget {
                       SimpleInputForm(
                         enabled: writeEnable,
                         labelText: Constants.PRESCRIPTION_EXPIRATION_DATE,
-                        hint: Constants.BLANK,
+                        hint: Constants.PRESCRIPTION_EXPIRATION_DATE_HINT,
                         width: 235,
                         inputWidth: 110,
                         controller: controller.expirationDateController,
@@ -134,7 +134,7 @@ class Prescription extends StatelessWidget {
                       SimpleInputForm(
                         enabled: writeEnable,
                         labelText: Constants.PACIENT_NASC,
-                        hint: Constants.BLANK,
+                        hint: Constants.PACIENT_NASC_HINT,
                         width: 260,
                         inputWidth: 130,
                       ),
@@ -172,7 +172,7 @@ class Prescription extends StatelessWidget {
                       SimpleInputForm(
                         enabled: writeEnable,
                         labelText: Constants.MEDICINE_DOSAGE,
-                        hint: Constants.BLANK,
+                        hint: Constants.MEDICINE_DOSAGE_HINT,
                         width: 150,
                         inputWidth: 80,
                         controller: controller.medicineDoseController,
@@ -180,7 +180,7 @@ class Prescription extends StatelessWidget {
                       SimpleInputForm(
                         enabled: writeEnable,
                         labelText: Constants.MEDICINE_AMOUNT,
-                        hint: Constants.BLANK,
+                        hint: Constants.MEDICINE_AMOUNT_HINT,
                         width: 150,
                         inputWidth: 60,
                         controller: controller.medicineAmountController,
@@ -188,7 +188,7 @@ class Prescription extends StatelessWidget {
                       SimpleInputForm(
                         enabled: writeEnable,
                         labelText: Constants.MEDICINE_USAGE,
-                        hint: Constants.BLANK,
+                        hint: Constants.MEDICINE_USAGE_HINT,
                         width: 180,
                         inputWidth: 90,
                         controller: controller.medicineUsageController,
@@ -196,7 +196,7 @@ class Prescription extends StatelessWidget {
                       SimpleInputForm(
                         enabled: writeEnable,
                         labelText: Constants.MEDICINE_ADMINISTRATION,
-                        hint: Constants.BLANK,
+                        hint: Constants.MEDICINE_ADMINISTRATION_HINT,
                         width: 160,
                         inputWidth: 80,
                         controller: controller.medicineAdministrationController,
@@ -218,7 +218,7 @@ class Prescription extends StatelessWidget {
                       SimpleInputForm(
                         enabled: writeEnable,
                         labelText: Constants.MEDICINE_FREQUENCY,
-                        hint: Constants.BLANK,
+                        hint: Constants.MEDICINE_FREQUENCY_HINT,
                         width: 180,
                         inputWidth: 95,
                         controller: controller.medicineFreqController,
@@ -226,7 +226,7 @@ class Prescription extends StatelessWidget {
                       SimpleInputForm(
                         enabled: writeEnable,
                         labelText: Constants.MEDICINE_DURATION,
-                        hint: Constants.BLANK,
+                        hint: Constants.MEDICINE_DURATION_HINT,
                         width: 200,
                         inputWidth: 90,
                         controller: controller.medicineDurationController,
