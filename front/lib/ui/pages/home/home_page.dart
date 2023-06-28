@@ -42,7 +42,7 @@ class HomePage extends StatelessWidget {
         //     ],
         //   ),
         // ),
-        Receptionist(), //remove expanded cause isn't necessary
+        Expanded(child: Receptionist()), //remove expanded cause isn't necessary
       ]),
     );
   }
