@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:front/domain/entities/prescription.dart';
 import 'package:get/get.dart';
 
 import '../repositories/prescription.dart';
@@ -26,5 +27,10 @@ class PrescriptionController extends GetxController {
 
   void onSubmit() {
     // TODO
+    // PrescriptionEntity entity = PrescriptionEntity(
+    //   emissionDate: emissionDateController.text,
+    //   expirationDate: expirationDateController.text,
+    //   autoRenovable: autoRenovable.value,
+    // )
   }
 }

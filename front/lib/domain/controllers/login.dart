@@ -18,21 +18,24 @@ class LoginController extends GetxController {
 
   LoginController(this.loginRepository);
 
-  void onSubmit() {
-    // TODO: authenticate user
+  void onSubmit() async {
     debugPrint('username: ${usernameController.text}');
     debugPrint('password: ${passwordController.text}');
 
     if (usernameController.text != '' && passwordController.text != '') {
-      // XXX
-      loginUser = UserEntity(
-        username: usernameController.text,
-      );
+      try {
+        loginUser = await loginRepository.login(
+          username: usernameController.text,
+          password: passwordController.text,
+        );
 
-      Get.to(HomePage());
+        Get.to(HomePage());
 
-      usernameController.clear();
-      passwordController.clear();
+        usernameController.clear();
+        passwordController.clear();
+      } catch (e) {
+        debugPrint(e.toString());
+      }
     }
   }
 }

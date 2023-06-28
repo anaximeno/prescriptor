@@ -8,7 +8,7 @@ class LoginRepository {
 
   LoginRepository(this.api);
 
-  Future<UserEntity> login({
+  Future<UserEntity?> login({
     required String username,
     required String password,
   }) async {

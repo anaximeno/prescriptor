@@ -6,6 +6,7 @@ import 'package:front/ui/pages/home/views/receptionist.dart';
 import 'package:front/ui/pages/login/login_page.dart';
 import 'package:front/ui/theming.dart';
 import 'package:front/utils/constants.dart';
+import 'package:front/utils/user_type.dart';
 import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
@@ -34,7 +35,7 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: const Row(children: [
+      body: Row(children: [
         // Expanded(
         //   flex: 2,
         //   child: Sidebar(
@@ -42,7 +43,11 @@ class HomePage extends StatelessWidget {
         //     ],
         //   ),
         // ),
-        Expanded(child: Receptionist()), //remove expanded cause isn't necessary
+        Expanded(
+          child: loginController.loginUser?.userType?.isRecepcionist() == true
+              ? const Receptionist()
+              : const Physicians(),
+        ), //remove expanded cause isn't necessary
       ]),
     );
   }
