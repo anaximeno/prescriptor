@@ -61,8 +61,7 @@ class SimpleInputForm extends StatelessWidget {
                   enabled: enabled,
                   controller: controller,
                   obscureText: hint == Constants.PASSWORD_HINT,
-                  maxLines:
-                      hint == Constants.MEDICINE_OBSERVATION_HINT ? null : 1,
+                  maxLines: isBig ? null : 1,
                   style: const TextStyle(
                     fontSize: 15,
                     color: Theming.colorKindaGrey,
