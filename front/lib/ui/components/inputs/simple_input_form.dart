@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:front/ui/theming.dart';
 import 'package:front/utils/constants.dart';
 
 class SimpleInputForm extends StatelessWidget {
@@ -64,7 +65,7 @@ class SimpleInputForm extends StatelessWidget {
                       hint == Constants.MEDICINE_OBSERVATION_HINT ? null : 1,
                   style: const TextStyle(
                     fontSize: 15,
-                    color: Colors.white,
+                    color: Theming.colorKindaGrey,
                   ),
                   decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(

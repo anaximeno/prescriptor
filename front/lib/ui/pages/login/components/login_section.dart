@@ -31,7 +31,7 @@ class LoginSection extends StatelessWidget {
                 Constants.LOGIN_RECEPTION,
                 style: const TextStyle(
                   fontSize: 20,
-                  color: Colors.black,
+                  color: Theming.colorKindaGrey,
                 ),
               ),
             ),
