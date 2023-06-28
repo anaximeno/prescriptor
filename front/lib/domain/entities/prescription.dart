@@ -1,7 +1,7 @@
 class PrescriptionEntity {
   int? id;
-  DateTime? emissionDate;
-  DateTime? expirationDate;
+  String? emissionDate;
+  String? expirationDate;
   int? pacientId;
   int? physicianId;
   String? medicineName;
@@ -28,8 +28,8 @@ class PrescriptionEntity {
 
   factory PrescriptionEntity.fromJson(Map<String, dynamic> json) =>
       PrescriptionEntity(
-        emissionDate: json['emissionDate'] as DateTime?,
-        expirationDate: json['expirationDate'] as DateTime?,
+        emissionDate: json['emissionDate'] as String?,
+        expirationDate: json['expirationDate'] as String?,
         pacientId: json['pacientId'] as int?,
         physicianId: json['physicianId'] as int?,
         medicineName: json['medicineName'] as String?,

@@ -4,14 +4,16 @@ import 'package:front/domain/entities/user.dart';
 import 'package:front/infra/api.dart';
 
 class LoginRepository {
-  final Api _api = Api(); // XXX
+  final Api api;
 
-  Future<UserEntity> login({
+  LoginRepository(this.api);
+
+  Future<UserEntity?> login({
     required String username,
     required String password,
   }) async {
     try {
-      final response = await _api.post(
+      final response = await api.post(
         'login',
         body: {
           'username': username,

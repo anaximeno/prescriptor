@@ -4,11 +4,13 @@ import 'package:front/domain/entities/user.dart';
 import 'package:front/infra/api.dart';
 
 class UserRepository {
-  final Api _api = Api(); // XXX: use dep injection
+  final Api api;
+
+  UserRepository(this.api);
 
   Future<UserEntity> getById(int id) async {
     try {
-      final response = await _api.get('user/$id');
+      final response = await api.get('user/$id');
       final data = jsonDecode(response.body)['data'];
       return UserEntity.fromJson(data as Map<String, dynamic>);
     } catch (e) {
@@ -18,7 +20,7 @@ class UserRepository {
 
   Future<List<UserEntity>> getAll() async {
     try {
-      final response = await _api.get('user');
+      final response = await api.get('user');
       final data = jsonDecode(response.body)['data'];
       return List.from(data)
           .map((e) => UserEntity.fromJson(e as Map<String, dynamic>))
@@ -32,7 +34,7 @@ class UserRepository {
     UserEntity entity,
   ) async {
     try {
-      final response = await _api.post(
+      final response = await api.post(
         'user',
         body: entity.toJson(),
       );
@@ -48,7 +50,7 @@ class UserRepository {
     UserEntity entity,
   ) async {
     try {
-      final response = await _api.put('user/$id');
+      final response = await api.put('user/$id');
       final data = jsonDecode(response.body)['data'];
       return UserEntity.fromJson(data as Map<String, dynamic>);
     } catch (e) {
@@ -57,6 +59,6 @@ class UserRepository {
   }
 
   Future<void> deleteUser(int id) async {
-    await _api.delete('user/$id');
+    await api.delete('user/$id');
   }
 }
