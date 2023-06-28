@@ -18,8 +18,8 @@ public class LoginService {
     public Response userLogin(UserLoginRequest userLogin) {
         final User user = userRepository.findByUsername(userLogin.getUsername());
 
-        if (user != null && user.getPassword() == userLogin.getPassword()) {
-            return Response.ok(JsonResource.messageWithData(Constants.SUCCESS, user)).build();
+        if (user != null && user.getPassword().strip().equals(userLogin.getPassword().strip())) {
+            return Response.ok(JsonResource.messageWithData(Constants.SUCCESS, user.toJsonResource())).build();
         }
 
         // TODO: should return a token to use in the app
