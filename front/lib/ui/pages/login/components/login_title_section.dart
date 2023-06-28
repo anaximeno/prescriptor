@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:front/ui/theming.dart';
 
 class LoginTitleSection extends StatelessWidget {
   final String title;
@@ -20,7 +21,7 @@ class LoginTitleSection extends StatelessWidget {
           title,
           style: const TextStyle(
             fontSize: 50,
-            color: Color(0xFFFFFFFF),
+            color: Theming.colorWhiteLike,
             decoration: TextDecoration.none,
           ),
         ),
@@ -32,7 +33,7 @@ class LoginTitleSection extends StatelessWidget {
             subtitle!,
             style: const TextStyle(
               fontSize: 18,
-              color: Color(0xFFEEEEFF),
+              color: Theming.colorWhiteLike,
               decoration: TextDecoration.none,
             ),
           ),

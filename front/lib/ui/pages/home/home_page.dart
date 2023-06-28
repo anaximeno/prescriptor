@@ -1,57 +1,42 @@
 import 'package:flutter/material.dart';
+import 'package:front/domain/controllers/login.dart';
 import 'package:front/ui/components/texts/texts.dart';
 import 'package:front/ui/pages/home/components/side_bar.dart';
+import 'package:front/ui/pages/home/views/pharmacist.dart';
+import 'package:front/ui/pages/login/login_page.dart';
+import 'package:front/ui/theming.dart';
 import 'package:front/utils/constants.dart';
-
-import 'views/views.dart';
+import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  final LoginController loginController = Get.find();
+
+  HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // TODO: here we should be choosing withing showing the doctor home page
-    //  view or the pharmacist's.
     return Scaffold(
       appBar: AppBar(
-        //AppBar is the same for every user
-        backgroundColor: Colors.white,
-        title: TextButton(
-          onPressed: () {},
-          child: TitleText(
-            title: Constants.APPBAR_TITLE,
-            color: Colors.black,
-          ),
+        backgroundColor: Theming.colorNiceBlue,
+        title: TitleText(
+          title: Constants.APPBAR_TITLE,
+          color: Theming.colorWhiteLike,
         ),
-        leading: IconButton(
-          onPressed: () {},
-          icon: Icon(
-            Icons.menu,
-            color: Color(Constants.DEFAULT_BLUE),
-          ),
-        ),
+        leadingWidth: 0,
+        leading: Container(),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () => Get.to(LoginPage()),
             icon: const Icon(
-              Icons.notifications_none_rounded,
-              color: Colors.black,
-            ),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.account_circle_outlined,
-              color: Colors.black,
+              Icons.power_settings_new_rounded,
+              color: Theming.colorWhiteLike,
             ),
           ),
         ],
       ),
       body: const Row(children: [
         Expanded(flex: 2, child: SideBar()),
-        //TODO: differ  between de users
         Expanded(flex: 10, child: Pharmacist()),
-        //TODO: a homepage with basic information about the user: fullname, job, clinic/pharmacy
       ]),
     );
   }
