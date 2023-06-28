@@ -9,6 +9,7 @@ import group.three.model.Pacient;
 import group.three.repository.PacientRepository;
 import group.three.repository.UserRepository;
 import group.three.request.PacientUserRequest;
+import group.three.utils.Constants;
 import group.three.utils.JsonResource;
 
 @ApplicationScoped
@@ -31,7 +32,7 @@ public class PacientUserService {
 
         return Response
                 .status(Response.Status.NOT_FOUND)
-                .entity(JsonResource.message("paciente não encontrado"))
+                .entity(JsonResource.message(Constants.SERVICE_RESPONSE_PACIENT_NOT_FOUND))
                 .build();
     }
 
@@ -44,7 +45,7 @@ public class PacientUserService {
             if (pacientRepository.insert(pacient)) {
                 return Response
                         .status(Response.Status.CREATED)
-                        .entity(JsonResource.messageWithData("paciente adicionado com sucesso", pacient.toJsonResource()))
+                        .entity(JsonResource.messageWithData(Constants.SERVICE_RESPONSE_PACIENT_CREATED, pacient.toJsonResource()))
                         .build();
             } else {
                 userRepository.delete(user);
@@ -53,7 +54,7 @@ public class PacientUserService {
 
         return Response
                 .status(Response.Status.UNSUPPORTED_MEDIA_TYPE)
-                .entity(JsonResource.message("operação realizada sem sucesso"))
+                .entity(JsonResource.message(Constants.SERVICE_RESPONSE_UNSUPPORTED_MEDIA_TYPE))
                 .build();
     }
 
@@ -66,20 +67,20 @@ public class PacientUserService {
 
                 return Response
                         .status(Response.Status.OK)
-                        .entity(JsonResource.messageWithData("operação realizada com sucesso",
+                        .entity(JsonResource.messageWithData(Constants.SERVICE_RESPONSE_OK,
                                 updatedPacient.toJsonResource()))
                         .build();
             }
 
             return Response
                     .status(Response.Status.UNSUPPORTED_MEDIA_TYPE)
-                    .entity(JsonResource.message("operação realizada sem sucesso"))
+                    .entity(JsonResource.message(Constants.SERVICE_RESPONSE_UNSUPPORTED_MEDIA_TYPE))
                     .build();
         }
 
         return Response
                 .status(Response.Status.NOT_FOUND)
-                .entity(JsonResource.message("paciente não encontrado"))
+                .entity(JsonResource.message(Constants.SERVICE_RESPONSE_PACIENT_NOT_FOUND))
                 .build();
     }
 
@@ -87,13 +88,13 @@ public class PacientUserService {
         if (pacientRepository.findById(id) != null && !pacientRepository.deleteById(id)) {
             return Response
                     .status(Response.Status.UNSUPPORTED_MEDIA_TYPE)
-                    .entity(JsonResource.message("operação realizada sem sucesso"))
+                    .entity(JsonResource.message(Constants.SERVICE_RESPONSE_UNSUPPORTED_MEDIA_TYPE))
                     .build();
         }
 
         return Response
                 .status(Response.Status.NOT_FOUND)
-                .entity(JsonResource.message("paciente não encontrado"))
+                .entity(JsonResource.message(Constants.SERVICE_RESPONSE_PACIENT_NOT_FOUND))
                 .build();
     }
 }

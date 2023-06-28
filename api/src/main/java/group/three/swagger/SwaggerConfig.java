@@ -11,22 +11,22 @@ import jakarta.ws.rs.core.Application;
 
 @OpenAPIDefinition(
     tags = {
-        @Tag(name = Constants.ENDPOINT_PHYSICIAN_TAG_NAME,
-        description = Constants.ENDPOINT_PHYSICIAN_TAG__DESCRIPTION
+        @Tag(name = Constants.SWAGGER_PHYSICIAN_TAG_NAME,
+        description = Constants.SWAGGER_PHYSICIAN_TAG__DESCRIPTION
         )
     },
     info = @Info(
-        title = Constants.ENDPOINT_PHYSICIAN_INFO_TITLE,
-        description = Constants.ENDPOINT_PHYSICIAN_INFO_DESCRIPTION,
-        version = Constants.ENDPOINT_PHYSICIAN_INFO_VERSION,
+        title = Constants.SWAGGER_PHYSICIAN_INFO_TITLE,
+        description = Constants.SWAGGER_PHYSICIAN_INFO_DESCRIPTION,
+        version = Constants.SWAGGER_PHYSICIAN_INFO_VERSION,
         contact = @Contact(
-            name = Constants.ENDPOINT_PHYSICIAN_INFO_CONTACT_NAME,
-            url = Constants.ENDPOINT_PHYSICIAN_INFO_CONTACT_URL,
-            email = Constants.ENDPOINT_PHYSICIAN_INFO_CONTACT_EMAIL
+            name = Constants.SWAGGER_PHYSICIAN_INFO_CONTACT_NAME,
+            url = Constants.SWAGGER_PHYSICIAN_INFO_CONTACT_URL,
+            email = Constants.SWAGGER_PHYSICIAN_INFO_CONTACT_EMAIL
         ),
         license = @License(
-            name = Constants.ENDPOINT_PHYSICIAN_INFO_LICENCE_NAME,
-            url = Constants.ENDPOINT_PHYSICIAN_INFO_LICENCE_URL
+            name = Constants.SWAGGER_PHYSICIAN_INFO_LICENCE_NAME,
+            url = Constants.SWAGGER_PHYSICIAN_INFO_LICENCE_URL
         )
     )
 )

@@ -13,6 +13,7 @@ import group.three.repository.PharmacistRepository;
 import group.three.repository.PhysicianRespository;
 import group.three.repository.PrescriptionRepository;
 import group.three.request.PrescriptionRequest;
+import group.three.utils.Constants;
 import group.three.utils.JsonResource;
 
 @ApplicationScoped
@@ -39,7 +40,7 @@ public class PrescriptionService {
 
         return Response
                 .status(Response.Status.NOT_FOUND)
-                .entity(JsonResource.message("receita médica não encontrada"))
+                .entity(JsonResource.message(Constants.SERVICE_RESPONSE_PRESCRIPTION_NOT_FOUND))
                 .build();
     }
 
@@ -54,8 +55,7 @@ public class PrescriptionService {
             if (prescriptionRepository.insert(prescription)) {
                 return Response
                         .status(Response.Status.CREATED)
-                        .entity(JsonResource.messageWithData("receita médica adicionada com sucesso",
-                                prescription.toJsonResource()))
+                        .entity(JsonResource.messageWithData(Constants.SERVICE_RESPONSE_PRESCRIPTION_CREATED, prescription.toJsonResource()))
                         .build();
             }
 
@@ -63,7 +63,7 @@ public class PrescriptionService {
 
         return Response
                 .status(Response.Status.UNSUPPORTED_MEDIA_TYPE)
-                .entity(JsonResource.message("operação realizada sem sucesso"))
+                .entity(JsonResource.message(Constants.SERVICE_RESPONSE_UNSUPPORTED_MEDIA_TYPE))
                 .build();
     }
 
@@ -78,20 +78,20 @@ public class PrescriptionService {
             if (prescriptionRepository.insert(prescription)) {
                 return Response
                         .status(Response.Status.OK)
-                        .entity(JsonResource.messageWithData("operação realizada com sucesso",
+                        .entity(JsonResource.messageWithData(Constants.SERVICE_RESPONSE_OK,
                                 prescription.toJsonResource()))
                         .build();
             }
 
             return Response
                     .status(Response.Status.UNSUPPORTED_MEDIA_TYPE)
-                    .entity(JsonResource.message("operação realizada sem sucesso"))
+                    .entity(JsonResource.message(Constants.SERVICE_RESPONSE_UNSUPPORTED_MEDIA_TYPE))
                     .build();
         }
 
         return Response
                 .status(Response.Status.NOT_FOUND)
-                .entity(JsonResource.message("receita médica não encontrada"))
+                .entity(JsonResource.message(Constants.SERVICE_RESPONSE_PRESCRIPTION_NOT_FOUND))
                 .build();
     }
 
@@ -100,19 +100,19 @@ public class PrescriptionService {
             if (prescriptionRepository.deleteById(id)) {
                 return Response
                         .status(Response.Status.OK)
-                        .entity(JsonResource.message("operação realizada com sucesso"))
+                        .entity(JsonResource.message(Constants.SERVICE_RESPONSE_OK))
                         .build();
             }
 
             return Response
                     .status(Response.Status.UNSUPPORTED_MEDIA_TYPE)
-                    .entity(JsonResource.message("operação realizada sem sucesso"))
+                    .entity(JsonResource.message(Constants.SERVICE_RESPONSE_UNSUPPORTED_MEDIA_TYPE))
                     .build();
         }
 
         return Response
                 .status(Response.Status.NOT_FOUND)
-                .entity(JsonResource.message("receita médica não encontrada"))
+                .entity(JsonResource.message(Constants.SERVICE_RESPONSE_PRESCRIPTION_NOT_FOUND))
                 .build();
     }
 }

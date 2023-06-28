@@ -7,6 +7,7 @@ import jakarta.ws.rs.core.Response;
 import group.three.model.User;
 import group.three.repository.UserRepository;
 import group.three.request.UserRequest;
+import group.three.utils.Constants;
 import group.three.utils.JsonResource;
 
 @ApplicationScoped
@@ -43,7 +44,7 @@ public class UserService {
 
         return Response
                 .status(Response.Status.UNSUPPORTED_MEDIA_TYPE)
-                .entity(JsonResource.message("operação realizada sem sucesso"))
+                .entity(JsonResource.message(Constants.SERVICE_RESPONSE_UNSUPPORTED_MEDIA_TYPE))
                 .build();
     }
 
@@ -54,13 +55,13 @@ public class UserService {
 
                 return Response
                         .status(Response.Status.OK)
-                        .entity(JsonResource.messageWithData("operação realizada com sucesso", updatedUser.toJsonResource()))
+                        .entity(JsonResource.messageWithData(Constants.SERVICE_RESPONSE_OK, updatedUser.toJsonResource()))
                         .build();
             }
 
             return Response
                     .status(Response.Status.UNSUPPORTED_MEDIA_TYPE)
-                    .entity(JsonResource.message("operação realizada sem sucesso"))
+                    .entity(JsonResource.message(Constants.SERVICE_RESPONSE_UNSUPPORTED_MEDIA_TYPE))
                     .build();
         }
 
@@ -74,7 +75,7 @@ public class UserService {
         if (userRepository.findById(id) != null && !userRepository.deleteById(id)) {
             return Response
                     .status(Response.Status.UNSUPPORTED_MEDIA_TYPE)
-                    .entity(JsonResource.message("operação realizada sem sucesso"))
+                    .entity(JsonResource.message(Constants.SERVICE_RESPONSE_UNSUPPORTED_MEDIA_TYPE))
                     .build();
         }
 

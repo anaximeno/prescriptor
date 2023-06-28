@@ -3,11 +3,13 @@ package group.three.services;
 import group.three.model.Pharmacy;
 import group.three.repository.PharmacyRepository;
 import group.three.request.PharmacyRequest;
+import group.three.utils.Constants;
 import group.three.utils.JsonResource;
-
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.core.Response;
 
+@ApplicationScoped
 public class PharmacyService {
     @Inject
     PharmacyRepository pharmacyRepository;
@@ -24,7 +26,7 @@ public class PharmacyService {
         }
         return Response
                 .status(Response.Status.NOT_FOUND)
-                .entity(JsonResource.message("farmácia não encontrada"))
+                .entity(JsonResource.message(Constants.SERVICE_RESPONSE_PHARMACY_NOT_FOUND))
                 .build();
     }
 
@@ -34,12 +36,12 @@ public class PharmacyService {
 
             return Response
                     .status(Response.Status.CREATED)
-                    .entity(JsonResource.messageWithData("farmácia adicionada com sucesso", storedPharmacy.toJsonResource()))
+                    .entity(JsonResource.messageWithData(Constants.SERVICE_RESPONSE_PHARMACY_CREATED, storedPharmacy.toJsonResource()))
                     .build();
         }
         return Response
                 .status(Response.Status.UNSUPPORTED_MEDIA_TYPE)
-                .entity(JsonResource.message("operação não realizada"))
+                .entity(JsonResource.message(Constants.SERVICE_RESPONSE_UNSUPPORTED_MEDIA_TYPE))
                 .build();
     }
 
@@ -50,17 +52,17 @@ public class PharmacyService {
 
                 return Response
                         .status(Response.Status.OK)
-                        .entity(JsonResource.messageWithData("operação realizada com suecesso", updatedPharmacy.toJsonResource()))
+                        .entity(JsonResource.messageWithData(Constants.SERVICE_RESPONSE_OK, updatedPharmacy.toJsonResource()))
                         .build();
             }
             return Response
                     .status(Response.Status.UNSUPPORTED_MEDIA_TYPE)
-                    .entity(JsonResource.message("operação não realizada"))
+                    .entity(JsonResource.message(Constants.SERVICE_RESPONSE_UNSUPPORTED_MEDIA_TYPE))
                     .build();
         }
         return Response
                 .status(Response.Status.NOT_FOUND)
-                .entity(JsonResource.message("farmácia não encontrada"))
+                .entity(JsonResource.message(Constants.SERVICE_RESPONSE_PHARMACY_NOT_FOUND))
                 .build();
     }
 
@@ -68,12 +70,12 @@ public class PharmacyService {
         if(pharmacyRepository.findById(id) != null && !pharmacyRepository.deleteById(id)){
             return Response
                     .status(Response.Status.UNSUPPORTED_MEDIA_TYPE)
-                    .entity(JsonResource.message("operação não realizada"))
+                    .entity(JsonResource.message(Constants.SERVICE_RESPONSE_UNSUPPORTED_MEDIA_TYPE))
                     .build();
         }
         return Response
                 .status(Response.Status.NOT_FOUND)
-                .entity(JsonResource.message("farmácia não encontrada"))
+                .entity(JsonResource.message(Constants.SERVICE_RESPONSE_PHARMACY_NOT_FOUND))
                 .build();
     }
 }
