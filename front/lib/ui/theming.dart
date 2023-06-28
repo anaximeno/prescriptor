@@ -17,4 +17,6 @@ abstract class Theming {
     primarySwatch: Colors.blue,
     textTheme: textTheme,
   );
+
+  static const Color colorLightBlue = Color(0xFF81D4FA);
 }

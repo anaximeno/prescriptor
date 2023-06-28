@@ -1,9 +1,12 @@
-class Constants{
-  Constants._();
+// ignore_for_file: non_constant_identifier_names
+
+abstract class Constants {
   static String BLANK = '';
 
-  static String APPBAR_TITLE = 'Prescription';
+  static String APPBAR_TITLE = 'Prescriptor';
+  static String APP_DESCRIPTION = 'Receita médica digital';
 
+  // XXX: update to the theming
   static int DEFAULT_BLUE = 0xFF7FB8D6;
   static int DEFAULT_2_BLUE_ = 0xFF5D8FC2;
   static int DEFAULT_GREY = 0xFFF4F4F4;
@@ -89,5 +92,4 @@ class Constants{
   static String PHYSICIANS_CIPS = 'CIPS';
   static String PHYSICIANS_CIPS_HINT = '030/2023';
   static String PHYSICIANS_SIGNATURE_BUTTON = 'Assinatura Digital';
-
 }
