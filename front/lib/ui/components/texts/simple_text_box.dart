@@ -6,16 +6,12 @@ class SimpleTextBox extends StatelessWidget {
 
   final String nameText;
   final String info;
-  final double inputWidth;
-  final double width;
   final  bool isBig;
 
   const SimpleTextBox({
     super.key,
     required this.nameText,
     required this.info,
-    required this.width,
-    required this.inputWidth,
     this.isBig = false
 
   });
