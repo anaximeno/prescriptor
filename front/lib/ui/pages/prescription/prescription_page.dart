@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:front/domain/controllers/prescription.dart';
-import 'package:front/ui/components/buttons/checkbox.dart';
 import 'package:front/ui/components/texts/texts.dart';
 import 'package:front/ui/theming.dart';
 import 'package:front/utils/constants.dart';
 import 'package:get/get.dart';
 
-import '../../../components/buttons/simple_button.dart';
-import '../../../components/inputs/simple_input_form.dart';
+import '../../components/buttons/simple_button.dart';
+import '../../components/inputs/simple_input_form.dart';
 
 class Prescription extends StatelessWidget {
   //TODO: try make the input_forms not  touchable on view and validate mode

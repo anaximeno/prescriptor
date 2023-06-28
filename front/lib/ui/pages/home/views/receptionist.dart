@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:front/ui/pages/registry/register_pacient_page.dart';
 
 import 'package:front/ui/theming.dart';
 import 'package:front/utils/constants.dart';
-import 'package:front/ui/pages/prescription/prescription_page.dart';
 
-class Physicians extends StatelessWidget {
-  const Physicians({super.key});
+class Receptionist extends StatelessWidget {
+  const Receptionist({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class Physicians extends StatelessWidget {
       Expanded(
         child: Container(
           color: Theming.colorBasicBlue,
-          child: Prescription(
+          child: RegisterPacientPage(
             goal: Constants.INSERT_BUTTON,
             writeEnable: true,
           ),

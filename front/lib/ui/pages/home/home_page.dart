@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:front/domain/controllers/login.dart';
 import 'package:front/ui/components/texts/texts.dart';
 import 'package:front/ui/pages/home/views/physicians.dart';
+import 'package:front/ui/pages/home/views/receptionist.dart';
 import 'package:front/ui/pages/login/login_page.dart';
 import 'package:front/ui/theming.dart';
 import 'package:front/utils/constants.dart';
@@ -43,7 +44,7 @@ class HomePage extends StatelessWidget {
         // ),
         Expanded(
           flex: 10,
-          child: Physicians(),
+          child: Receptionist(),
         ),
       ]),
     );
