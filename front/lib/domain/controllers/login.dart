@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:front/domain/entities/entities.dart';
+import 'package:front/domain/repositories/login.dart';
 import 'package:front/ui/pages/home/home_page.dart';
 import 'package:get/get.dart';
 
@@ -13,21 +14,28 @@ class LoginController extends GetxController {
 
   set loginUser(UserEntity? value) => _loginUser.value = value;
 
-  void onSubmit() {
-    // TODO: authenticate user
+  LoginRepository loginRepository;
+
+  LoginController(this.loginRepository);
+
+  void onSubmit() async {
     debugPrint('username: ${usernameController.text}');
     debugPrint('password: ${passwordController.text}');
 
     if (usernameController.text != '' && passwordController.text != '') {
-      // XXX
-      loginUser = UserEntity(
-        username: usernameController.text,
-      );
+      try {
+        loginUser = await loginRepository.login(
+          username: usernameController.text,
+          password: passwordController.text,
+        );
 
-      Get.to(HomePage());
+        Get.to(HomePage());
 
-      usernameController.clear();
-      passwordController.clear();
+        usernameController.clear();
+        passwordController.clear();
+      } catch (e) {
+        debugPrint(e.toString());
+      }
     }
   }
 }
