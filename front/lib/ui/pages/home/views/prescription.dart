@@ -1,18 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:front/ui/components/buttons/checkbox.dart';
 import 'package:front/ui/components/texts/texts.dart';
+import 'package:front/ui/theming.dart';
 import 'package:front/utils/constants.dart';
 
 import '../../../components/buttons/simple_button.dart';
 import '../../../components/inputs/simple_input_form.dart';
 
 class Prescription extends StatelessWidget {
-  final String
-      goal; //TODO: try make the input_forms not  touchable on view and validate mode
+  //TODO: try make the input_forms not  touchable on view and validate mode
+  final String goal;
   final bool writeEnable;
+  final Function()? onSubmit;
 
-  const Prescription(
-      {super.key, required this.goal, required this.writeEnable});
+  const Prescription({
+    super.key,
+    required this.goal,
+    required this.writeEnable,
+    this.onSubmit,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +27,14 @@ class Prescription extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          TitleText(title: Constants.PRESCRIPTION_TITLE, color: Colors.white),
+          TitleText(
+            title: Constants.PRESCRIPTION_TITLE,
+            color: Theming.colorWhiteLike,
+            padding: 20,
+          ),
           Card(
             elevation: 5,
-            color: Colors.white,
+            color: Theming.colorWhiteLike,
             child: Padding(
               padding: const EdgeInsets.all(10.0),
               child: Column(
@@ -48,15 +58,17 @@ class Prescription extends StatelessWidget {
                       ),
                       //TODO: RENOVABLE CHECKBOX
                       Container(
-                        padding: EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(8.0),
                         child: Row(
                           children: [
                             Text(
                               Constants.PRESCRIPTION_AUTO_RENOVABLE,
-                              style:
-                                  TextStyle(fontSize: 15, color: Colors.black),
+                              style: const TextStyle(
+                                fontSize: 15,
+                                color: Colors.black,
+                              ),
                             ),
-                            CheckboxExample(),
+                            const CheckboxExample(),
                           ],
                         ),
                       ),
@@ -70,15 +82,14 @@ class Prescription extends StatelessWidget {
                     ],
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(16),
                     child: Center(
-                        child: Title(
-                            color: Colors.black,
-                            child: Text(
-                              Constants.PACIENT_TITLE,
-                              style: const TextStyle(
-                                  fontSize: 15, fontWeight: FontWeight.bold),
-                            ))),
+                      child: TitleText(
+                        title: Constants.PACIENT_TITLE,
+                        color: Colors.black,
+                        fontSize: 18,
+                      ),
+                    ),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -122,15 +133,12 @@ class Prescription extends StatelessWidget {
                   ),
                   //TODO: ADICIONAR ENTIDADE E NUMERO BENEFICIARIO QUANDO O PACIENTE TEM "VALE REMEDIOS"
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(16),
                     child: Center(
-                      child: Title(
+                      child: TitleText(
+                        title: Constants.MEDICINE_TITLE,
                         color: Colors.black,
-                        child: Text(
-                          Constants.MEDICINE_TITLE,
-                          style: const TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.bold),
-                        ),
+                        fontSize: 18,
                       ),
                     ),
                   ),
@@ -201,53 +209,56 @@ class Prescription extends StatelessWidget {
                       ),
                     ],
                   ),
+                  // Padding(
+                  //   padding: const EdgeInsets.all(8.0),
+                  //   child: Center(
+                  //     child: Title(
+                  //       color: Colors.black,
+                  //       child: Text(
+                  //         Constants.PHYSICIANS_TITLE,
+                  //         style: const TextStyle(
+                  //             fontSize: 15, fontWeight: FontWeight.bold),
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.center,
+                  //   children: [
+                  //     SimpleInputForm(
+                  //       enabled: writeEnable,
+                  //       labelText: Constants.PHYSICIANS_NAME,
+                  //       hint: Constants.PHYSICIANS_NAME_HINT,
+                  //       width: 180,
+                  //       inputWidth: 130,
+                  //     ),
+                  //     SimpleInputForm(
+                  //       enabled: writeEnable,
+                  //       labelText: Constants.PHYSICIANS_SPECIALITY,
+                  //       hint: Constants.PHYSICIANS_SPECIALITY_HINT,
+                  //       width: 300,
+                  //       inputWidth: 200,
+                  //     ),
+                  //     SimpleInputForm(
+                  //       enabled: writeEnable,
+                  //       labelText: Constants.PHYSICIANS_CIPS,
+                  //       hint: Constants.PHYSICIANS_CIPS_HINT,
+                  //       width: 150,
+                  //       inputWidth: 100,
+                  //     ),
+                  //     SimpleButton(
+                  //       text: Constants.PHYSICIANS_SIGNATURE_BUTTON,
+                  //       width: 200,
+                  //     ),
+                  //   ],
+                  // ),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Center(
-                      child: Title(
-                        color: Colors.black,
-                        child: Text(
-                          Constants.PHYSICIANS_TITLE,
-                          style: const TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.bold),
-                        ),
-                      ),
+                    padding: const EdgeInsets.only(top: 20),
+                    child: SimpleButton(
+                      onPressed: onSubmit,
+                      text: goal,
+                      width: 100,
                     ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SimpleInputForm(
-                        enabled: writeEnable,
-                        labelText: Constants.PHYSICIANS_NAME,
-                        hint: Constants.PHYSICIANS_NAME_HINT,
-                        width: 180,
-                        inputWidth: 130,
-                      ),
-                      SimpleInputForm(
-                        enabled: writeEnable,
-                        labelText: Constants.PHYSICIANS_SPECIALITY,
-                        hint: Constants.PHYSICIANS_SPECIALITY_HINT,
-                        width: 300,
-                        inputWidth: 200,
-                      ),
-                      SimpleInputForm(
-                        enabled: writeEnable,
-                        labelText: Constants.PHYSICIANS_CIPS,
-                        hint: Constants.PHYSICIANS_CIPS_HINT,
-                        width: 150,
-                        inputWidth: 100,
-                      ),
-                      SimpleButton(
-                        text: Constants.PHYSICIANS_SIGNATURE_BUTTON,
-                        width: 200,
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 20),
-                  SimpleButton(
-                    text: goal,
-                    width: 100,
                   ),
                 ],
               ),

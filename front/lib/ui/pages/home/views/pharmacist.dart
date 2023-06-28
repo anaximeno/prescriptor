@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:front/ui/components/buttons/big_button.dart';
 import 'package:front/ui/components/texts/title_text.dart';
-import 'package:front/ui/pages/home/components/side_bar.dart';
+import 'package:front/ui/pages/home/components/sidebar.dart';
 import 'package:front/ui/pages/home/components/simple_search_bar.dart';
 import 'package:front/utils/constants.dart';
 

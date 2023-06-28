@@ -35,9 +35,9 @@ abstract class Constants {
   static String PRESCRIPTION_SEARCH = 'Pesquisar Receita';
   static String PRESCRIPTION_VALIDATE = 'Validar Receita';
   static String PRESCRIPTION_EMISSION_DATE = 'Data de Emissão';
-  static String PRESCRIPTION_EMISSION_DATE_HINT = '10-01-2023';
+  static String PRESCRIPTION_EMISSION_DATE_HINT = 'yyyy-mm-dd';
   static String PRESCRIPTION_EXPIRATION_DATE = 'Data de Expiração';
-  static String PRESCRIPTION_EXPIRATION_DATE_HINT = '11-02-2023';
+  static String PRESCRIPTION_EXPIRATION_DATE_HINT = 'yyyy-mm-dd';
   static String PRESCRIPTION_AUTO_RENOVABLE = 'Renovável';
   static String PRESCRIPTION_CYCLE = 'Ciclo Renovação';
   static String PRESCRIPTION_CYCLE_HINT = '30 (dias)'; //validate once per cycle

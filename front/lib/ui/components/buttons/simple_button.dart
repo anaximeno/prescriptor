@@ -6,6 +6,8 @@ class SimpleButton extends StatelessWidget {
   final double height;
   final Color enabledColor;
   final Color disabledColor;
+  final Color textEnabledColor;
+  final Color textDisabledColor;
 
   final void Function()? onPressed;
 
@@ -16,7 +18,9 @@ class SimpleButton extends StatelessWidget {
     this.onPressed,
     this.height = 35,
     this.enabledColor = const Color(0xFF0DA0F0),
-    this.disabledColor = const Color(0xFF0DA0F0),
+    this.disabledColor = const Color(0xFF729BB1),
+    this.textEnabledColor = const Color(0xFFFFFFFF),
+    this.textDisabledColor = const Color(0xFFA7A7A7),
   });
 
   @override
@@ -33,8 +37,8 @@ class SimpleButton extends StatelessWidget {
           onPressed: onPressed,
           child: Text(
             text,
-            style: const TextStyle(
-              color: Colors.white,
+            style: TextStyle(
+              color: onPressed != null ? textEnabledColor : textDisabledColor,
               fontSize: 15,
             ),
           ),

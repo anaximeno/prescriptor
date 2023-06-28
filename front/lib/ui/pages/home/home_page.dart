@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:front/domain/controllers/login.dart';
 import 'package:front/ui/components/texts/texts.dart';
-import 'package:front/ui/pages/home/components/side_bar.dart';
-import 'package:front/ui/pages/home/views/pharmacist.dart';
+import 'package:front/ui/pages/home/views/physicians.dart';
 import 'package:front/ui/pages/login/login_page.dart';
 import 'package:front/ui/theming.dart';
 import 'package:front/utils/constants.dart';
@@ -35,8 +34,17 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: const Row(children: [
-        Expanded(flex: 2, child: SideBar()),
-        Expanded(flex: 10, child: Pharmacist()),
+        // Expanded(
+        //   flex: 2,
+        //   child: Sidebar(
+        //     sections: [
+        //     ],
+        //   ),
+        // ),
+        Expanded(
+          flex: 10,
+          child: Physicians(),
+        ),
       ]),
     );
   }

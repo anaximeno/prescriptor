@@ -4,7 +4,7 @@ import 'package:front/utils/constants.dart';
 class SimpleInputForm extends StatelessWidget {
   final double _height = 37;
   final String labelText;
-  final String hint;
+  final String? hint;
   final double inputWidth;
   final double width;
   final bool isBig;
@@ -52,7 +52,7 @@ class SimpleInputForm extends StatelessWidget {
                 left: 20.0,
               ),
               decoration: BoxDecoration(
-                color: Colors.blue[100],
+                color: const Color.fromARGB(255, 213, 236, 255),
                 borderRadius: BorderRadius.circular(5),
               ),
               child: Center(
@@ -72,9 +72,9 @@ class SimpleInputForm extends StatelessWidget {
                     ),
                     border: InputBorder.none,
                     hintText: hint,
-                    hintStyle: TextStyle(
+                    hintStyle: const TextStyle(
                       fontSize: 15,
-                      color: Colors.grey[500],
+                      color: Color.fromRGBO(138, 138, 138, 1),
                     ),
                   ),
                 ),
