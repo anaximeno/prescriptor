@@ -39,7 +39,7 @@ abstract class Constants {
   static String EDIT_BUTTON = 'Editar';
   static String VALIDATE_BUTTON = 'Validar';
 
-  static String LOGIN_RECEPTION = 'Bem vindo';
+  static String LOGIN_RECEPTION = 'Bem-vindo';
   static String LOGIN_EMAIL_HINT = 'Email ou CIPS';
   static String PASSWORD_HINT = 'Password';
   static String LOGIN_BUTTON = 'Entrar';
