@@ -18,7 +18,7 @@ class Prescription extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.fromLTRB(10.0,10.0,10.0,0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -38,16 +38,16 @@ class Prescription extends StatelessWidget {
                         labelText:
                         Constants.PRESCRIPTION_EMISSION_DATE,
                         hint: Constants.PRESCRIPTION_EMISSION_DATE_HINT,
-                        width: 250,
-                        inputWidth: 120,
+                        width: 230,
+                        inputWidth: 110,
                       ),
                       SimpleInputForm(
                         writeEnable: writeEnable,
                         labelText:
                         Constants.PRESCRIPTION_EXPIRATION_DATE,
                         hint: Constants.PRESCRIPTION_EXPIRATION_DATE_HINT,
-                        width: 250,
-                        inputWidth: 120,
+                        width: 235,
+                        inputWidth: 110,
                       ),
                       //TODO: RENOVABLE CHECKBOX
                       Container(padding: EdgeInsets.all(8.0),
@@ -58,7 +58,8 @@ class Prescription extends StatelessWidget {
                               ),
                               CheckboxExample(),
                             ],
-                          )),
+                          ),
+                      ),
                       SimpleInputForm(
                         writeEnable: writeEnable,
                         labelText:
@@ -76,7 +77,8 @@ class Prescription extends StatelessWidget {
                             color: Colors.black,
                             child: Text(
                               Constants.PACIENT_TITLE,
-                              style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                              style: const TextStyle(
+                                  fontSize: 15, fontWeight: FontWeight.bold),
                             ))),
                   ),
                   Row(
@@ -86,29 +88,36 @@ class Prescription extends StatelessWidget {
                         writeEnable: writeEnable,
                         labelText: Constants.PACIENT_NAME,
                         hint: Constants.PACIENT_NAME_HINT,
-                        width: 200,
-                        inputWidth: 150,
+                        width: 180,
+                        inputWidth: 130,
+                      ),
+                      SimpleInputForm(
+                        writeEnable: writeEnable,
+                        labelText: Constants.PACIENT_SURNAME,
+                        hint: Constants.PACIENT_SURNAME_HINT,
+                        width: 180,
+                        inputWidth: 120,
                       ),
                       SimpleInputForm(
                         writeEnable: writeEnable,
                         labelText: Constants.PACIENT_CNI,
                         hint: Constants.PACIENT_CNI_HINT,
-                        width: 190,
-                        inputWidth: 150,
+                        width: 175,
+                        inputWidth: 135,
                       ),
                       SimpleInputForm(
                         writeEnable: writeEnable,
                         labelText: Constants.PACIENT_NASC,
                         hint: Constants.PACIENT_NASC_HINT,
-                        width: 250,
-                        inputWidth: 120,
+                        width: 230,
+                        inputWidth: 110,
                       ),
                       SimpleInputForm(
                         writeEnable: writeEnable,
                         labelText: Constants.PACIENT_PHONE,
                         hint: Constants.PACIENT_PHONE_HINT,
-                        width: 200,
-                        inputWidth: 120,
+                        width: 180,
+                        inputWidth: 100,
                       ),
                     ],
                   ),
@@ -120,7 +129,8 @@ class Prescription extends StatelessWidget {
                         color: Colors.black,
                         child: Text(
                           Constants.MEDICINE_TITLE,
-                          style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                          style: const TextStyle(
+                              fontSize: 15, fontWeight: FontWeight.bold),
                         ),
                       ),
                     ),
@@ -132,7 +142,7 @@ class Prescription extends StatelessWidget {
                         writeEnable: writeEnable,
                         labelText: Constants.MEDICINE_NAME,
                         hint: Constants.MEDICINE_NAME_HINT,
-                        width: 300,
+                        width: 230,
                         inputWidth: 150,
                       ),
                       SimpleInputForm(
@@ -184,8 +194,8 @@ class Prescription extends StatelessWidget {
                         labelText:
                         Constants.MEDICINE_FREQUENCY,
                         hint: Constants.MEDICINE_FREQUENCY_HINT,
-                        width: 200,
-                        inputWidth: 110,
+                        width: 180,
+                        inputWidth: 95,
                       ),
                       SimpleInputForm(
                         writeEnable: writeEnable,
@@ -204,7 +214,8 @@ class Prescription extends StatelessWidget {
                         color: Colors.black,
                         child: Text(
                           Constants.PHYSICIANS_TITLE,
-                          style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                          style: const TextStyle(
+                              fontSize: 15, fontWeight: FontWeight.bold),
                         ),
                       ),
                     ),
@@ -212,6 +223,20 @@ class Prescription extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      SimpleInputForm(
+                        writeEnable: writeEnable,
+                        labelText: Constants.PHYSICIANS_NAME,
+                        hint: Constants.PHYSICIANS_NAME_HINT,
+                        width: 180,
+                        inputWidth: 130,
+                      ),
+                      SimpleInputForm(
+                        writeEnable: writeEnable,
+                        labelText: Constants.PHYSICIANS_SPECIALITY,
+                        hint: Constants.PHYSICIANS_SPECIALITY_HINT,
+                        width: 300,
+                        inputWidth: 200,
+                      ),
                       SimpleInputForm(
                         writeEnable: writeEnable,
                         labelText: Constants.PHYSICIANS_CIPS,

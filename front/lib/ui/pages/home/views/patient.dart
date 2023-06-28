@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:front/ui/components/buttons/checkbox.dart';
 import 'package:front/ui/components/buttons/simple_button.dart';
 import 'package:front/ui/components/inputs/simple_input_form.dart';
 import 'package:front/utils/constants.dart';
@@ -46,16 +47,17 @@ class Patient extends StatelessWidget {
                         writeEnable: writeEnable,
                         labelText: Constants.PACIENT_NAME,
                         hint: Constants.PACIENT_NAME_HINT,
-                        width: 200,
-                        inputWidth: 150,
+                        width: 190,
+                        inputWidth: 140,
                       ),
                       SimpleInputForm(
                         writeEnable: writeEnable,
-                        labelText: Constants.PACIENT_CNI,
-                        hint: Constants.PACIENT_CNI_HINT,
-                        width: 190,
-                        inputWidth: 150,
+                        labelText: Constants.PACIENT_SURNAME,
+                        hint: Constants.PACIENT_SURNAME_HINT,
+                        width: 200,
+                        inputWidth: 140,
                       ),
+
                       SimpleInputForm(
                         writeEnable: writeEnable,
                         labelText: Constants.PACIENT_NASC,
@@ -67,8 +69,15 @@ class Patient extends StatelessWidget {
                         writeEnable: writeEnable,
                         labelText: Constants.PACIENT_SEX,
                         hint: Constants.PACIENT_SEX_HINT,
-                        width: 120,
-                        inputWidth: 75,
+                        width: 125,
+                        inputWidth: 80,
+                      ),
+                      SimpleInputForm(
+                        writeEnable: writeEnable,
+                        labelText: Constants.PACIENT_PHONE,
+                        hint: Constants.PACIENT_PHONE_HINT,
+                        width: 175,
+                        inputWidth: 95,
                       ),
                     ],
                   ),
@@ -77,25 +86,34 @@ class Patient extends StatelessWidget {
                     children: [
                       SimpleInputForm(
                         writeEnable: writeEnable,
-                        labelText: Constants.PACIENT_CITY,
-                        hint: Constants.PACIENT_CITY_HINT,
-                        width: 210,
-                        inputWidth: 150,
+                        labelText: Constants.PACIENT_CNI,
+                        hint: Constants.PACIENT_CNI_HINT,
+                        width: 175,
+                        inputWidth: 140,
                       ),
                       SimpleInputForm(
                         writeEnable: writeEnable,
-                        labelText: Constants.PACIENT_DISTRICT,
-                        hint: Constants.PACIENT_DISTRICT_HINT,
+                        labelText: Constants.PACIENT_NIF,
+                        hint: Constants.PACIENT_NIF_HINT,
+                        width: 150,
+                        inputWidth: 115,
+                      ),
+                      SimpleInputForm(
+                        writeEnable: writeEnable,
+                        labelText: Constants.PACIENT_ADDRESS,
+                        hint: Constants.PACIENT_ADDRESS_HINT,
                         width: 260,
-                        inputWidth: 210,
+                        inputWidth: 190,
                       ),
-                      SimpleInputForm(
-                        writeEnable: writeEnable,
-                        labelText: Constants.PACIENT_PHONE,
-                        hint: Constants.PACIENT_PHONE_HINT,
-                        width: 200,
-                        inputWidth: 120,
-                      ),
+                      Container(padding: EdgeInsets.all(8.0),
+                        child: Row(
+                          children: [
+                            Text(Constants.PACIENT_INSURANCE,
+                              style: TextStyle(fontSize: 15, color: Colors.black),
+                            ),
+                            CheckboxExample(),
+                          ],
+                        )),
                     ],
                   ),
                   //TODO: ADICIONAR ENTIDADE E NUMERO BENEFICIARIO QUANDO O PACIENTE TEM "VALE REMEDIOS"

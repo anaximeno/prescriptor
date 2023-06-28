@@ -16,27 +16,21 @@ class SimpleButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(padding: EdgeInsets.all(8.0),
       width: width,
+      height: 35,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(5),
+        color: backgroundColor,
+      ),
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: backgroundColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(5),
-          ),
-          minimumSize: const Size(80, 30),
+          backgroundColor: null,
+          //minimumSize: const Size(80, 30),
+          elevation: 10
         ),
-        child: Container(
-          padding: const EdgeInsets.all(8.0),
-          child: Text(
-            text,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 15,
-            ),
-          ),
-        ),
+        child: Text(text, style: const TextStyle(color: Colors.white, fontSize: 15)),
       ),
     );
   }

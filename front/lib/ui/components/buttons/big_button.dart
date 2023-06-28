@@ -21,16 +21,17 @@ class BigButton extends StatelessWidget {
   return SizedBox(
     height: 60,
     width: 170,
-    child: Container(
-      alignment: Alignment.center,
-      margin: const EdgeInsets.all(8),
-      padding: const EdgeInsets.all(3),
-      decoration: BoxDecoration(
-          color: buttonColor,
-      borderRadius: BorderRadius.circular(4.0),
-      ),
-      child: TextButton(onPressed: onPressed,
-        child: Text(text, style: TextStyle(color: textColor)),
+    child: TextButton(
+      onPressed: onPressed,
+      child: Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(3),
+        decoration: BoxDecoration(
+            color: buttonColor,
+        borderRadius: BorderRadius.circular(4.0),
+        ),
+        child: Text(text, style: TextStyle(color: textColor, fontSize: 15)),
       ),
     ),
   );

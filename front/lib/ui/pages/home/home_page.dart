@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
         appBar: AppBar(//AppBar is the same for every user
         backgroundColor: Colors.white,
           title: TextButton(onPressed: () {}, child: TitleText(title: Constants.APPBAR_TITLE, color: Colors.black)),
-          leading: IconButton(onPressed:() {}, icon: Icon(Icons.menu, color: Colors.black)),
+          leading: IconButton(onPressed:() {}, icon: Icon(Icons.menu, color: Color(Constants.DEFAULT_BLUE))),
           actions: [
             IconButton(onPressed: (){}, icon: const Icon(Icons.notifications_none_rounded, color: Colors.black)),
             IconButton(onPressed: (){}, icon: const Icon(Icons.account_circle_outlined, color: Colors.black)),
@@ -29,8 +29,10 @@ class HomePage extends StatelessWidget {
           Expanded(flex: 2, child: SideBar()),
 
           Expanded( flex: 10,
-            child: Physicians()// differ  between de users
+             child: Pharmacist()//TODO: differ  between de users
           ),
+          //TODO: a homepage with basic information about the user: fullname, job, clinic/pharmacy
+
         ]),
     );
   }

@@ -22,13 +22,19 @@ class Pharmacist extends StatelessWidget {
                 SimpleSearchBar(),
 
                 BigButton(text: Constants.PRESCRIPTION_SEARCH, buttonColor: Colors.white, textColor: Colors.black),
-                BigButton(text: Constants.PRESCRIPTION_VALIDATE, buttonColor: Colors.lightBlueAccent, textColor: Colors.white),
+                BigButton(text: Constants.PRESCRIPTION_VALIDATE, buttonColor: Color(Constants.DEFAULT_BLUE), textColor: Colors.white),
               ],
             ),
           ),
-          Expanded(child: Container(color: Colors.lightBlueAccent,
-              child: Placeholder() // If press create prescription
-          )),
+          Expanded(child: Container(color: Color(Constants.DEFAULT_BLUE),
+              padding: EdgeInsets.fromLTRB(20.0,20.0,20.0,0),
+              child: Card(elevation:5,
+                  child: Column(//TODO: Show basic info
+                    children: [
+
+                    ],
+                  ) // If press create prescription
+              ))),
         ]);
   }
 }

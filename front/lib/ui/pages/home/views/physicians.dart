@@ -22,13 +22,13 @@ class Physicians extends StatelessWidget {
 
                 SimpleSearchBar(),
 
-                BigButton(text: Constants.PRESCRIPTION_SEARCH, buttonColor: Colors.white, textColor: Colors.black),
+                //BigButton(text: Constants.PRESCRIPTION_SEARCH, buttonColor: Colors.white, textColor: Colors.black),
                 BigButton(text: Constants.PRESCRIPTION_CREATE, buttonColor: Color(Constants.DEFAULT_BLUE), textColor: Colors.white),
               ],
             ),
           ),
           Expanded(child: Container(color: Color(Constants.DEFAULT_BLUE),
-            child: Patient(goal: Constants.CREATE_BUTTON,writeEnable: true) // TODO:make to differ: create and edit
+            child: Prescription(goal: Constants.INSERT_BUTTON,writeEnable: true) // TODO:make to differ: create and edit
           )),
         ]);
   }
