@@ -64,7 +64,7 @@ class SimpleInputForm extends StatelessWidget {
                       hint == Constants.MEDICINE_OBSERVATION_HINT ? null : 1,
                   style: const TextStyle(
                     fontSize: 15,
-                    color: Colors.black,
+                    color: Colors.white,
                   ),
                   decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(

@@ -17,8 +17,8 @@ class SimpleSearchBar extends StatelessWidget {
                         delegate: CustomSearchDelegate());
                     },
                   icon: Icon(Icons.search_rounded, size: 20, color: Colors.grey)),*/
-              Icon(Icons.search_rounded, size: 20, color: Color(Constants.DEFAULT_2_GREY)),
-              SimpleInputForm(enabled: true,labelText: Constants.BLANK, hint: Constants.SEARCH_BAR_HINT, width: 500, inputWidth: 490),
+              Icon(Icons.search_rounded, size: 20, color: Color(Constants.DEFAULT_2_BLUE)),
+              SimpleInputForm(enabled: true,labelText: Constants.BLANK, hint: Constants.SEARCH_PRESCRIPTION_BAR_HINT, width: 500, inputWidth: 490),
             ],
         ),
     );

@@ -2,17 +2,32 @@
 
 abstract class Constants {
   static String BLANK = '';
+  static String TEST = 'Testando qualidade do widget';
 
-  static String APPBAR_TITLE = 'Prescriptor';
+  static String APPBAR_TITLE = 'Safira';
   static String APP_DESCRIPTION = 'Receita médica digital';
 
   // XXX: update to the theming
   static int DEFAULT_BLUE = 0xFF7FB8D6;
-  static int DEFAULT_2_BLUE_ = 0xFF5D8FC2;
+  static int DEFAULT_BLUE_LIGHT = 0xA67FB8D6;
+  static int DEFAULT_2_BLUE = 0xFF5D8FC2;
   static int DEFAULT_GREY = 0xFFF4F4F4;
   static int DEFAULT_2_GREY = 0xFFF8F9FA;
 
-  static String SEARCH_BAR_HINT = 'Busca Prescriptor';
+  static String USER_INFO_TITLE = 'Utilizador';
+  static String USER_INFO_USERNAME = 'Utilizador:';
+  static String USER_INFO_FULLNAME = 'Nome:';
+  static String USER_INFO_PHONENUMBER = 'Telefone:';
+  static String USER_INFO_ADDRESS = 'Endereço:';
+  static String USER_INFO_JOB = 'Trabalho:';
+  static String USER_INFO_JOB_ID = 'Numero de Identificação:';
+  static String USER_INFO_ORGANIZATION = 'Organização:';
+
+
+  static String SEARCH_PRESCRIPTION_BAR_HINT = 'Busca Receita';
+  static String SEARCH_PACIENT_HINT = 'Busca Paciente';
+  static String SEARCH_MEDICAMENTO_HINT = 'Busca Medicamento';
+
   static String DASHBOARD = 'Dashboard';
   static String ICON_DASHBOARD = 'Menu Principal';
   static String ICON_PRESCRIPTION = 'Receitas';
