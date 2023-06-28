@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:front/ui/pages/registry/register_pacient_page.dart';
+import 'package:front/ui/pages/home/components/register_pacient.dart';
 
 import 'package:front/ui/theming.dart';
 import 'package:front/utils/constants.dart';
@@ -36,7 +36,7 @@ class Receptionist extends StatelessWidget {
       Expanded(
         child: Container(
           color: Theming.colorBasicBlue,
-          child: RegisterPacientPage(
+          child: RegisterPacient(
             goal: Constants.INSERT_BUTTON,
             writeEnable: true,
           ),

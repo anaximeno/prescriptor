@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:front/ui/theming.dart';
 import 'package:front/utils/constants.dart';
-import 'package:front/ui/pages/prescription/prescription_page.dart';
+import 'package:front/ui/pages/home/components/prescription.dart';
 
 class Physicians extends StatelessWidget {
   const Physicians({super.key});

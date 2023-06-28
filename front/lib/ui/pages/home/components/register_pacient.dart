@@ -4,17 +4,17 @@ import 'package:front/ui/components/buttons/simple_button.dart';
 import 'package:front/ui/components/inputs/simple_input_form.dart';
 import 'package:front/utils/constants.dart';
 
-import '../../../domain/controllers/pacient.dart';
-import '../../components/texts/texts.dart';
+import '../../../../domain/controllers/pacient.dart';
+import '../../../components/texts/texts.dart';
 
-class RegisterPacientPage extends StatelessWidget {
+class RegisterPacient extends StatelessWidget {
   //TODO: try make the input_forms not  touchable on view and validate mode
   final String goal;
   final bool writeEnable;
 
   final PacientController controller = Get.find();
 
-  RegisterPacientPage({
+  RegisterPacient({
     super.key,
     required this.goal,
     required this.writeEnable,
