@@ -2,8 +2,6 @@ package group.three.request;
 
 import jakarta.annotation.Nonnull;
 
-import java.time.LocalDate;
-
 import group.three.model.User;
 import group.three.utils.enums.Gender;
 import group.three.utils.enums.UserType;

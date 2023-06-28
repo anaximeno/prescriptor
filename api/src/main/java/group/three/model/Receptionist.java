@@ -1,7 +1,5 @@
 package group.three.model;
 
-import java.time.*;
-
 import group.three.utils.JsonResource;
 import group.three.utils.interfaces.IJsonResource;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;

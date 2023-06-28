@@ -2,7 +2,6 @@ package group.three.request;
 
 import group.three.model.Clinic;
 
-import java.time.LocalDate;
 import jakarta.annotation.Nonnull;
 
 import lombok.*;

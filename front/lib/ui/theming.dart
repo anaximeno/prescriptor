@@ -24,8 +24,8 @@ abstract class Theming {
 
   // Colors
 
-  static const Color colorLightBlue = Color(0xFF81D4FA);
-  static const Color colorNiceBlue = Color(0xFF0DA0F0);
+  static const Color colorLightBlue = Color(0xFF2E82FF);
+  static const Color colorNiceBlue = Color(0xFF0f52ba);
   static const Color colorDartherBlue = Color(0xFF5D8FC2);
   static const Color colorBasicBlue = Color(0xFF7FB8D6);
   static const Color colorWhiteLike = Color(0xFFEEEEFF);

@@ -1,7 +1,5 @@
 package group.three.model;
 
-import java.time.LocalDate;
-
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

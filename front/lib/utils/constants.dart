@@ -8,11 +8,12 @@ abstract class Constants {
   static String APP_DESCRIPTION = 'Receita médica digital';
 
   // XXX: update to the theming
-  static int DEFAULT_BLUE = 0xFF7FB8D6;
-  static int DEFAULT_BLUE_LIGHT = 0xA67FB8D6;
+  static int DEFAULT_BLUE = 0xFF0F52BA;
+  static int DEFAULT_BLUE_LIGHT = 0xFF08AAFC;
   static int DEFAULT_2_BLUE = 0xFF5D8FC2;
-  static int DEFAULT_GREY = 0xFFF4F4F4;
-  static int DEFAULT_2_GREY = 0xFFF8F9FA;
+  static int DEFAULT_GREY = 0xFFF8F9FA;
+  static int DEFAULT_2_GREY = 0xFFF4F4F4;
+  
 
   static String USER_INFO_TITLE = 'Utilizador';
   static String USER_INFO_USERNAME = 'Utilizador:';
