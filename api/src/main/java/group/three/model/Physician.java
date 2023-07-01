@@ -1,11 +1,14 @@
 package group.three.model;
 
-import java.io.Serializable;
-import java.util.Date;
-import java.util.UUID;
-import lombok.*;
+import group.three.utils.JsonResource;
+import group.three.utils.interfaces.IJsonResource;
+
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+
 import jakarta.persistence.*;
 import jakarta.annotation.Nonnull;
+
+import lombok.*;
 
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor
@@ -14,35 +17,31 @@ import jakarta.annotation.Nonnull;
 @Setter
 @Entity
 @Table(name = "physicians")
-public class Physician implements Serializable{
-    
+public class Physician extends PanacheEntityBase implements IJsonResource {
     @Id
-    @Nonnull
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    private Long id;
 
     @Nonnull
-    private String name;
-
-    @Nonnull
-    private Date dob;//date of birth
-
-    @Nonnull
-    private String CNI;
-
-    @Nonnull
-    private String NIP;//numero de identificacao profissional
+    private String cips;
 
     @Nonnull
     private String specialty;
 
+    @Nonnull
+    @OneToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+    private User user;
 
-// Nome completo
-// - Data de nascimento
-// - Número de CNI
-// - Número de identificação profissional (ERIS)
-// - Área de especialidade
-    
-    
+    @Nonnull
+    @ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+    private Clinic clinic;
 
+    public JsonResource toJsonResource() {
+        return JsonResource.builder()
+                .set("cips", getCips())
+                .set("speciality", getSpecialty())
+                .set("user", getUser().toJsonResource())
+                .set("clinic", getClinic().toJsonResource())
+                .build();
+    }
 }

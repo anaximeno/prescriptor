@@ -1,11 +1,14 @@
 package group.three.model;
 
-import java.io.Serializable;
-import java.util.Date;
-import java.util.UUID;
-import lombok.*;
+import java.time.LocalDate;
+
+import group.three.utils.JsonResource;
+import group.three.utils.interfaces.IJsonResource;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.*;
 import jakarta.annotation.Nonnull;
+
+import lombok.*;
 
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor
@@ -14,20 +17,26 @@ import jakarta.annotation.Nonnull;
 @Setter
 @Entity
 @Table(name = "pharmacies")
-public class Pharmacy implements Serializable{
-    
+public class Pharmacy extends PanacheEntityBase implements IJsonResource {
     @Id
-    @Nonnull
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    private Long id;
 
     @Nonnull
     private String name;
 
     @Nonnull
-    private Date dof;//date of foundation 
+    @Column(name = "date_of_foundation")
+    private LocalDate dateOfFoundation;
 
-    @Nonnull
-    private byte NIF;
+    // @Nonnull
+    // private DateTimeFormatter afterHoursService; // XXX: ???
 
+    public JsonResource toJsonResource() {
+        return JsonResource.builder()
+                .set("id", getId())
+                .set("name", getName())
+                .set("dateOfFoundation", getDateOfFoundation())
+                .build();
+    }
 }

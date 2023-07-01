@@ -1,20 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:front/ui/pages/home/views/prescription.dart';
+import 'package:front/infra/di.dart';
+import 'package:get/get.dart';
 
-void main() => runApp(const MyApp());
+import 'package:front/ui/pages/home/home_page.dart';
+import 'package:front/ui/pages/login/login_page.dart';
+import 'package:front/utils/utils.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+import './ui/theming.dart';
+
+void main() => runApp(const App());
+
+class App extends StatelessWidget {
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Prescriptor',
+    dependencyInjection();
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const Prescription(),
+      theme: Theming.appTheme,
+      title: Constants.APPBAR_TITLE,
+      initialRoute: '/login',
+      routes: {
+        '/login': (context) => LoginPage(),
+        '/': (context) => HomePage(),
+      },
     );
   }
 }

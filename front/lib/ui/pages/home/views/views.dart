@@ -1,3 +1,3 @@
 export 'pharmacist.dart';
-export 'doctor.dart';
-export 'prescription.dart';
+export 'physicians.dart';
+export 'receptionist.dart';
